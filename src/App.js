@@ -1,12 +1,14 @@
 import './App.css'
-import { ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider,  } from '@chakra-ui/react'
 import { theme } from './resources/theme/index.js'
-import BasicUsage from './components/modal/modal'
-
+import ModalDialog from './components/modal'
+import Component from './components/slider'
 function App() {
   return (
     <ChakraProvider theme={theme}>
-      <BasicUsage />,
+      <ModalDialog>
+        <Component />
+      </ModalDialog>
       </ChakraProvider>
   )
 }

@@ -1,7 +1,7 @@
 import {
     Modal,
     ModalOverlay,
-    ModalContent, 
+    ModalContent,
     ModalHeader,
     ModalBody,
     ModalFooter,
@@ -9,7 +9,7 @@ import {
     useDisclosure,
     Button,
     Flex,
-    Image,
+    // Image,
     IconButton,
     Center,
 } from "@chakra-ui/react"
@@ -18,8 +18,9 @@ import {
     ChevronRightIcon,
 }
     from '@chakra-ui/icons'
+import Component from "./slider"
 
-function BasicUsage() {
+function ModalDialog() {
     const { isOpen, onOpen, onClose } = useDisclosure()
     return (
         <>
@@ -41,10 +42,10 @@ function BasicUsage() {
                 <ModalOverlay />
                 <ModalContent
                     bg="brand.primaryBlack"
-                    pb= {50}
+                    pb={50}
                     borderRadius="0"
-                    maxWidth= "none"
-                    w={{ base: "22rem", md: "28rem", lg: "30rem"}}
+                    maxWidth="none"
+                    w={{ base: "22rem", md: "28rem", lg: "30rem" }}
                 >
 
                     <ModalHeader
@@ -56,18 +57,19 @@ function BasicUsage() {
                     </ModalHeader>
                     <ModalCloseButton
                         mt="12"
-                        color="brand.baseColor" 
+                        color="brand.baseColor"
                         w={7} h={7}
-                        />
+                    />
                     <ModalBody>
                         <Center>
-                        < Image
-                            mt="10"
-                            src="https://i.ibb.co/yypmPZm/maria-Crisstina.png"
-                            alt="se muestra una foto de Emilia prieto en sus años dorados"
-                        />
+                            {/* < Image
+                                mt="10"
+                                src="https://i.ibb.co/yypmPZm/maria-Crisstina.png"
+                                alt="se muestra una foto de Emilia prieto en sus años dorados"
+                            /> */}
+                            <Component />
                         </Center>
-                        
+
                     </ModalBody>
                     <ModalFooter>
                         <IconButton
@@ -91,4 +93,4 @@ function BasicUsage() {
     )
 }
 
-export default BasicUsage;
+export default ModalDialog;
