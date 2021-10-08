@@ -29,13 +29,13 @@ function SerchBar() {
   const [serchTerm, setSerchTerm] = useState('')
   return (
     <div>
-      <Stack spacing={4} w="100%" h="100%" m="0 auto" pt="100px" bg="brand.primaryOrange" >
+      <Stack spacing={4} w="100%" h="100%" m="0 auto" pt="100px">
         <InputGroup w={{base:"328px", md:"80%", lg:"50%"}} m="0 auto" bg="brand.baseColor">
           <Input variant='outline' placeholder="Busca Artistas  " size="lg" w="100%" borderWidth="5px" borderColor="brand.secondaryGray" borderRadius="0" onChange={event => { setSerchTerm(event.target.value) }} />
           <InputRightElement width="15px" mr="15px" mt="5px" children={<BsSearch/>} />
         </InputGroup>
       </Stack>
-      <Stack spacing={4} w="100%" h="100%" m="0 auto" pt="100px" bg="brand.primaryOrange" color="brand.baseColor" textAlign="center">
+      <Stack spacing={4} w="100%" h="100%" m="0 auto" pt="100px" textAlign="center">
         {JSONDATA.filter((val) => {
           if (serchTerm === "") {
             return val
