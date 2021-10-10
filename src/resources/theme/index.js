@@ -1,102 +1,48 @@
 import { extendTheme } from "@chakra-ui/react"
-import { createBreakpoints } from "@chakra-ui/theme-tools"
+import { breakpoints } from "./foundations/Breakpoints"
+import { colors } from "./foundations/Colors"
+import { fonts } from "./foundations/Fonts"
 
-const breakpoints = createBreakpoints({
-    sm: "320px",
-    md: "768px",
-    lg: "960px",
-    xl: "1200px",
-})
 export const theme = extendTheme({
-    colors: {
-        brand: {
-            primaryOrange: '#EB5529',
-            primaryBlack: '#231F20',
-            primaryGray: '#434143',
-            secondaryOrange: '#F47843',
-            secondaryBlack: '#262626',
-            secondaryGray: '#C6C6C5',
-            baseColor: '#FFFFFF',
-        },
-    },
-    textStyles: {
-        body: {
-            fontFamily: 'Kulim Park, sans-serif',
-        },
-        subtitle: {
-            fontFamily: 'Cousine, monospace',
-        },
-    },
-    fontSizes: {
-        small: {
-            sm: "1.8rem", //equivalente a un h4
-            md: "2.0rem", //equivalente a un h3
-            lg: "2.4rem", //equivalente a un h2
-            xl: "3.2rem"  //equivalente a un h1
-        },
-        medium: {
-            sm: "1.2rem", //equivalente a un h4
-            md: "1.4rem", //equivalente a un h3
-            lg: "1.6rem", //equivalente a un h2
-            xl: "3.2rem"  //equivalente a un h1
-        },
-        large: {
-            sm: "2rem", //equivalente a un h4
-            md: "2.4rem", //equivalente a un h3
-            lg: "2.6rem", //equivalente a un h2
-            xl: "4.2rem"  //equivalente a un h1
-        },
-        paragraph: {
-            sm: "1.6rem",
-            md: "1.8rem",
-            xl: "5rem",
-        },
-        links: {
-            sm: "1.4rem",
-            md: "1.6rem",
-        }
-    },
-    fontWeightTypes: {
-        fontWeight: {
-            bold: "bold",
-            regular: "regular",
-            light: "light",
-        },
-    },
-    iconSizes: {
-        icons: {
-            sm: "2.4rem", //mobile
-            md: "3.5rem", //tablet
-            lg: "4.5rem", //desktop
-        },
-    },
-    logoSizes: {
-        logos: {
-            sm: "4.2rem", //mobile
-            md: "4.8rem", //tablet
-            lg: "7.2rem", //desktop
-        },
-    },
-    letterSpacing: {
-        letterSpacing: {
-            sm: "0.07rem",
-            md: "2.4rem",
-        }
-    },
-    lineHeight: {
-        lineHeight: {
-            sm: "1.2rem",
-            md: "1.4rem",
-            lg: "1.8rem",
-        }
-    },
-    breakPoints: {
-        container: {
-            sm: "640px",
-            md: "768px",
-            lg: "1024px",
-            xl: "1280px",
-        },
-    },
     breakpoints,
+    //se implementa de esta manera: w={{ base: "24px", md: "40px", lg: "56px" }}
+    colors,
+    //se implementa de esta manera: bg="brand.primaryOrange"
+    fonts,
+    //se implementa de esta manera: fontFamily="body"  
+
+    /*
+    los demas estilos ya vienen por default en chakra y no es
+    necesario definirlos de nuevo como fontSizes, fontWeights, 
+    lineHeights, letterSpacings y space (space son espaciados y
+    se pueden usar en padding, margin, top, right y bottom; 
+    aparte ya vienen los multiplos de 8 y son responsive con una 
+    tabla explicativa de tamaños) para mas informacion consultar: 
+    https://chakra-ui.com/docs/theming/theme 
+    */
+
+    /* 
+    los tamaños de los iconos (https://chakra-ui.com/docs/media-and-icons/icon)
+    se hacen basados en los tamaños de la tabla de los space 
+    (https://chakra-ui.com/docs/theming/theme)
+    icons:
+        sm: "2.4rem", //mobile se implementa de esta manera: w={10}
+        md: "3.5rem", //tablet se implementa de esta manera: w={14}
+        lg: "4rem", //desktop se implementa de esta manera: w={16}
+    logos:
+        sm: "4rem", //mobile se implementa de esta manera: w={16}
+        md: "20rem", //tablet se implementa de esta manera: w={20}
+        lg: "7rem", //desktop se implementa de esta manera: w={28}
+    */
+    
+    /*
+    aqui se pueden poner componentes y sus variantes en la carpeta 
+    "src/resources/components" se crea un archivo js por cada componente 
+    por ejemplo: Button.js y se exporta aqui por ejemplo:
+    import { Button } from "./components/Button"
+    Para mas informacion consultar: 
+    (https://chakra-ui.com/docs/theming/component-style) 
+    o ver el video:
+    (https://www.youtube.com/watch?v=Tx54S3UtRjI)
+    */
 })
