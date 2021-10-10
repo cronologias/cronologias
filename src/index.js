@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import { ChakraProvider } from "@chakra-ui/react"
 import {theme} from './resources/theme/index.js'
-import { SerchBar } from './components/serchBar';
+import { SearchBarContainer } from './components/searchBarContainer';
 
 
 ReactDOM.render(
   <ChakraProvider theme={theme}>
-      <SerchBar />
+      <SearchBarContainer />
     </ChakraProvider>,
 document.getElementById('root')
 );
