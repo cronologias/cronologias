@@ -1,12 +1,8 @@
-const font = {
-    body: {
-        fontFamily: 'Kulim Park, sans-serif',
-    },
-    heading: {
-        fontFamily: 'Cousine, monospace',
-    },
+const fonts = {
+    body: 'Kulim Park, sans-serif',
+    heading: 'Cousine, monospace',
 }
 
 export {
-    font,
+    fonts,
 }

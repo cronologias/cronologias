@@ -1,18 +1,19 @@
 import './App.css'
-// import { ChakraProvider } from '@chakra-ui/react'
-// import { theme } from './resources/theme/index.js'
+import { ChakraProvider } from '@chakra-ui/react'
+import { theme } from './resources/theme/index'
+//import AccordionArtist from './components/accordion'
+import HeaderCronicas from "./components/Header"
 
 function App() {
   return (
-    // hello is an example
-    <>
-    <h1> Hello</h1>
-    </>
-    // <ChakraProvider theme={theme}>
-    //   {/* Add your component tag */}
-    // </ChakraProvider>
+    <ChakraProvider theme={theme}>
+      <HeaderCronicas>
+      </HeaderCronicas>
+      {/*<AccordionArtist></AccordionArtist>*/}
+    </ChakraProvider>
   )
 }
+
 export default App;
 
 /*
