@@ -1,15 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { ChakraProvider } from "@chakra-ui/react"
-import {theme} from './resources/theme/index.js'
-import { SearchBarContainer } from './components/searchBarContainer';
+import App from './App'
 
 
 ReactDOM.render(
-  <ChakraProvider theme={theme}>
-      <SearchBarContainer />
-    </ChakraProvider>,
+  <App/>,
 document.getElementById('root')
 );
 
