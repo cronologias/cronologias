@@ -4,6 +4,7 @@ import { theme } from './resources/theme/index'
 //import AccordionArtist from './components/accordion'
 import HeaderCronicas from "./components/Header"
 import { SearchBarContainer } from './components/searchBarContainer'
+import Galery from './components/artistGalery'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       </HeaderCronicas>
       {/*<AccordionArtist></AccordionArtist>*/}
       <SearchBarContainer />
+      <Galery></Galery>
     </ChakraProvider>
   )
 }
