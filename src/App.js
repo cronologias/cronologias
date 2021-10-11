@@ -1,16 +1,20 @@
-import './App.css'
-// import { ChakraProvider } from '@chakra-ui/react'
-// import { theme } from './resources/theme/index.js'
+import "./App.css"
+import { ChakraProvider } from "@chakra-ui/react"
+import { theme } from "./resources/theme/index.js"
+import ModalDialog from "./components/modal"
+import Slider from "./components/slider"
+import Slides from "./slides"
+import MobileSlider from "./components/mobileSlider"
+import MobileSlides from "./mobileSlides"
 
 function App() {
   return (
-    // hello is an example
-    <>
-    <h1> Hello</h1>
-    </>
-    // <ChakraProvider theme={theme}>
-    //   {/* Add your component tag */}
-    // </ChakraProvider>
+    <ChakraProvider theme={theme}>
+      <ModalDialog>
+        <Slider slides={Slides}/>
+      </ModalDialog>
+      <MobileSlider mobleSlides={MobileSlides}/>
+    </ChakraProvider>
   )
 }
 export default App;
