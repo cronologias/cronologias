@@ -12,7 +12,7 @@ export async function getArtist (){
                 'Authorization': `Bearer ${token}`,
             },
             body: JSON.stringify({
-                query: 'query Myquery{allTarjetaAutoras {id nombreDeLaAutora}}'
+                query: 'query Myquery{allTarjetaAutoras(first:54) {id nombreDeLaAutora}}'
             }),
         }
     )
