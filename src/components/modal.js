@@ -26,8 +26,9 @@ function ModalDialog() {
         <>
             <Flex mt="20%">
                 <Button
-                    fontFamily="subtitle-fontFamily"
-                    fontSize="paragraph.sm"
+                textStyle="heading"
+                    fontFamily="heading"
+                    fontSize="sm"
                     bg="brand.primaryOrange"
                     color="brand.baseColor"
                     m="0 auto"
@@ -50,7 +51,7 @@ function ModalDialog() {
 
                     <ModalHeader
                         color="brand.baseColor"
-                        fontFamily="body"
+                        fontFamily="heading"
                         fontSize="2xl"
                         mt="24"
                     >Retrato de Maria Cristina Goicochea
