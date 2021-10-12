@@ -4,7 +4,7 @@ import {
   AspectRatio,
   Image,
   Text,
-  Stack
+  Stack,
 } from "@chakra-ui/react";
 
 function Card(props) {
