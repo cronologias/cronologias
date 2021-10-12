@@ -4,7 +4,8 @@ import { ChakraProvider, SimpleGrid, Container } from "@chakra-ui/react";
 import Card from "./Card";
 import img from "./img/ana_cristina.png"
 
-ReactDOM.render(<Card/>, document.getElementById('root'));
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
 
 function App() {
   const dataList = [
@@ -39,6 +40,3 @@ function App() {
     </ChakraProvider>
   );
 }
-
-const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);

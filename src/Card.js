@@ -11,11 +11,7 @@ function Card(props) {
   const { full_name, description } = props;
 
   return (
-    <Box
-      p={4}
-      minWidth="156px"
-      margin={2}
-    >
+    <Box minWidth="156px" margin={2}>
       <AspectRatio ratio={1 / 1}>
         <Image
           minWidth="156px"
