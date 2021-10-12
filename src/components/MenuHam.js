@@ -50,13 +50,14 @@ function MenuHam() {
           <HamburgerIcon 
           boxSize={{ base: "1.5rem", md: "2rem", lg: "2.25rem" }} 
           color="brand.primaryBlack" 
-          onClick={onOpen}
-          _hover={{ color:"brand.baseColor"}} 
           />
         }
         mr={4}
         p={4}
-        _hover={{ bg: "brand.primaryBlack", color:"brand.baseColor"}}  
+        onClick={onOpen}
+        _hover={{ bg: "brand.secondaryOrange", borderRadius:"none"}}
+        _active={{ bg: "brand.baseColor", boxShadow: "none", borderRadius:"none"}}
+        _focus={{ boxShadow: "none", borderRadius:"none", border: "0.125rem solid", borderColor: "brand.primaryBlack"}}
       > 
       </IconButton>
 
@@ -74,7 +75,9 @@ function MenuHam() {
             mt={8}
             size={{ base: "1.5rem", md: "2rem", lg: "2.25rem" }}
             p={4}
-            _hover={{ bg: "brand.primaryBlack", color:"brand.baseColor"}} 
+            _hover={{ bg: "brand.secondaryOrange", borderRadius:"none"}}
+            _active={{ bg: "brand.baseColor", boxShadow: "none", borderRadius:"none"}}
+            _focus={{ boxShadow: "none", borderRadius:"none", border: "0.125rem solid", borderColor: "brand.primaryBlack"}}
           >
           </DrawerCloseButton>
 
@@ -109,11 +112,14 @@ function MenuHam() {
                   mb={8}
                 >
                   <Box pr={2}>
-                    <Accordion isdisabled="true" allowToggle>
+                    <Accordion isdisabled="true" allowToggle >
                       <AccordionItem borderStyle="none" color="brand.primaryBlack" pl="0" pr="0">
                         <Box display="flex" flexDir="row" alignItems="center">
                           <BsFillPinMapFill></BsFillPinMapFill>
-                          <AccordionButton w={{ base: "16rem", md: "25rem"}} p={2}>
+                          <AccordionButton 
+                          w={{ base: "16rem", md: "25rem"}} 
+                          p={2} 
+                          _focus={{ boxShadow: "none", borderRadius:"none", border: "0.125rem solid", borderColor: "brand.primaryBlack"}}>
                             <Box 
                             flex="1" 
                             fontSize={{ base: "1.25rem", md: "1.25rem", lg: "1.5rem"}} 
@@ -162,7 +168,11 @@ function MenuHam() {
                       <AccordionItem borderStyle="none" color="brand.primaryBlack" pl="0" pr="0">
                         <Box display="flex" flexDir="row" alignItems="center">
                           <BsPeopleFill></BsPeopleFill>
-                          <AccordionButton w={{ base: "16rem", md: "25rem"}} p={2}>
+                          <AccordionButton 
+                          w={{ base: "16rem", md: "25rem"}} 
+                          p={2}
+                          _focus={{ boxShadow: "none", borderRadius:"none", border: "0.125rem solid", borderColor: "brand.primaryBlack"}}
+                          >
                             <Box fontSize={{ base: "1.25rem", md: "1.25rem", lg: "1.5rem"}}fontWeight={700} textStyle="body" flex="1" textAlign="left">
                               <h4>Curadoras</h4>
                             </Box>
@@ -197,7 +207,7 @@ function MenuHam() {
                   <Box pr={2}>
                     <BsSearch></BsSearch>
                   </Box>
-                  Busca nuestras Artistas
+                  Búsqueda de artistas
                 </ListItem>
 
                 <ListItem
