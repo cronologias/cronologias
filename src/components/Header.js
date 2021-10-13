@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Flex, Spacer, Image } from "@chakra-ui/react"
 import MenuHam from './MenuHam'
-import logo from '../img/logo.svg'
+import logo from '../img/logoNegro.svg'
 
 function HeaderCronicas() {
   return (
