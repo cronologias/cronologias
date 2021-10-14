@@ -26,7 +26,7 @@ const SearchBar = ({names}) => {
       <Stack spacing={4} w="100%" h="100%" m="0 auto" pt="100px" textAlign="center">
         {names.filter((val) => {
           if (serchTerm === "") {
-            return val
+            return ""
           } else if (val.nombreDeLaAutora.toLocaleLowerCase().includes(serchTerm.toLocaleLowerCase())) {
             return val
           }
