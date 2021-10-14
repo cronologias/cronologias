@@ -6,6 +6,10 @@ import Slider from "./components/slider"
 import Slides from "./slides"
 import MobileSlider from "./components/mobileSlider"
 import MobileSlides from "./mobileSlides"
+//import AccordionArtist from './components/accordion'
+import {CardContainer} from "./components/cardContainer"
+import HeaderCronicas from "./components/Header"
+import { SearchBarContainer } from './components/searchBarContainer'
 
 function App() {
   return (
@@ -14,9 +18,15 @@ function App() {
         <Slider slides={Slides}/>
       </ModalDialog>
       <MobileSlider mobleSlides={MobileSlides}/>
+      <HeaderCronicas>
+      </HeaderCronicas>
+      {/*<AccordionArtist></AccordionArtist>*/}
+      <SearchBarContainer />
+      <CardContainer/>
     </ChakraProvider>
   )
 }
+
 export default App;
 
 /*

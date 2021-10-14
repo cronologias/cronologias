@@ -1,14 +1,14 @@
 import { extendTheme } from "@chakra-ui/react"
 import { breakpoints } from "./foundations/Breakpoints"
 import { colors } from "./foundations/Colors"
-import { font } from "./foundations/Fonts"
+import { fonts } from "./foundations/Fonts"
 
 export const theme = extendTheme({
     breakpoints,
     //se implementa de esta manera: w={{ base: "24px", md: "40px", lg: "56px" }}
     colors,
     //se implementa de esta manera: bg="brand.primaryOrange"
-    font,
+    fonts,
     //se implementa de esta manera: fontFamily="body"  
 
     /*
