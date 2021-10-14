@@ -2,7 +2,7 @@ import './App.css'
 import { ChakraProvider } from '@chakra-ui/react'
 import { theme } from './resources/theme/index'
 //import AccordionArtist from './components/accordion'
-import {CardContainer} from "./components/cardContainer"
+//import {CardContainer} from "./components/cardContainer"
 import HeaderCronicas from "./components/Header"
 import { SearchBarContainer } from './components/searchBarContainer'
 
@@ -13,7 +13,6 @@ function App() {
       </HeaderCronicas>
       {/*<AccordionArtist></AccordionArtist>*/}
       <SearchBarContainer />
-      <CardContainer/>
     </ChakraProvider>
   )
 }

@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import { Stack, Input, InputRightElement, InputGroup } from "@chakra-ui/react";
 import { BsSearch } from "react-icons/bs";
+import Card from "./card";
 
 const SearchBar = ({names}) => {
   const [serchTerm, setSerchTerm] = useState('')
@@ -33,7 +34,7 @@ const SearchBar = ({names}) => {
         }).map((val, key) => {
           return (
             <div key={key}>
-              <p>{val.nombreDeLaAutora}</p>
+              <Card names={val}/>
             </div>)
         })}
       </Stack>
