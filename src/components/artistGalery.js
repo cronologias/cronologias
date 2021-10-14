@@ -5,7 +5,7 @@ function Galery(props){
     return (
         <>
             {props.images.map((worksImg, index) => (
-                index % 2 == 0 
+                index % 2 === 0 
                 ? <Center>
                     <HStack spacing={{base:4, md:6 ,lg:8}} mt={{base:5, lg:8}}>
                         <Box>
