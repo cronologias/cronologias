@@ -2,31 +2,11 @@ import React from "react";
 import { Box, Collapse, Button, Container, Flex, LinkBox, LinkOverlay, Text } from "@chakra-ui/react";
 import ReactMarkdown from 'react-markdown';
 import { ChevronDownIcon, ChevronUpIcon } from "@chakra-ui/icons";
+import { sizeWindow } from "../utilities/sizeWindow";
 
 const ViewArtist = ({ names }) => {
     const [show, setShow] = React.useState(false)
     const handleToggle = () => setShow(!show)
-    function tamVentana() {
-        var tam = [0, 0];
-        if (typeof window.innerWidth != 'undefined') {
-            tam = [window.innerWidth, window.innerHeight];
-        }
-        else if (typeof document.documentElement != 'undefined'
-            && typeof document.documentElement.clientWidth !=
-            'undefined' && document.documentElement.clientWidth !== 0) {
-            tam = [
-                document.documentElement.clientWidth,
-                document.documentElement.clientHeight
-            ];
-        }
-        else {
-            tam = [
-                document.getElementsByTagName('body')[0].clientWidth,
-                document.getElementsByTagName('body')[0].clientHeight
-            ];
-        }
-        return tam;
-    }
     return (
         <>
             <Flex p={8} flexDir={{ base: "column", lg: "row" }}>
@@ -41,7 +21,7 @@ const ViewArtist = ({ names }) => {
                         <LinkOverlay href="#artTreasures">Obras</LinkOverlay>
                     </LinkBox>
                 </Box>
-                {tamVentana()[0] <= 960 ?
+                {sizeWindow()[0] <= 960 ?
                     <Box w={{ lg: "581px" }} fontSize={{ base: "1rem", md: "1rem", lg: "1.125rem" }}>
                         <Collapse startingHeight={460} in={show} >
 
