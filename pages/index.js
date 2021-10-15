@@ -2,6 +2,13 @@ import React from 'react'
 import { Box, Flex, Spacer, Image } from "@chakra-ui/react"
 import MenuHam from '../src/components/MenuHam'
 import { SearchBarContainer } from '../src/components/searchBarContainer'
+import Galery from '../src/components/artistGalery'
+import ArtistImg from '../artistImage'
+import ModalDialog from "../src/components/modal"
+import Slider from "../src/components/slider"
+import Slides from "../slides"
+import MobileSlider from "../src/components/mobileSlider"
+import MobileSlides from "../mobileSlides"
 function HeaderCronicas() {
   return (
     <>
@@ -13,6 +20,11 @@ function HeaderCronicas() {
         <MenuHam></MenuHam>
       </Flex>
       <SearchBarContainer></SearchBarContainer>
+      <Galery images={ArtistImg}></Galery>
+      <ModalDialog>
+        <Slider slides={Slides}/>
+      </ModalDialog>
+      <MobileSlider mobleSlides={MobileSlides}/>
     </>
   )
 }

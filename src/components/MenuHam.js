@@ -32,9 +32,9 @@ import {
   BsFillPinMapFill, 
   BsFileEarmark, 
   BsPeopleFill, 
-  BsClock } from 'react-icons/bs'
+  BsClock } from "react-icons/bs"
 
-import { FaUsers } from 'react-icons/fa'
+import { FaUsers } from "react-icons/fa"
 
 
 function MenuHam() {
