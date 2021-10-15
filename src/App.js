@@ -7,11 +7,12 @@ import Slides from "./slides"
 import MobileSlider from "./components/mobileSlider"
 import MobileSlides from "./mobileSlides"
 //import AccordionArtist from './components/accordion'
-import {CardContainer} from "./components/cardContainer"
 import HeaderCronicas from "./components/Header"
 import { SearchBarContainer } from './components/searchBarContainer'
+import { ViewArtistContainer } from './components/viewArtistContainer'
 import Galery from './components/artistGalery'
 import ArtistImg from './artistImage'
+
 
 function App() {
   return (
@@ -20,8 +21,8 @@ function App() {
       </HeaderCronicas>
       {/*<AccordionArtist></AccordionArtist>*/}
       <SearchBarContainer />
+      <ViewArtistContainer/>
       <Galery images={ArtistImg}></Galery>
-      <CardContainer/>
       <ModalDialog>
         <Slider slides={Slides}/>
       </ModalDialog>
