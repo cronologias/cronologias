@@ -14,15 +14,15 @@ import { SearchBarContainer } from './components/searchBarContainer'
 function App() {
   return (
     <ChakraProvider theme={theme}>
-      <ModalDialog>
-        <Slider slides={Slides}/>
-      </ModalDialog>
-      <MobileSlider mobleSlides={MobileSlides}/>
-      <HeaderCronicas>
+            <HeaderCronicas>
       </HeaderCronicas>
       {/*<AccordionArtist></AccordionArtist>*/}
       <SearchBarContainer />
       <CardContainer/>
+      <ModalDialog>
+        <Slider slides={Slides}/>
+      </ModalDialog>
+      <MobileSlider mobleSlides={MobileSlides}/>
     </ChakraProvider>
   )
 }

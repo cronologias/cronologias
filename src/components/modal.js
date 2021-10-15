@@ -28,14 +28,17 @@ function ModalDialog(props) {
             <Modal
                 isOpen={isOpen} onClose={onClose}
             >
-                <ModalOverlay />
+                <ModalOverlay/>
                 <ModalContent
                     bg="brand.primaryOrange"
                     borderRadius="0"
                     maxWidth="none"
-                    w={{ base: "100vw", sm: "22rem", md: "26rem", lg: "30rem" }}
+                    w={{ base: "100%", sm: "22rem", md: "26rem", lg: "30rem" }}
                 >
                     <ModalCloseButton
+                        _hover={{ bg: "brand.secondaryOrange", borderRadius:"none"}}
+                        _active={{ bg: "brand.secondaryOrange", boxShadow: "none", borderRadius:"none"}}
+                        _focus={{ boxShadow: "none", borderRadius:"none", border: "0.125rem solid", borderColor: "brand.primaryBlack"}}
                         mt="12"
                         color="brand.primaryBlack"
                         size="1rem"

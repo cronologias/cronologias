@@ -51,12 +51,15 @@ const Slider = (props) => {
                         zIndex="2"
                         onClick={prevSlide}
                         bg="transparent"
-                        _hover={{ bg: "brand.primaryOrange", }}
                         borderRadius="none"
                         backgroundColor="rgba(38, 38, 38, 0.5)"
                         mr="14"
                         aria-label="imagen anterior"
-                        icon={<ChevronLeftIcon color="brand.baseColor" w={10} h={10} />} />
+                        _hover={{ bg: "brand.secondaryOrange", borderRadius:"none"}}
+                        _active={{ bg: "brand.secondaryOrange", boxShadow: "none", borderRadius:"none"}}
+                        _focus={{ boxShadow: "none", borderRadius:"none", border: "0.125rem solid", borderColor: "brand.primaryBlack"}}icon={<ChevronLeftIcon color="brand.baseColor" w={10} h={10} />} 
+                        
+                        />
                         <IconButton
                         pos= "absolute"
                         top= "40%"
@@ -65,11 +68,14 @@ const Slider = (props) => {
                         zIndex="2"
                         onClick={nextSlide}
                         bg="transparent"
-                        _hover={{ bg: "brand.primaryOrange", }}
                         borderRadius="none"
                         backgroundColor="rgba(38, 38, 38, 0.5)"
                         aria-label="siguiente imagen"
-                        icon={<ChevronRightIcon color="brand.baseColor" w={10} h={10} />} />
+                        icon={<ChevronRightIcon color="brand.baseColor" w={10} h={10} />}
+                        _hover={{ bg: "brand.secondaryOrange", borderRadius:"none"}}
+                        _active={{ bg: "brand.secondaryOrange", boxShadow: "none", borderRadius:"none"}}
+                        _focus={{ boxShadow: "none", borderRadius:"none", border: "0.125rem solid", borderColor: "brand.primaryBlack"}}
+                        />
             </Flex>
         </Flex>
     );
