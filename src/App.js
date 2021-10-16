@@ -1,21 +1,33 @@
-import './App.css'
-import { ChakraProvider } from '@chakra-ui/react'
-import { theme } from './resources/theme/index'
+import "./App.css"
+import { ChakraProvider } from "@chakra-ui/react"
+import { theme } from "./resources/theme/index.js"
+import ModalDialog from "./components/modal"
+import Slider from "./components/slider"
+import Slides from "./slides"
+import MobileSlider from "./components/mobileSlider"
+import MobileSlides from "./mobileSlides"
 //import AccordionArtist from './components/accordion'
 import HeaderCronicas from "./components/Header"
 import { SearchBarContainer } from './components/searchBarContainer'
+import { ViewArtistContainer } from './components/viewArtistContainer'
 import Galery from './components/artistGalery'
 import ArtistImg from './artistImage'
 import Footer from './components/footer'
 
+
 function App() {
   return (
     <ChakraProvider theme={theme}>
-      <HeaderCronicas>
+            <HeaderCronicas>
       </HeaderCronicas>
       {/*<AccordionArtist></AccordionArtist>*/}
       <SearchBarContainer />
+      <ViewArtistContainer/>
       <Galery images={ArtistImg}></Galery>
+      <ModalDialog>
+        <Slider slides={Slides}/>
+      </ModalDialog>
+      <MobileSlider mobleSlides={MobileSlides}/>
       <Footer></Footer>
     </ChakraProvider>
   )
