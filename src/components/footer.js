@@ -7,7 +7,7 @@ function Footer(){
         <>
             <Box
                 bg="brand.primaryBlack"
-                w={{ base: "23.5rem", md:"48rem", lg: "64rem", xl: "88rem"}}
+                w={"100%"}
                 h={{ base: "7rem", md:"9rem", lg: "10rem"}}
                 mt={8}
             >
