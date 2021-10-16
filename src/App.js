@@ -12,6 +12,7 @@ import { SearchBarContainer } from './components/searchBarContainer'
 import { ViewArtistContainer } from './components/viewArtistContainer'
 import Galery from './components/artistGalery'
 import ArtistImg from './artistImage'
+import Footer from './components/footer'
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Slider slides={Slides}/>
       </ModalDialog>
       <MobileSlider mobleSlides={MobileSlides}/>
+      <Footer></Footer>
     </ChakraProvider>
   )
 }
