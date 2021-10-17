@@ -6,7 +6,7 @@ function Galery(props) {
         <>
             {props.images.map((worksImg, index) => (
                 index % 2 === 0
-                    ? <Center>
+                    ? <Center key={index}>
                         <HStack spacing={{ base: 4, md: 6, lg: 8 }} mt={{ base: 5, lg: 8 }}>
                             <Box>
                                 <Image w={{ base: "16rem", md: "28rem", lg: "44rem", xl: "50rem" }}
@@ -23,7 +23,7 @@ function Galery(props) {
                         </HStack>
                     </Center>
                     :
-                    <Center>
+                    <Center key={index}>
                         <HStack spacing={{ base: 4, md: 6, lg: 8 }} mt={{ base: 5, lg: 8 }}>
                             <Box
                                 bg="brand.primaryBlack"

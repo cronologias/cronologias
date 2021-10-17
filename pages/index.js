@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Flex, Spacer, Image } from "@chakra-ui/react"
 import MenuHam from '../src/components/MenuHam'
-import { SearchBarContainer } from '../src/components/searchBarContainer'
+import { SearchBar } from '../src/components/serchBar'
 import Galery from '../src/components/artistGalery'
 import ArtistImg from '../artistImage'
 import ModalDialog from "../src/components/modal"
@@ -9,7 +9,10 @@ import Slider from "../src/components/slider"
 import Slides from "../slides"
 import MobileSlider from "../src/components/mobileSlider"
 import MobileSlides from "../mobileSlides"
-function HeaderCronicas() {
+import { getArtist } from '../src/services/searchBarApi'
+import { ViewArtist } from '../src/components/viewArtist'
+import { getArtistView } from '../src/services/viewArtistApi'
+function HeaderCronicas({data, names}) {
   return (
     <>
       <Flex bg="brand.primaryOrange" alignItems="center">
@@ -19,7 +22,8 @@ function HeaderCronicas() {
         <Spacer />
         <MenuHam></MenuHam>
       </Flex>
-      <SearchBarContainer></SearchBarContainer>
+      <SearchBar names={data}></SearchBar>
+      <ViewArtist names={names}/>
       <Galery images={ArtistImg}></Galery>
       <ModalDialog>
         <Slider slides={Slides}/>
@@ -30,3 +34,18 @@ function HeaderCronicas() {
 }
 
 export default HeaderCronicas
+
+export async function getStaticProps () {
+  const URl= process.env.URL;
+  const TOKEN= process.env.TOKEN;
+  const resposeJson = await getArtist(URl,TOKEN);
+  const data = resposeJson.data.allTarjetaAutoras;
+  const resposeJson2 = await getArtistView(URl,TOKEN);
+  const names = resposeJson2.data.allNombreAutoras[0];
+  return{
+    props: {
+      data,
+      names
+    }
+  }
+}

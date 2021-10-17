@@ -22,9 +22,8 @@ function MobileSlider(props) {
             >
                 <HStack spacing={{ base:"0.5rem", md:"0.6rem", lg:"2.438rem" }}>
                     {props.mobleSlides.map((slide, sid) => (
-                        <LinkBox>
+                        <LinkBox  key={`slide-card-${sid}`}>
                             <Box 
-                            key={`slide-card-${sid}`}  
                             w={{ base:"14.938rem", md:"15.5rem", lg:"18.375rem" }}
                             h={{ base:"13.75rem", md:"14rem", lg:"16.875rem" }}
                             borderBottom="4px" 
