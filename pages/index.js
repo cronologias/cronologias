@@ -9,6 +9,7 @@ import Slider from "../src/components/slider"
 import Slides from "../slides"
 import MobileSlider from "../src/components/mobileSlider"
 import MobileSlides from "../mobileSlides"
+//HeaderCronicas(Aquí van los props ej: props.name, etc...)
 function HeaderCronicas() {
   return (
     <>
@@ -26,7 +27,16 @@ function HeaderCronicas() {
       </ModalDialog>
       <MobileSlider mobleSlides={MobileSlides}/>
     </>
+
   )
 }
 
 export default HeaderCronicas
+export async function getStaticProps(context) {
+  //Aquí va el llamado a GraphQl con Dato-cms getArtist()
+  return {
+    props: {
+      //aquí se retornan los datos se icluye, propiedades, datos
+    }, // will be passed to the page component as props
+  }
+}
