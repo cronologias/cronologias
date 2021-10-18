@@ -13,6 +13,7 @@ import { getArtist } from '../src/services/searchBarApi'
 import { ViewArtist } from '../src/components/viewArtist'
 import { getArtistView } from '../src/services/viewArtistApi'
 function HeaderCronicas({data, names}) {
+  console.log(process.env.URL,process.env.TOKEN)
   return (
     <>
       <Flex bg="brand.primaryOrange" alignItems="center">
