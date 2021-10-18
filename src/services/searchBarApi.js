@@ -1,19 +1,16 @@
-const token = process.env.TOKEN;
-const URL = process.env.URL;
-console.log(token)
-export async function getArtist (){
-    
+
+export async function getArtist (URl, TOKEN){
     const response = await fetch(
-        URL,
+        URl,
         {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
-                'Authorization': `Bearer ${token}`,
+                'Authorization': `Bearer ${TOKEN}`,
             },
             body: JSON.stringify({
-                query: 'query Myquery{allTarjetaAutoras(first:54) {id nombreDeLaAutora}}'
+                query: 'query Myquery{allTarjetaAutoras(first:54) {id nombreDeLaAutora imagenDeLaArtista}}'
             }),
         }
     )

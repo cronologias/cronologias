@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Flex, Spacer, Image } from "@chakra-ui/react"
 import MenuHam from '../src/components/MenuHam'
-import { SearchBarContainer } from '../src/components/searchBarContainer'
+import { SearchBar } from '../src/components/serchBar'
 import Galery from '../src/components/artistGalery'
 import ArtistImg from '../artistImage'
 import ModalDialog from "../src/components/modal"
@@ -9,8 +9,11 @@ import Slider from "../src/components/slider"
 import Slides from "../slides"
 import MobileSlider from "../src/components/mobileSlider"
 import MobileSlides from "../mobileSlides"
-//HeaderCronicas(Aquí van los props ej: props.name, etc...)
-function HeaderCronicas() {
+import { getArtist } from '../src/services/searchBarApi'
+import { ViewArtist } from '../src/components/viewArtist'
+import { getArtistView } from '../src/services/viewArtistApi'
+function HeaderCronicas({data, names}) {
+  console.log(process.env.URL,process.env.TOKEN)
   return (
     <>
       <Flex bg="brand.primaryOrange" alignItems="center">
@@ -20,7 +23,8 @@ function HeaderCronicas() {
         <Spacer />
         <MenuHam></MenuHam>
       </Flex>
-      <SearchBarContainer></SearchBarContainer>
+      <SearchBar names={data}></SearchBar>
+      <ViewArtist names={names}/>
       <Galery images={ArtistImg}></Galery>
       <ModalDialog>
         <Slider slides={Slides}/>
@@ -32,11 +36,19 @@ function HeaderCronicas() {
 }
 
 export default HeaderCronicas
-export async function getStaticProps(context) {
-  //Aquí va el llamado a GraphQl con Dato-cms getArtist()
-  return {
+
+export async function getStaticProps () {
+  const URl= process.env.URL;
+  const TOKEN= process.env.TOKEN;
+  console.log(URl, TOKEN);
+  const resposeJson = await getArtist(URl,TOKEN,);
+  const data = resposeJson.data.allTarjetaAutoras;
+  const resposeJson2 = await getArtistView(URl,TOKEN);
+  const names = resposeJson2.data.allNombreAutoras[0];
+  return{
     props: {
-      //aquí se retornan los datos se icluye, propiedades, datos
-    }, // will be passed to the page component as props
+      data,
+      names
+    }
   }
 }

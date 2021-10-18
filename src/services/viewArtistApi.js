@@ -1,6 +1,4 @@
-const token = process.env.REACT_APP_TOKEN;
-const URL = process.env.REACT_APP_URL;
-export async function getArtistView (){
+export async function getArtistView (URL, TOKEN){
     
     const response = await fetch(
         URL,
@@ -9,7 +7,7 @@ export async function getArtistView (){
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
-                'Authorization': `Bearer ${token}`,
+                'Authorization': `Bearer ${TOKEN}`,
             },
             body: JSON.stringify({
                 query: 'query Myquery { allNombreAutoras { id nombreDeLaArtista biografADeLaArtista imagenDeLaArtista}}'
