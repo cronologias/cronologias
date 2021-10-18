@@ -30,6 +30,7 @@ function HeaderCronicas({data, names}) {
       </ModalDialog>
       <MobileSlider mobleSlides={MobileSlides}/>
     </>
+
   )
 }
 
