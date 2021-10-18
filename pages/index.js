@@ -13,7 +13,6 @@ import { getArtist } from '../src/services/searchBarApi'
 import { ViewArtist } from '../src/components/viewArtist'
 import { getArtistView } from '../src/services/viewArtistApi'
 function HeaderCronicas({data, names}) {
-  console.log(process.env.URL,process.env.TOKEN)
   return (
     <>
       <Flex bg="brand.primaryOrange" alignItems="center">
@@ -37,13 +36,14 @@ function HeaderCronicas({data, names}) {
 export default HeaderCronicas
 
 export async function getStaticProps () {
-  const URl= process.env.URL;
-  const TOKEN= process.env.TOKEN;
+  const URl= process.env.NEXT_URL;
+  const TOKEN= process.env.NEXT_TOKEN;
   console.log(URl, TOKEN);
   const resposeJson = await getArtist(URl,TOKEN,);
   const data = resposeJson.data.allTarjetaAutoras;
   const resposeJson2 = await getArtistView(URl,TOKEN);
   const names = resposeJson2.data.allNombreAutoras[0];
+  console.log("HOOOOOLAAAAAAAAAAAAAA", data)
   return{
     props: {
       data,
