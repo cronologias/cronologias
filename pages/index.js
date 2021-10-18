@@ -38,6 +38,7 @@ export default HeaderCronicas
 export async function getStaticProps () {
   const URl= process.env.URL;
   const TOKEN= process.env.TOKEN;
+  console.log(URl, TOKEN);
   const resposeJson = await getArtist(URl,TOKEN);
   const data = resposeJson.data.allTarjetaAutoras;
   const resposeJson2 = await getArtistView(URl,TOKEN);
