@@ -10,11 +10,12 @@ import MobileSlides from "./mobileSlides"
 import {CardContainer} from "./components/cardContainer"
 import HeaderCronicas from "./components/Header"
 import { SearchBarContainer } from './components/searchBarContainer'
+import { CuratorsContainer } from './components/curatorsContainer'
 
 function App() {
   return (
     <ChakraProvider theme={theme}>
-            <HeaderCronicas>
+      <HeaderCronicas>
       </HeaderCronicas>
       {/*<AccordionArtist></AccordionArtist>*/}
       <SearchBarContainer />
@@ -23,6 +24,7 @@ function App() {
         <Slider slides={Slides}/>
       </ModalDialog>
       <MobileSlider mobleSlides={MobileSlides}/>
+      <CuratorsContainer/>
     </ChakraProvider>
   )
 }
