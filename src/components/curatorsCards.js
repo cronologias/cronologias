@@ -14,10 +14,10 @@ function CuratorsCards(props) {
     return (
         <Center>
             <Flex
-            align="none"
             >
             <HStack 
             spacing={{ base:"1rem", md:"2rem", lg:"2.25rem" }}
+            alignItems="normal"
             >
                 {props.curators.map((element, id) => (
                     <LinkBox
