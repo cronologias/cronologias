@@ -1,4 +1,3 @@
-
 export async function getArtist (URl, TOKEN){
     const response = await fetch(
         URl,
