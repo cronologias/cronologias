@@ -1,9 +1,8 @@
 import React from "react";
-import Card from "./card";
+import AccordionSearch from "../components/accordionSearch";
 import { getArtist } from "../services/searchBarApi"
 
-
-class CardContainer extends React.Component {
+class AccordionSearchContainer extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -14,11 +13,11 @@ class CardContainer extends React.Component {
         const resposeJson = await getArtist()
         this.setState({names:resposeJson.data.allTarjetaAutoras})
         }
+    
     render() {
-        
         const names = this.state.names;
-        return <Card names={names} />
-        }
+        const order = names.sort((a, b) => (a.nombreDeLaAutora > b.nombreDeLaAutora ? 1 : a.nombreDeLaAutora < b.nombreDeLaAutora ? -1 : 0))
+        return <AccordionSearch order={order} />
     }
-
-export { CardContainer }
+}
+export { AccordionSearchContainer }

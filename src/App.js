@@ -1,8 +1,7 @@
 import './App.css'
 import { ChakraProvider } from '@chakra-ui/react'
 import { theme } from './resources/theme/index'
-//import AccordionArtist from './components/accordion'
-import {CardContainer} from "./components/cardContainer"
+import { AccordionSearchContainer } from './components/accordionSearchContainer'
 import HeaderCronicas from "./components/Header"
 import { SearchBarContainer } from './components/searchBarContainer'
 
@@ -11,9 +10,8 @@ function App() {
     <ChakraProvider theme={theme}>
       <HeaderCronicas>
       </HeaderCronicas>
-      {/*<AccordionArtist></AccordionArtist>*/}
+      <AccordionSearchContainer />
       <SearchBarContainer />
-      <CardContainer/>
     </ChakraProvider>
   )
 }
