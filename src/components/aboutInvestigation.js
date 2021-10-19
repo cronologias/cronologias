@@ -78,3 +78,6 @@ export default AboutInvestigation
                 Sobre la investigación
                 </h1>
             </Box> */}
+
+
+
