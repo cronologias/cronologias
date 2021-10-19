@@ -9,7 +9,7 @@ export async function getInvestigation (URL, TOKEN){
                 'Authorization': `Bearer ${TOKEN}`,
             },
             body: JSON.stringify({
-                query: 'query MyQuery {allsobreLaInvestigacions {cuerpoDeLaInvestigacion}}'
+                query: 'query MyQuery {sobreLaInvestigacion {tituloDeLaInvestigacion cuerpoDeLaInvestigacion}}'
             }),
         }
     )

@@ -38,7 +38,6 @@ function HeaderCronicas({data, names, investigationData }) {
 }
 
 export default HeaderCronicas
-
 export async function getStaticProps () {
   const URl= process.env.NEXT_URL;
   const TOKEN= process.env.NEXT_TOKEN;
@@ -47,8 +46,7 @@ export async function getStaticProps () {
   const resposeJson2 = await getArtistView(URl,TOKEN);
   const names = resposeJson2.data.allNombreAutoras[0];
   const responseJson3 = await getInvestigation(URl,TOKEN)
-  const investigationData = responseJson3
-  console.log(investigationData)
+  const investigationData = responseJson3.data.sobreLaInvestigacion
   return{
     props: {
       data,
