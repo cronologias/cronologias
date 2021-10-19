@@ -14,17 +14,20 @@ import { ViewArtist } from '../src/components/viewArtist'
 import { getArtistView } from '../src/services/viewArtistApi'
 import { getInvestigation } from '../src/services/aboutInvestigationApi'
 import AboutInvestigation from '../src/components/aboutInvestigation'
+import AccordionSearch from '../src/components/accordionSearch'
+
 function HeaderCronicas({data, names, investigationData }) {
   return (
     <>
       <Flex bg="brand.primaryOrange" alignItems="center">
         <Box p={8}>
           <Image w={{ base: "42px", md: "50px", lg: "58px" }} src='/logoNegro.svg' alt="Cronologias de lo Invisible"></Image>
-        </Box>
+        </Box> 
         <Spacer />
         <MenuHam></MenuHam>
       </Flex>
       <SearchBar names={data}></SearchBar>
+      <AccordionSearch names={data}></AccordionSearch>
       <ViewArtist names={names}/>
       <Galery images={ArtistImg}></Galery>
       <ModalDialog>
