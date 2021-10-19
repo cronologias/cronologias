@@ -1,14 +1,46 @@
-const img = document.getElementById('res_js');
+/*
 
 cloudinary.imageTag('Edelmira_Losilla_q8a8vz.png', {quality: 70, width: 512, crop: "scale"}).toHtml();
 
-// Se configura la imagen y se trae de cloudinary
+// The image is configured and called from cloudinary
 cloudinary.url().transformation(new Transformation().quality(70).width(512).crop("scale")).imageTag("Edelmira_Losilla_q8a8vz.png");
 
-// *** Los formatos webp fallan en chrome *** Se soluciona utilizando el parametro "f_auto"
+*/
+
+// Using HTML image layer
+
+// Import the plugin
+import {responsive, HtmlImageLayer} from "@cloudinary/html";
+import {CloudinaryImage} from "@cloudinary/url-gen";
+
+// Create a new HTML image element and inject it to the page
+const imgTag = document.createElement('img');
+document.body.appendChild(imgTag);
+
+// Create your image
+const myImage = new CloudinaryImage('sample', {cloudName: 'Edelmira_Losilla_q8a8vz.png'});
+
+// Wire up Cloudinary to work with that element and use the responsive plugin and setting the image size
+new HtmlImageLayer(imgTag, myImage, [responsive(200)]);
+
+/* ------------------------------------ */
+
+// Configure the breakpoint
+
+breakpoint_img = function (width){
+  return 50 * Math.ceil(width / 50);
+}
+let cl_img = _imgoudinary.Cloudinary.new({cloud_name: "Edelmira_Losilla_q8a8vz.png"});
+cl_img.config({breakpoints:breakpoint_img, responsive_use_breakpoints:"resize"})
+cl_img.responsive();
+
+/* Cloudinary library install: npm i @cloudinary/url-gen @cloudinary/html --save */
+
+// *** The webp format doesn´t work in chrome *** It is solved using the parameter "f_auto"
 
 /*
 
-https://cloudinary.com/documentation/image_transformations#quality_parameter
+check the version of the cloudinary core
+https://unpkg.com/cloudinary-core@latest/cloudinary-core-shrinkwrap.js
 
 */
