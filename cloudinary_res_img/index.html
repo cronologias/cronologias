@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Res example</title>
+</head>
+<body>
+
+  <!-- https://res.cloudinary.com/ -->
+
+  <!--
+
+    sm: "320px",
+    md: "768px",
+    lg: "960px",
+    xl: "1200px"
+
+    f_auto,q_70,w_1200
+
+  -->
+
+  <div class="res_html">
+    <h2>This is a cloudinary responsive image example from the HTML</h2>
+    <img 
+    sizes="(max-width: 1200px) 100vw"
+    srcset="https://res.cloudinary.com/cronologias-invisible/image/upload/f_auto,q_70,w_512/v1634090448/cronologias/Edelmira%20Losilla/Edelmira_Losilla_q8a8vz.png 512w, 
+    https://res.cloudinary.com/cronologias-invisible/image/upload/f_auto,q_70,w_412/v1634090448/cronologias/Edelmira%20Losilla/Edelmira_Losilla_q8a8vz.png 412w, 
+    https://res.cloudinary.com/cronologias-invisible/image/upload/f_auto,q_70,w_300/v1634090448/cronologias/Edelmira%20Losilla/Edelmira_Losilla_q8a8vz.png 300w,
+    https://res.cloudinary.com/cronologias-invisible/image/upload/f_auto,q_70,w_120/v1634090448/cronologias/Edelmira%20Losilla/Edelmira_Losilla_q8a8vz.png 120w" 
+    src="https://res.cloudinary.com/cronologias-invisible/image/upload/v1634090448/cronologias/Edelmira%20Losilla/Edelmira_Losilla_q8a8vz.png"
+    alt="html example">
+  </div>
+  <div id="res_js">
+
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

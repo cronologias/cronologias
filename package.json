@@ -4,8 +4,8 @@
   "private": true,
   "dependencies": {
     "@chakra-ui/icons": "^1.0.15",
-    "@chakra-ui/react": "^1.6.8",
-    "@emotion/react": "^11.4.1",
+    "@chakra-ui/react": "^1.6.10",
+    "@emotion/react": "^11.5.0",
     "@emotion/styled": "^11.3.0",
     "@expo-google-fonts/kulim-park": "^0.2.0",
     "@fontsource/cousine": "^4.5.0",
