@@ -33,7 +33,7 @@ const ViewArtist = ({ names }) => {
                     </Box>
                     <Box ml="15.375rem" w={{ lg: "36.313rem" }} fontSize={{ base: "1rem", md: "1rem", lg: "1.125rem" }} display={{base:"none",lg:"block"}}>
                         <ReactMarkdown id="biography" components={{
-                            p: ({ nodo, ...props }) => < p style={{ paddingBottom: '0.625rem', paddingTop: '0.625rem' }}  {...props} />
+                            p: ({ nodo, ...props }) => < p style={{ paddingBottom: '0.625rem', paddingTop: '0.625rem', fontWeight:'light'}}  {...props} />
                         }}>{names.biografADeLaArtista}</ReactMarkdown></Box>
             </Flex>
             <Box id="artTreasures" pl={8} pr={8} fontWeight="bold" fontFamily="heading" fontSize={{ base: "1.5rem", md: "1.5rem", lg: "2rem" }} color="brand.primaryBlack" w={{ lg: '21.875rem' }}>

@@ -12,7 +12,9 @@ import MobileSlides from "../mobileSlides"
 import { getArtist } from '../src/services/searchBarApi'
 import { ViewArtist } from '../src/components/viewArtist'
 import { getArtistView } from '../src/services/viewArtistApi'
-function HeaderCronicas({data, names}) {
+import { getInvestigation } from '../src/services/aboutInvestigationApi'
+import AboutInvestigation from '../src/components/aboutInvestigation'
+function HeaderCronicas({data, names, investigationData }) {
   return (
     <>
       <Flex bg="brand.primaryOrange" alignItems="center">
@@ -29,6 +31,7 @@ function HeaderCronicas({data, names}) {
         <Slider slides={Slides}/>
       </ModalDialog>
       <MobileSlider mobleSlides={MobileSlides}/>
+      <AboutInvestigation investigationData={investigationData} />
     </>
 
   )
@@ -43,10 +46,14 @@ export async function getStaticProps () {
   const data = resposeJson.data.allTarjetaAutoras;
   const resposeJson2 = await getArtistView(URl,TOKEN);
   const names = resposeJson2.data.allNombreAutoras[0];
+  const responseJson3 = await getInvestigation(URl,TOKEN)
+  const investigationData = responseJson3
+  console.log(investigationData)
   return{
     props: {
       data,
-      names
+      names,
+      investigationData,
     }
   }
 }
