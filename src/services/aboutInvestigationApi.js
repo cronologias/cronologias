@@ -1,6 +1,6 @@
-export async function getArtist (URl, TOKEN){
+export async function getInvestigation (URL, TOKEN){
     const response = await fetch(
-        URl,
+        URL,
         {
             method: 'POST',
             headers: {
@@ -9,10 +9,11 @@ export async function getArtist (URl, TOKEN){
                 'Authorization': `Bearer ${TOKEN}`,
             },
             body: JSON.stringify({
-                query: 'query Myquery{allTarjetaAutoras(first:54) {id nombreDeLaAutora imagenDeLaArtista}}'
+                query: 'query MyQuery {allsobreLaInvestigacions {cuerpoDeLaInvestigacion}}'
             }),
         }
     )
     const resposeJson = await response.json()
     return resposeJson
 }
+

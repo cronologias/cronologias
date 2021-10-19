@@ -17,7 +17,8 @@ import {
 
 import { CardAccordion } from "./card";
 
-function AccordionSearch({order}){
+function AccordionSearch({names}){
+  const order = names.sort((a, b) => (a.nombreDeLaAutora > b.nombreDeLaAutora ? 1 : a.nombreDeLaAutora < b.nombreDeLaAutora ? -1 : 0))
   let style = {color: "#EB5529"}
   let newObject = {}
   order.forEach(element => {
