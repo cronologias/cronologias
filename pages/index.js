@@ -12,17 +12,20 @@ import MobileSlides from "../mobileSlides"
 import { ViewArtist } from '../src/components/viewArtist'
 import AboutInvestigation from '../src/components/aboutInvestigation'
 import { getApiRes } from '../src/services/callApi'
+import AccordionSearch from '../src/components/accordionSearch'
+
 function HeaderCronicas({dataArtist, dataView, investigationData }) {
   return (
     <>
       <Flex bg="brand.primaryOrange" alignItems="center">
         <Box p={8}>
           <Image w={{ base: "42px", md: "50px", lg: "58px" }} src='/logoNegro.svg' alt="Cronologias de lo Invisible"></Image>
-        </Box>
+        </Box> 
         <Spacer />
         <MenuHam></MenuHam>
       </Flex>
       <SearchBar names={dataArtist}></SearchBar>
+      <AccordionSearch names={dataArtist}></AccordionSearch>
       <ViewArtist names={dataView}/>
       <Galery images={ArtistImg}></Galery>
       <ModalDialog>

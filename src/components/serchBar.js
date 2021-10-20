@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Stack, Input, InputRightElement, InputGroup, Center, SimpleGrid } from "@chakra-ui/react";
 import { BsSearch } from "react-icons/bs";
-import Card from "./card";
+import { Card } from "./card";
 
 const SearchBar = ({ names }) => {
   const [serchTerm, setSerchTerm] = useState('')
