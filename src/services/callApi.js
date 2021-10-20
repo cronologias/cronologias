@@ -1,6 +1,6 @@
-export async function getArtistView (URL, TOKEN){
+export async function getApiRes (URl, TOKEN, query){
     const response = await fetch(
-        URL,
+        URl,
         {
             method: 'POST',
             headers: {
@@ -9,7 +9,7 @@ export async function getArtistView (URL, TOKEN){
                 'Authorization': `Bearer ${TOKEN}`,
             },
             body: JSON.stringify({
-                query: 'query Myquery { allNombreAutoras { id nombreDeLaArtista biografADeLaArtista imagenDeLaArtista}}'
+                query: query
             }),
         }
     )
