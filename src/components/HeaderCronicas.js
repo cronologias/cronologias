@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box, Flex, Spacer, Image } from "@chakra-ui/react"
-import MenuHam from './MenuHam'
+import MenuHam from './menuHam'
 
 
 function HeaderCronicas() {
