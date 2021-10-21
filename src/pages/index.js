@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Box, Center, Image, Text} from "@chakra-ui/react";
-import HeaderCronicas from "../components/headerCronicas";
+
 import MobileSlider from "../components/mobileSlider";
 import CuratorsCards from "../components/curatorsCards";
 import Footer from "../components/footer";
@@ -18,7 +18,7 @@ function homePage({curatorsData, museumData}) {
   };
   return (
     <>
-      <HeaderCronicas />
+      
       <Box bg="brand.fifhtOrange" width="100%" >
         <Image
           src="/animation.gif"
