@@ -84,7 +84,7 @@ function homePage({curatorsData, museumData}) {
           textDecoration="underline"
           >
             <Link
-              href="/">
+              href="/about-investigation">
               <a>Leer más</a>
             </Link>
           </Box>
@@ -104,6 +104,18 @@ function homePage({curatorsData, museumData}) {
         <h2>Visita las exposiciones</h2>
       </Box>
       <MobileSlider mobleSlides={museumData}/>
+      <Box
+        w={{ base: "20rem", md: "48rem", lg: "60rem", xl: "75rem" }}
+        m="auto"
+        textAlign="start"
+        fontFamily="heading"
+        fontSize={{ base: "1.25rem", md: "1.25rem", lg: "1.5rem" }}
+        color="brand.primaryBlack"
+        fontWeight={700}
+        mb={4}
+      >
+        <h2>Curadoras</h2>
+      </Box>
       <CuratorsCards curators={curatorsData} />
       <Center>
         <Box
@@ -112,7 +124,6 @@ function homePage({curatorsData, museumData}) {
         fontSize={{ base: "1rem", lg: "1.125rem" }}
         fontFamily="body"
         fontWeight={700}
-        mt="6rem"
         p={4}
         >
           <Link

@@ -1,25 +1,19 @@
 import React from "react";
-import { Box, Collapse, Button, Container, Flex, Image} from "@chakra-ui/react";
+import { Box, Collapse, Button, Container, Flex, Text } from "@chakra-ui/react";
 import ReactMarkdown from 'react-markdown';
 import { ChevronDownIcon, ChevronUpIcon } from "@chakra-ui/icons";
-
+import {getApiRes} from "../src/services/callApi"
 
 function AboutInvestigation({ investigationData }) {
+    console.log(investigationData)
     const [show, setShow] = React.useState(false)
     const handleToggle = () => setShow(!show)
     return (
         <>
-        <Image
-        src="../../public/background.png"
-        >
-            
-        </Image>
-            {/* <Box className="bg"
-                backgroundImage="url(../../public/background.png)"
-                backgroundRepeat="no-repeat"
-            >
-            </Box> */}
             <Flex p={8} > 
+                <Box fontWeight="bold" fontFamily="heading" fontSize={{ base: "1.5rem", md: "1.5rem", lg: "2rem" }} color="brand.primaryBlack" w={{ lg: '21.875rem' }} mb={4}>
+                    <Text>{investigationData.tituloDeLaInvestigacion}</Text>
+                </Box>
                 <Box
                     w="0.25rem"
                     h={{ base: "28.75rem", md: "16.375rem", lg:"24rem" }}
@@ -51,33 +45,16 @@ function AboutInvestigation({ investigationData }) {
 }
 export default AboutInvestigation
 
-
-
-
-
-
-
-{/* <Flex
-            >
-                <Box
-                    backgroundImage="url('../../public/background.svg')"    
-                    backgroundPosition="center"
-                    backgroundRepeat="no-repeat"
-                >          
-                </Box>
-            </Flex>
-            <Box
-                position= "absolute"
-                top= "12.5rem"
-                left= {8}
-                color="brand.primaryOrange"
-                fontFamily="body"
-                fontSize={{ base: "1.75rem", md: "2rem", lg: "2.25rem" }}
-            >
-                <h1>
-                Sobre la investigación
-                </h1>
-            </Box> */}
-
-
-
+export async function getStaticProps () {
+    const URl= process.env.NEXT_URL;
+    const TOKEN= process.env.NEXT_TOKEN;
+    const bodyInvestigation ='query MyQuery {sobreLaInvestigacion {tituloDeLaInvestigacion cuerpoDeLaInvestigacion}}'
+    const getInvestigation = await getApiRes(URl,TOKEN, bodyInvestigation)
+    const investigationData = getInvestigation
+    console.log(investigationData)
+    return{
+        props: {
+            investigationData
+        }
+    }
+}
