@@ -2,8 +2,9 @@ import Link from "next/link";
 import { Box, Center, Image, Text} from "@chakra-ui/react";
 import HeaderCronicas from "../src/components/headerCronicas";
 import MobileSlider from "../src/components/mobileSlider";
-import MobileSlides from "../mobileSlides";
+import CuratorsCards from "../src/components/curatorsCards";
 import Footer from "../src/components/footer";
+import {getApiRes} from "../src/services/callApi"
 
 function homePage({curatorsData, museumData}) {
   let emphasisWord = {
@@ -102,7 +103,7 @@ function homePage({curatorsData, museumData}) {
       >
         <h2>Visita las exposiciones</h2>
       </Box>
-       <MobileSlider mobleSlides={museumData}/>
+      <MobileSlider mobleSlides={museumData}/>
       <CuratorsCards curators={curatorsData} />
       <Center>
         <Box
@@ -123,7 +124,7 @@ function homePage({curatorsData, museumData}) {
       <Footer></Footer>
     </>
   );
-
+}
 export async function getStaticProps () {
   const URl= process.env.NEXT_URL;
   const TOKEN= process.env.NEXT_TOKEN;
@@ -143,7 +144,5 @@ export async function getStaticProps () {
       museumData,
     }
   }
-
 }
-
-export default homePage;
+export default homePage
