@@ -1,10 +1,10 @@
 import Link from "next/link";
 import { Box, Center, Image, Text} from "@chakra-ui/react";
-import HeaderCronicas from "../src/components/headerCronicas";
-import MobileSlider from "../src/components/mobileSlider";
-import CuratorsCards from "../src/components/curatorsCards"
-import Footer from "../src/components/footer";
-import {getApiRes} from "../src/services/callApi"
+import MobileSlider from "../components/mobileSlider";
+import Header from "../components/header";
+import CuratorsCards from "../components/curatorsCards";
+import Footer from "../components/footer";
+import {getApiRes} from "../services/callApi";
 
 function homePage({curatorsData, museumData}) {
   let emphasisWord = {
@@ -18,7 +18,7 @@ function homePage({curatorsData, museumData}) {
   };
   return (
     <>
-      <HeaderCronicas />
+      <Header/>
       <Box bg="brand.fifhtOrange" width="100%" >
         <Image
           src="/animation.gif"
@@ -136,6 +136,9 @@ function homePage({curatorsData, museumData}) {
     </>
   );
 }
+
+export default homePage;
+
 export async function getStaticProps () {
   const URl= process.env.NEXT_URL;
   const TOKEN= process.env.NEXT_TOKEN;
@@ -156,4 +159,7 @@ export async function getStaticProps () {
     }
   }
 }
+<<<<<<< HEAD:pages/index.js
 export default homePage
+=======
+>>>>>>> 60f73cbe412687a5718969f4ed065233350f2053:src/pages/index.js
