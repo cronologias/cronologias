@@ -1,10 +1,10 @@
 import Link from "next/link";
 import { Box, Center, Image, Text} from "@chakra-ui/react";
-import HeaderCronicas from "../src/components/headerCronicas";
-import MobileSlider from "../src/components/mobileSlider";
-import CuratorsCards from "../src/components/curatorsCards"
-import Footer from "../src/components/footer";
-import {getApiRes} from "../src/services/callApi"
+import HeaderCronicas from "../components/headerCronicas";
+import MobileSlider from "../components/mobileSlider";
+import CuratorsCards from "../components/curatorsCards";
+import Footer from "../components/footer";
+import {getApiRes} from "../services/callApi";
 
 function homePage({curatorsData, museumData}) {
   let emphasisWord = {
