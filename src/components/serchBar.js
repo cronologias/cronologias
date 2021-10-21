@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Stack, Input, InputRightElement, InputGroup, Center, SimpleGrid } from "@chakra-ui/react";
+import { Stack, Input, InputRightElement, InputGroup, Center, SimpleGrid, Text } from "@chakra-ui/react";
 import { BsSearch } from "react-icons/bs";
 import { Card } from "./card";
 
@@ -8,15 +8,21 @@ const SearchBar = ({ names }) => {
 
   return (
     <div>
-      <Stack spacing={4} w="100%" h="100%" m="0 auto" pt="100px" fontFamily="body">
-        <InputGroup w={{ base: "328px", md: "80%", lg: "50%" }} m="0 auto" bg="brand.baseColor">
+      <Stack spacing={4} w="100%" h="100%" m="0 auto" pt={8} fontFamily="body">
+        <Text>Búsqueda por nombre o apellido </Text>
+        <InputGroup 
+          w={{ base: "20rem", md: "48rem", lg: "60rem", xl: "75rem" }} 
+          m="0 auto" 
+          bg="brand.baseColor"
+        >
           <Input
             variant='outline'
             placeholder="Búsqueda de artista"
-            size="lg" w="100%"
+            size="lg" 
             borderWidth={{ base: "0.125rem", md: "0.175rem" }}
             borderColor="brand.secondaryGray"
             borderRadius="0"
+            w="100%"
             onChange={event => { setSerchTerm(event.target.value) }}
             _placeholder={{ color: "brand.secondaryGray" }}
             _focus={{ borderColor: "brand.primaryOrange" }}
@@ -24,9 +30,9 @@ const SearchBar = ({ names }) => {
           <InputRightElement width="15px" mr="15px" mt="5px" children={<BsSearch />} />
         </InputGroup>
       </Stack>
-      <Stack spacing={4} w="100%" h="100%" m="0 auto" pt="100px" textAlign="center">
+      <Stack spacing={4} w="100%" h="100%" m="0 auto" pt={8} textAlign="center">
         <Center alignContent minW="328px">
-          <SimpleGrid columns={[2, 2]}>
+          <SimpleGrid columns={{ base:[2,2], md:[4, 2] }}>
             {names.filter((val) => {
               if (serchTerm === "") {
                 return ""
