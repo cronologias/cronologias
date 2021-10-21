@@ -1,18 +1,17 @@
-<<<<<<< HEAD
 import Link from "next/link";
-import { Box, Center, Image, Container, Text, Stack } from "@chakra-ui/react";
+import { Box, Center, Image, Text} from "@chakra-ui/react";
 import HeaderCronicas from "../src/components/headerCronicas";
 import MobileSlider from "../src/components/mobileSlider";
 import MobileSlides from "../mobileSlides";
 import Footer from "../src/components/footer";
 
-function home() {
-  let style = {
+function homePage() {
+  let emphasisWord = {
     color: "#E6AA92",
     fontFamily: "Kulim Park, sans-serif",
     fontWeight: "bold",
   };
-  let style2 = {
+  let normalParagraph = {
     color: "brand.primaryBlack",
     fontFamily: "Cousine, monospace",
   };
@@ -24,7 +23,7 @@ function home() {
           src="/animation.gif"
           m="auto"
           w={{ base: "22.5rem", md:"30rem"}}
-        ></Image>
+        />
         <Box
           w="100%"
           bg="brand.thirdOrange"
@@ -33,16 +32,16 @@ function home() {
           mb={{ base: "2rem" }}
         >
           <Text fontSize={{ base: "1rem", lg: "1.125rem" }}>
-            <span style={style}></span>
-            <span style={style}>CRONOLOGÍAS DE LO INVISIBLE</span>{" "}
-            <span style={style2}>
+            <span style={emphasisWord}></span>
+            <span style={emphasisWord}>CRONOLOGÍAS DE LO INVISIBLE</span>{" "}
+            <span style={normalParagraph}>
               es una exposición historiográfica de las artistas visuales en
               Costa Rica de los años 1900 a 1979. Muestra los resultados de las
               investigaciones realizadas por
             </span>{" "}
-            <span style={style}>Sussy Vargas Alvarado</span>{" "}
-            <span style={style2}>y</span>{" "}
-            <span style={style}>Susana Sánchez Carballo</span>
+            <span style={emphasisWord}>Sussy Vargas Alvarado</span>{" "}
+            <span style={normalParagraph}>y</span>{" "}
+            <span style={emphasisWord}>Susana Sánchez Carballo</span>
           </Text>
         </Box>
       </Box>
@@ -85,7 +84,7 @@ function home() {
           textDecoration="underline"
           >
             <Link
-              href="/sobreLaInvestigacion">
+              href="/">
               <a>Leer más</a>
             </Link>
           </Box>
@@ -105,7 +104,7 @@ function home() {
         <h2>Visita las exposiciones</h2>
       </Box>
       <MobileSlider mobleSlides={MobileSlides} />
-      {/* Aquí va el espaci de curadoras */}
+      {/* Aquí va el espacip de curadoras */}
       <Center>
         <Box
         bg="brand.primaryOrange"
@@ -122,116 +121,10 @@ function home() {
           </Link>
         </Box>
       </Center>
-=======
-import React from 'react'
-import { Box, Flex, Spacer, Image } from "@chakra-ui/react"
-import MenuHam from '../src/components/MenuHam'
-import { SearchBar } from '../src/components/serchBar'
-import Galery from '../src/components/artistGalery'
-import ArtistImg from '../artistImage'
-import ModalDialog from "../src/components/modal"
-import Slider from "../src/components/slider"
-import Slides from "../slides"
-import MobileSlider from "../src/components/mobileSlider"
-import MobileSlides from "../mobileSlides"
-import { ViewArtist } from '../src/components/viewArtist'
-import AboutInvestigation from '../src/components/aboutInvestigation'
-import { getApiRes } from '../src/services/callApi'
-import AccordionSearch from '../src/components/accordionSearch'
 
-function HeaderCronicas({dataArtist, dataView, investigationData }) {
-  return (
-    <>
-      <Flex bg="brand.primaryOrange" alignItems="center">
-        <Box p={8}>
-          <Image w={{ base: "42px", md: "50px", lg: "58px" }} src='/logoNegro.svg' alt="Cronologias de lo Invisible"></Image>
-        </Box> 
-        <Spacer />
-        <MenuHam></MenuHam>
-      </Flex>
-      <SearchBar names={dataArtist}></SearchBar>
-      <AccordionSearch names={dataArtist}></AccordionSearch>
-      <ViewArtist names={dataView}/>
-      <Galery images={ArtistImg}></Galery>
-      <ModalDialog>
-        <Slider slides={Slides}/>
-      </ModalDialog>
-      <MobileSlider mobleSlides={MobileSlides}/>
-      <AboutInvestigation investigationData={investigationData} />
-    </>
->>>>>>> ffae53bb035bea3397951d9fb30a048f313188df
-
-
-<<<<<<< HEAD
       <Footer></Footer>
     </>
   );
-=======
-export default HeaderCronicas
-
-export async function getStaticProps () {
-  const URl= process.env.NEXT_URL;
-  const TOKEN= process.env.NEXT_TOKEN;
-  const bodyArtist ='query Myquery{allTarjetaAutoras(first:54) {id nombreDeLaAutora imagenDeLaArtista}}';
-  const bodyView ='query Myquery { allNombreAutoras { id nombreDeLaArtista biografADeLaArtista imagenDeLaArtista}}'
-  const bodyInvestigation ='query Myquery {allSobreLaInvestigacions {cuerpoDeLaInvestigacion}}'
-  const getArtist = await getApiRes(URl,TOKEN, bodyArtist)
-  const dataArtist =getArtist.data.allTarjetaAutoras;
-  const getView = await getApiRes(URl,TOKEN, bodyView);
-  const dataView = getView.data.allNombreAutoras[0];
-  const getInvestigation = await getApiRes(URl,TOKEN, bodyInvestigation)
-  const investigationData = getInvestigation
-  return{
-    props: {
-      dataArtist,
-      dataView,
-      investigationData,
-    }
-  }
->>>>>>> ffae53bb035bea3397951d9fb30a048f313188df
 }
 
-export default home;
-
-// function HeaderCronicas({data, names, investigationData }) {
-//   return (
-//     <>
-//       <Flex bg="brand.primaryOrange" alignItems="center">
-//         <Box p={8}>
-//           <Image w={{ base: "42px", md: "50px", lg: "58px" }} src='/logoNegro.svg' alt="Cronologias de lo Invisible"></Image>
-//         </Box>
-//         <Spacer />
-//         <MenuHam></MenuHam>
-//       </Flex>
-//       <SearchBar names={data}></SearchBar>
-//       <AccordionSearch names={data}></AccordionSearch>
-//       <ViewArtist names={names}/>
-//       <Galery images={ArtistImg}></Galery>
-//       <ModalDialog>
-//         <Slider slides={Slides}/>
-//       </ModalDialog>
-//       <MobileSlider mobleSlides={MobileSlides}/>
-//       <AboutInvestigation investigationData={investigationData} />
-//     </>
-
-//   )
-// }
-
-// export default HeaderCronicas
-// export async function getStaticProps () {
-//   const URl= process.env.NEXT_URL;
-//   const TOKEN= process.env.NEXT_TOKEN;
-//   const resposeJson = await getArtist(URl,TOKEN,);
-//   const data = resposeJson.data.allTarjetaAutoras;
-//   const resposeJson2 = await getArtistView(URl,TOKEN);
-//   const names = resposeJson2.data.allNombreAutoras[0];
-//   const responseJson3 = await getInvestigation(URl,TOKEN)
-//   const investigationData = responseJson3.data.sobreLaInvestigacion
-//   return{
-//     props: {
-//       data,
-//       names,
-//       investigationData,
-//     }
-//   }
-// }
+export default homePage;
