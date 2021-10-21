@@ -1,4 +1,5 @@
 //import Link from "next/link";
+import React from 'react';
 import { Box, Center, Image, Text} from "@chakra-ui/react";
 import HeaderCronicas from "../src/components/headerCronicas";
 import MobileSlider from "../src/components/mobileSlider";
