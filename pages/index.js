@@ -8,13 +8,14 @@ import ModalDialog from "../src/components/modal"
 import Slider from "../src/components/slider"
 import Slides from "../slides"
 import MobileSlider from "../src/components/mobileSlider"
-import MobileSlides from "../mobileSlides"
 import { ViewArtist } from '../src/components/viewArtist'
 import AboutInvestigation from '../src/components/aboutInvestigation'
 import { getApiRes } from '../src/services/callApi'
 import AccordionSearch from '../src/components/accordionSearch'
+import CuratorsCards from '../src/components/curatorsCards'
 
-function HeaderCronicas({dataArtist, dataView, investigationData }) {
+function HeaderCronicas({dataArtist, dataView, investigationData, curatorsData, museumData}) {
+  console.log(museumData)
   return (
     <>
       <Flex bg="brand.primaryOrange" alignItems="center">
@@ -31,8 +32,9 @@ function HeaderCronicas({dataArtist, dataView, investigationData }) {
       <ModalDialog>
         <Slider slides={Slides}/>
       </ModalDialog>
-      <MobileSlider mobleSlides={MobileSlides}/>
+      <MobileSlider mobleSlides={museumData}/>
       <AboutInvestigation investigationData={investigationData} />
+      <CuratorsCards curators={curatorsData} />
     </>
 
   )
@@ -46,17 +48,26 @@ export async function getStaticProps () {
   const bodyArtist ='query Myquery{allTarjetaAutoras(first:54) {id nombreDeLaAutora imagenDeLaArtista}}';
   const bodyView ='query Myquery { allNombreAutoras { id nombreDeLaArtista biografADeLaArtista imagenDeLaArtista}}'
   const bodyInvestigation ='query Myquery {allSobreLaInvestigacions {cuerpoDeLaInvestigacion}}'
+  const curatorsInfo ='query MyQuery{ allTarjetaCuradoras{ nombreDeLaCuradora enlaceDeLaImagen breveDescripcionDeLaCuradora }}'
+  const museumInfo ='query MyQuery {allVisitaLaExposicions{ enlaceDeLaImagen, tituloDeLaTarjeta}}'
   const getArtist = await getApiRes(URl,TOKEN, bodyArtist)
   const dataArtist =getArtist.data.allTarjetaAutoras;
   const getView = await getApiRes(URl,TOKEN, bodyView);
   const dataView = getView.data.allNombreAutoras[0];
   const getInvestigation = await getApiRes(URl,TOKEN, bodyInvestigation)
   const investigationData = getInvestigation
+  const getCurators = await getApiRes(URl,TOKEN, curatorsInfo)
+  const curatorsData = getCurators.data.allTarjetaCuradoras
+  const getMuseum = await getApiRes(URl,TOKEN, museumInfo)
+  const museumData = getMuseum.data.allVisitaLaExposicions
+
   return{
     props: {
       dataArtist,
       dataView,
       investigationData,
+      curatorsData,
+      museumData,
     }
   }
 }
