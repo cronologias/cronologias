@@ -2,31 +2,61 @@ import React from "react";
 import { Box, Collapse, Button, Container, Flex, Text } from "@chakra-ui/react";
 import ReactMarkdown from 'react-markdown';
 import { ChevronDownIcon, ChevronUpIcon } from "@chakra-ui/icons";
-import {getApiRes} from "../src/services/callApi"
+import {getApiRes} from "../../services/callApi"
+import Header from "../../components/header";
+import Footer from "../../components/footer";
 
 function AboutInvestigation({ investigationData }) {
-    console.log(investigationData)
     const [show, setShow] = React.useState(false)
     const handleToggle = () => setShow(!show)
     return (
         <>
-            <Flex p={8} > 
-                <Box fontWeight="bold" fontFamily="heading" fontSize={{ base: "1.5rem", md: "1.5rem", lg: "2rem" }} color="brand.primaryBlack" w={{ lg: '21.875rem' }} mb={4}>
-                    <Text>{investigationData.tituloDeLaInvestigacion}</Text>
+        <Header/> 
+        <Box 
+        bg="brand.primaryBlack"
+        w="100%"
+        h="330px"
+        >
+
+        </Box>
+            <Flex 
+                p={8} 
+                flexDir={{ base: "column", lg: "row" }}
+                m="auto"
+                w={{ base: "20rem", md: "48rem", lg: "60rem", xl: "75rem" }}
+                justifyContent="space-between"
+                > 
+                
+                <Box 
+                fontWeight={700} 
+                fontFamily="heading" 
+                fontSize={{ base: "1.25rem", md: "1.25rem", lg: "1.5rem" }}
+                color="brand.primaryBlack"
+                mb={4}
+                >
+                    <Text>{investigationData.data.sobreLaInvestigacion.tituloDeLaInvestigacion}</Text>
                 </Box>
-                <Box
+                <Box 
+                    ml="-10px"
+                    mt={{base:"5.125rem", md:"3.125rem"}}
+                    display={{lg:"none", xl:"none"}}
                     w="0.25rem"
                     h={{ base: "28.75rem", md: "16.375rem", lg:"24rem" }}
                     bg="brand.primaryOrange"
-                    ml={{base: "-0.5rem", lg:"36rem"}}
                     position="absolute"
                 >
                 </Box>
-                <Box  position="relative" fontSize={{ base: "1rem", md: "1rem", lg: "1.125rem" }} display={{ base: "block", lg: "none" }}>
+                <Box 
+                    w={{lg:"36.313rem", xl:"38.125rem"}}
+                    fontSize={{ base: "1rem", md: "1rem", lg: "1.125rem" }} 
+                    display={{ base: "block", lg: "none" }}
+                    position="relative"
+                >
                     <Collapse startingHeight={460} in={show} >
-                        <ReactMarkdown components={{
+                        <ReactMarkdown 
+                        components={{
                             p: ({ nodo, ...props }) => < p style={{}}  {...props} />
-                        }}>{investigationData.cuerpoDeLaInvestigacion}</ReactMarkdown>
+                        }}>{investigationData.data.sobreLaInvestigacion.cuerpoDeLaInvestigacion}</ReactMarkdown>
                     </Collapse>
                     <Container alignContent centerContent>
                         <Button size="sm" onClick={handleToggle} mt="1rem" _active={{ bg: "brand.secondaryGray" }} _focus={{ boxShadow: "none" }}>
@@ -34,11 +64,16 @@ function AboutInvestigation({ investigationData }) {
                         </Button>
                     </Container>
                 </Box>
-                <Box ml="37rem" w={{ lg: "37.375rem" }} fontSize={{ base: "1rem", md: "1rem", lg: "1.125rem" }} display={{ base: "none", lg: "block" }}>
+                <Box
+                w={{lg:"36.313rem", xl:"38.125rem"}}
+                fontSize={{ base: "1rem", md: "1rem", lg: "1.125rem" }} 
+                display={{ base: "none", lg: "block" }}>
                     <ReactMarkdown  components={{
                         p: ({ nodo, ...props }) => < p style={{}}  {...props} />
-                    }}>{investigationData.cuerpoDeLaInvestigacion}</ReactMarkdown></Box>
+                    }}>{investigationData.data.sobreLaInvestigacion.cuerpoDeLaInvestigacion}</ReactMarkdown>
+                </Box>
             </Flex>
+            <Footer></Footer>
         </>
 
     )
@@ -51,7 +86,6 @@ export async function getStaticProps () {
     const bodyInvestigation ='query MyQuery {sobreLaInvestigacion {tituloDeLaInvestigacion cuerpoDeLaInvestigacion}}'
     const getInvestigation = await getApiRes(URl,TOKEN, bodyInvestigation)
     const investigationData = getInvestigation
-    console.log(investigationData)
     return{
         props: {
             investigationData

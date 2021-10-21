@@ -69,7 +69,7 @@ function homePage({curatorsData, museumData}) {
           fontWeight={300}
           mb={{ base: "2rem" }}
           fontSize={{ base: "1rem", lg: "1.125rem" }}
-          w={{ base: "20rem", md: "24.4rem", lg: "36.25", xl:"43.125rem" }} 
+          w={{ base: "20rem", md: "24.4rem", lg: "36.25rem", xl:"43.125rem" }} 
           m={{ md: "0" }}
         >
           <p>
@@ -159,7 +159,3 @@ export async function getStaticProps () {
     }
   }
 }
-<<<<<<< HEAD:pages/index.js
-export default homePage
-=======
->>>>>>> 60f73cbe412687a5718969f4ed065233350f2053:src/pages/index.js
