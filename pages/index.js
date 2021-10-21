@@ -125,6 +125,9 @@ function homePage({curatorsData, museumData}) {
     </>
   );
 }
+
+export default homePage;
+
 export async function getStaticProps () {
   const URl= process.env.NEXT_URL;
   const TOKEN= process.env.NEXT_TOKEN;
@@ -146,5 +149,3 @@ export async function getStaticProps () {
   }
 
 }
-
-export default homePage;
