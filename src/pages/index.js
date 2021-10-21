@@ -1,6 +1,8 @@
 import Link from "next/link";
-import { Box, Center, Image, Text} from "@chakra-ui/react";
-import HeaderCronicas from "../components/headerCronicas";
+import { Box, Center, Image, Text, Flex, Spacer} from "@chakra-ui/react";
+import MenuHam from '../components/MenuHam'
+import logo from '../../public/logoNegro.svg'
+//import HeaderCronicas from "../components/headerCronicas";
 import MobileSlider from "../components/mobileSlider";
 import CuratorsCards from "../components/curatorsCards";
 import Footer from "../components/footer";
@@ -18,7 +20,13 @@ function homePage({curatorsData, museumData}) {
   };
   return (
     <>
-      <HeaderCronicas />
+      <Flex bg="brand.primaryOrange" alignItems="center">
+        <Box p={8}>
+          <Image w={{ base: "42px", md: "50px", lg: "58px" }} src={logo} alt="Cronologias de lo Invisible" />
+        </Box>
+        <Spacer />
+        <MenuHam></MenuHam>
+      </Flex>
       <Box bg="brand.fifhtOrange" width="100%" >
         <Image
           src="/animation.gif"
