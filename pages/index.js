@@ -5,7 +5,7 @@ import MobileSlider from "../src/components/mobileSlider";
 import MobileSlides from "../mobileSlides";
 import Footer from "../src/components/footer";
 
-function homePage() {
+function homePage({curatorsData, museumData}) {
   let emphasisWord = {
     color: "#E6AA92",
     fontFamily: "Kulim Park, sans-serif",
@@ -45,7 +45,6 @@ function homePage() {
           </Text>
         </Box>
       </Box>
-
       <Center
         alignItems="start"
         color="brand.primaryBlack"
@@ -103,8 +102,8 @@ function homePage() {
       >
         <h2>Visita las exposiciones</h2>
       </Box>
-      <MobileSlider mobleSlides={MobileSlides} />
-      {/* Aquí va el espacip de curadoras */}
+       <MobileSlider mobleSlides={museumData}/>
+      <CuratorsCards curators={curatorsData} />
       <Center>
         <Box
         bg="brand.primaryOrange"
@@ -121,10 +120,30 @@ function homePage() {
           </Link>
         </Box>
       </Center>
-
       <Footer></Footer>
     </>
   );
+
+export async function getStaticProps () {
+  const URl= process.env.NEXT_URL;
+  const TOKEN= process.env.NEXT_TOKEN;
+  
+  const curatorsInfo ='query MyQuery{ allTarjetaCuradoras{ nombreDeLaCuradora enlaceDeLaImagen breveDescripcionDeLaCuradora }}'
+  const museumInfo ='query MyQuery {allVisitaLaExposicions{ enlaceDeLaImagen, tituloDeLaTarjeta}}'
+  
+  const getCurators = await getApiRes(URl,TOKEN, curatorsInfo)
+  const curatorsData = getCurators.data.allTarjetaCuradoras
+  
+  const getMuseum = await getApiRes(URl,TOKEN, museumInfo)
+  const museumData = getMuseum.data.allVisitaLaExposicions
+
+  return{
+    props: {
+      curatorsData,
+      museumData,
+    }
+  }
+
 }
 
 export default homePage;
