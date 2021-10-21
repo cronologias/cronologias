@@ -1,4 +1,4 @@
-import Link from "next/link";
+//import Link from "next/link";
 import { Box, Center, Image, Text} from "@chakra-ui/react";
 import HeaderCronicas from "../src/components/headerCronicas";
 import MobileSlider from "../src/components/mobileSlider";
@@ -83,10 +83,10 @@ function homePage({curatorsData, museumData}) {
           textAlign="end"
           textDecoration="underline"
           >
-            <Link
+            {/*<Link
               href="/">
               <a>Leer más</a>
-            </Link>
+            </Link>*/}
           </Box>
         </Box>
 
@@ -115,10 +115,10 @@ function homePage({curatorsData, museumData}) {
         mt="6rem"
         p={4}
         >
-          <Link
+          {/*<Link
             href="/">
             <a>Búsqueda de artistas</a>
-          </Link>
+          </Link>*/}
         </Box>
       </Center>
       <Footer></Footer>
