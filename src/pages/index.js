@@ -116,7 +116,7 @@ function homePage({curatorsData, museumData}) {
         mb={{ base: "2rem", md:"2.25rem", lg:"2.5rem"}}
         >
           <Link
-            href="/">
+            href="/search-artist">
             <a>Búsqueda de artistas</a>
           </Link>
         </Box>

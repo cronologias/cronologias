@@ -37,6 +37,7 @@ function AccordionSearch({names}){
         justifyContent="space-between"
         fontFamily="heading"
         m="auto"
+        mb="5.25rem"
         w={{ base: "20rem", md: "48rem", lg: "60rem", xl: "75rem" }}
       >
         <Box

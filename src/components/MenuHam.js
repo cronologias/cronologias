@@ -210,7 +210,9 @@ function MenuHam() {
                   <Box pr={2}>
                     <BsSearch></BsSearch>
                   </Box>
-                  Búsqueda de artistas
+                  <Link href="/search-artist">
+                    <a>Búsqueda de artistas</a>
+                  </Link>
                 </ListItem>
 
                 <ListItem

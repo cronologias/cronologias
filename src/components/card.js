@@ -1,14 +1,27 @@
 import React from "react";
+import  { useRouter } from 'next/router'
 import { SimpleGrid, Center, Box, AspectRatio, Image, Text, Stack, } from "@chakra-ui/react";
 
 function Card({ names }) {
+  const router = useRouter()
   return (
-    <Box minWidth="156px" margin={2} key={names.id}>
-      <AspectRatio ratio={1 / 1}>
-        <Image minWidth="156px" src={names.imagenDeLaArtista} alt="artist image" />
+    <Box key={names} mb={4}>
+      <AspectRatio 
+        ratio={1 / 1}
+        w={{ base: "8.6rem", md: "9.75rem", lg: "9.75rem", xl: "16.8rem"}}
+        h={{ base: "8.6rem", md: "9.75rem", lg: "9.75rem", xl: "10rem"}}
+      >
+        <Image src={names.imagenDeLaArtista} alt={names.imagenDeLaArtista}/>
       </AspectRatio>
-      <Stack align={{ base: "center", md: "stretch" }} textAlign={{ base: "center", md: "left" }} mt={{ base: 4, md: 0 }} ml={{ md: 6 }}>
-        <Text fontWeight="bold" fontSize="18px" textTransform="uppercase" color="#000000">
+      <Stack 
+        align={{ base: "center", md: "stretch" }}
+        mb={8}
+        w={{ base: "8.6rem", md: "9.75rem", lg: "9.75rem", xl: "16.8rem"}}
+      >
+        <Text 
+         fontWeight={300} 
+         fontFamily="heading"
+         color="brand.primaryBlack">
           {names.nombreDeLaAutora}
         </Text>
       </Stack>
@@ -28,7 +41,7 @@ function CardAccordion({ names }) {
                 w={{ base: "8.6rem", md: "9.75rem", lg: "9.75rem", xl: "16.8rem"}}
                 h={{ base: "8.6rem", md: "9.75rem", lg: "9.75rem", xl: "10rem"}}
               >
-                <Image src={val.imagenDeLaArtista} alt="artist image"/>
+                <Image src={val.imagenDeLaArtista} alt={val.imagenDeLaArtista}/>
               </AspectRatio>
               <Stack 
                 align={{ base: "center", md: "stretch" }}
