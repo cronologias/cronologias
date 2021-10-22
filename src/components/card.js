@@ -1,7 +1,9 @@
 import React from "react";
+import  { useRouter } from 'next/router'
 import { SimpleGrid, Center, Box, AspectRatio, Image, Text, Stack, } from "@chakra-ui/react";
 
 function Card({ names }) {
+  const router = useRouter()
   return (
     <Box key={names} mb={4}>
       <AspectRatio 

@@ -19,6 +19,7 @@ function MobileSlider(props) {
                 display: "none",
                 },
             }}
+            align="center"
             >
                 <HStack spacing={{ base:"0.5rem", md:"0.6rem", lg:"2.438rem" }}>
                     {props.mobleSlides.map((slide, sid) => (
@@ -30,7 +31,7 @@ function MobileSlider(props) {
                             borderBottomColor="brand.primaryOrange" 
                             >
                                 <Image 
-                                src={slide.img} 
+                                src={slide.enlaceDeLaImagen} 
                                 objectFit="cover" 
                                 w="100%"
                                 h="100%"
@@ -58,7 +59,7 @@ function MobileSlider(props) {
                                         <LinkOverlay 
                                         href="#"
                                         >
-                                            {slide.title}
+                                            {slide.tituloDeLaTarjeta}
                                         </LinkOverlay>
                                     </Heading>
                                 </Box>

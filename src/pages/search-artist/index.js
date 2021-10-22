@@ -1,8 +1,8 @@
-import { getApiRes } from '../src/services/callApi'
-import HeaderCronicas from '../src/components/headerCronicas'
-import { SearchBar } from '../src/components/serchBar'
-import AccordionSearch from '../src/components/accordionSearch'
-import Footer from '../src/components/footer'
+import { getApiRes } from '../../services/callApi'
+import Header from '../../components/header'
+import { SearchBar } from '../../components/serchBar'
+import AccordionSearch from '../../components/accordionSearch'
+import Footer from '../../components/footer'
 
 import {
   Box,
@@ -12,7 +12,7 @@ import {
 function searchArtist({ dataArtist }) {
   return (
     <>
-      <HeaderCronicas />
+      <Header />
       <Box 
         bg="brand.primaryBlack" 
         w="100%" 
@@ -36,12 +36,11 @@ export default searchArtist
 export async function getStaticProps () {
   const URl= process.env.NEXT_URL;
   const TOKEN= process.env.NEXT_TOKEN;
+  
   const bodyArtist ='query Myquery{allTarjetaAutoras(first:54) {id nombreDeLaAutora imagenDeLaArtista}}';
   const getArtist = await getApiRes(URl,TOKEN, bodyArtist);
   const dataArtist =getArtist.data.allTarjetaAutoras;
  
- 
-  
   return {
     props: {
       dataArtist

@@ -31,22 +31,20 @@ const SearchBar = ({ names }) => {
         </InputGroup>
       </Stack>
       <Stack spacing={4} w="100%" h="100%" m="0 auto" pt={8} textAlign="center">
-        <Center alignContent minW="328px">
-          <SimpleGrid columns={{ base:[2,2], md:[4, 2] }}>
-            {names.filter((val) => {
-              if (serchTerm === "") {
-                return ""
-              } else if (val.nombreDeLaAutora.toLocaleLowerCase().includes(serchTerm.toLocaleLowerCase())) {
-                return val
-              }
-              return '';
-            }).map((val, key) => {
-              return (
-                <Card key={key} names={val} />
-              )
-            })}
-          </SimpleGrid>
-        </Center>
+        <SimpleGrid columns={{ base:[2,2], md:[4, 2] }}>
+          {names.filter((val) => {
+            if (serchTerm === "") {
+              return ""
+            } else if (val.nombreDeLaAutora.toLocaleLowerCase().includes(serchTerm.toLocaleLowerCase())) {
+              return val
+            }
+            return '';
+          }).map((val, key) => {
+            return (
+              <Card key={key} names={val} />
+            )
+          })}
+        </SimpleGrid>
       </Stack>
     </div>
   )
