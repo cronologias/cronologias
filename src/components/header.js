@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from "next/link";
 import { Box, Flex, Spacer, Image } from "@chakra-ui/react"
-import MenuHam from './menuHam'
+import MenuHam from './MenuHam'
 import logo from '../../public/logoNegro.svg'
 
 function Header() {
