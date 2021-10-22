@@ -27,7 +27,7 @@ new HtmlImageLayer(imgTag, myImage, [responsive(200)]);
 
 // Configure the breakpoint
 
-breakpoint_img = function (width){
+breakpoint_img = function (width) {
   return 50 * Math.ceil(width / 50);
 }
 let cl_img = imgCoudinary.Cloudinary.new({cloud_name: "Edelmira_Losilla_q8a8vz.png"});
@@ -45,4 +45,11 @@ https://unpkg.com/cloudinary-core@latest/cloudinary-core-shrinkwrap.js
 
 */
 
-// Responsive images with next.js: https://spacejelly.dev/posts/how-to-use-cloudinary-images-in-next-js-with-blurred-placeholders/
+/* 
+
+  Responsive images with next.js: 
+  
+  https://spacejelly.dev/posts/how-to-use-cloudinary-images-in-next-js-with-blurred-placeholders/
+  https://github.com/vercel/next.js/discussions/18374
+
+*/
