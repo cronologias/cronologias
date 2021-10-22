@@ -102,7 +102,10 @@ function MenuHam() {
                   <Box pr={2}>
                     <BsFillInfoSquareFill></BsFillInfoSquareFill>
                   </Box>
-                  Sobre la Investigación
+                  <Link
+                    href="/about-investigation">
+                    <a>Sobre la Investigación</a>
+                  </Link>
                 </ListItem>
 
                 <ListItem

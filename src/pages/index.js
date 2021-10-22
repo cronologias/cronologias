@@ -30,7 +30,7 @@ function homePage({curatorsData, museumData}) {
           bg="brand.thirdOrange"
           h={{ base: "15.75rem", md: "8.75rem", xl: "7.75rem" }}
           p="2.375rem"
-          mb={{ base: "2rem" }}
+          mb={{ base: "2rem", md:"2.25rem", lg:"2.5rem"}}
         >
           <Text fontSize={{ base: "1rem", lg: "1.125rem" }}>
             <span style={emphasisWord}></span>
@@ -56,7 +56,7 @@ function homePage({curatorsData, museumData}) {
         m="auto"
         w={{ base: "20rem", md: "48rem", lg: "60rem", xl: "75rem" }}
         justifyContent="space-between"
-        mb={8}
+        mb={{ base: "2rem", md:"2.25rem", lg:"2.5rem"}}
       >
         <Box
           w={{ base: "100%", md: "16.938rem" }}
@@ -69,7 +69,7 @@ function homePage({curatorsData, museumData}) {
           fontWeight={300}
           mb={{ base: "2rem" }}
           fontSize={{ base: "1rem", lg: "1.125rem" }}
-          w={{ base: "20rem", md: "24.4rem", lg: "36.25", xl:"43.125rem" }} 
+          w={{ base: "20rem", md: "24.4rem", lg: "36.25rem", xl:"43.125rem" }} 
           m={{ md: "0" }}
         >
           <p>
@@ -84,7 +84,7 @@ function homePage({curatorsData, museumData}) {
           textDecoration="underline"
           >
             <Link
-              href="/">
+              href="/about-investigation">
               <a>Leer más</a>
             </Link>
           </Box>
@@ -112,11 +112,11 @@ function homePage({curatorsData, museumData}) {
         fontSize={{ base: "1rem", lg: "1.125rem" }}
         fontFamily="body"
         fontWeight={700}
-        mt="6rem"
         p={4}
+        mb={{ base: "2rem", md:"2.25rem", lg:"2.5rem"}}
         >
           <Link
-            href="/">
+            href="/search-artist">
             <a>Búsqueda de artistas</a>
           </Link>
         </Box>
@@ -147,5 +147,5 @@ export async function getStaticProps () {
       museumData,
     }
   }
-
 }
+
