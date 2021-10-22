@@ -30,7 +30,7 @@ function homePage({curatorsData, museumData}) {
           bg="brand.thirdOrange"
           h={{ base: "15.75rem", md: "8.75rem", xl: "7.75rem" }}
           p="2.375rem"
-          mb={{ base: "2rem" }}
+          mb={{ base: "2rem", md:"2.25rem", lg:"2.5rem"}}
         >
           <Text fontSize={{ base: "1rem", lg: "1.125rem" }}>
             <span style={emphasisWord}></span>
@@ -56,7 +56,7 @@ function homePage({curatorsData, museumData}) {
         m="auto"
         w={{ base: "20rem", md: "48rem", lg: "60rem", xl: "75rem" }}
         justifyContent="space-between"
-        mb={8}
+        mb={{ base: "2rem", md:"2.25rem", lg:"2.5rem"}}
       >
         <Box
           w={{ base: "100%", md: "16.938rem" }}
@@ -104,18 +104,6 @@ function homePage({curatorsData, museumData}) {
         <h2>Visita las exposiciones</h2>
       </Box>
       <MobileSlider mobleSlides={museumData}/>
-      <Box
-        w={{ base: "20rem", md: "48rem", lg: "60rem", xl: "75rem" }}
-        m="auto"
-        textAlign="start"
-        fontFamily="heading"
-        fontSize={{ base: "1.25rem", md: "1.25rem", lg: "1.5rem" }}
-        color="brand.primaryBlack"
-        fontWeight={700}
-        mb={4}
-      >
-        <h2>Curadoras</h2>
-      </Box>
       <CuratorsCards curators={curatorsData} />
       <Center>
         <Box
@@ -125,6 +113,7 @@ function homePage({curatorsData, museumData}) {
         fontFamily="body"
         fontWeight={700}
         p={4}
+        mb={{ base: "2rem", md:"2.25rem", lg:"2.5rem"}}
         >
           <Link
             href="/">
@@ -159,3 +148,4 @@ export async function getStaticProps () {
     }
   }
 }
+

@@ -11,7 +11,9 @@ import {
 
 function MobileSlider(props) {
     return(
-        <Center>
+        <Center 
+        mb={{ base: "2rem", md:"2.25rem", lg:"2.5rem"}}
+        >
             <Flex
             overflow="scroll"
             css={{
@@ -30,7 +32,7 @@ function MobileSlider(props) {
                     {props.mobleSlides.map((slide, sid) => (
                         <LinkBox  key={`slide-card-${sid}`}>
                             <Box 
-                            w={{ base:"14.938rem", md:"15.5rem", lg:"18.375rem" }}
+                            w={{ base:"14.938rem", md:"18rem", lg:"24rem" }}
                             h={{ base:"13.75rem", md:"14rem", lg:"16.875rem" }}
                             borderBottom="4px" 
                             borderBottomColor="brand.primaryOrange" 
