@@ -51,6 +51,7 @@ function AboutInvestigation({ investigationData }) {
                     fontSize={{ base: "1rem", md: "1rem", lg: "1.125rem" }} 
                     display={{ base: "block", lg: "none" }}
                     position="relative"
+                    pl="0.5rem"
                 >
                     <Collapse startingHeight={460} in={show} >
                         <ReactMarkdown 
@@ -92,3 +93,6 @@ export async function getStaticProps () {
         }
     }
 }
+
+
+
