@@ -20,6 +20,8 @@ function dynamicViewArtist({ dataView }) {
 
 export default dynamicViewArtist
 
+
+
 export async function getStaticProps () {
   const URl= process.env.NEXT_URL;
   const TOKEN= process.env.NEXT_TOKEN;
