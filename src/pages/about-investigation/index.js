@@ -15,7 +15,7 @@ function AboutInvestigation({ investigationData }) {
         <Box 
         bg="brand.primaryBlack"
         w="100%"
-        h="330px"
+        h="331px"
         >
 
         </Box>
