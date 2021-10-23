@@ -50,7 +50,7 @@ function CuratorsCards(props) {
                         w="100%" 
                         h="100%"
                         objectFit={{base:"cover",lg:"cover" }}
-                        alt="Sussy Vargas Alvarado" 
+                        alt={element.nombreDeLaCuradora} 
                         pb="7px"
                         />
                     </Box>
@@ -64,7 +64,7 @@ function CuratorsCards(props) {
                     mb={3}
                     >
                         <LinkOverlay 
-                        href="#"
+                        href="/curator-bio"
                         >
                             {element.nombreDeLaCuradora} 
                         </LinkOverlay>
