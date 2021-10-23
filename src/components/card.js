@@ -1,10 +1,8 @@
 import React from "react";
 import Link from "next/link";
-//import  { useRouter } from 'next/router'
 import { SimpleGrid, Center, Box, AspectRatio, Image, Text, Stack, } from "@chakra-ui/react";
 
 function Card({ names }) {
-  //const router = useRouter()
   return (
     <Link href={`/search-artist/${names.id}`} as={`/search-artist/${names.id}`}>
       <a>

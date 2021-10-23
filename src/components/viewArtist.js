@@ -8,12 +8,17 @@ const ViewArtist = ({ names }) => {
     const handleToggle = () => setShow(!show)
     return (
         <>
-            <Flex p={8} flexDir={{ base: "column", lg: "row" }}>
-                <Box fontWeight="bold" fontFamily="heading" fontSize={{ base: "1.5rem", md: "1.5rem", lg: "2rem" }} color="brand.primaryBlack" w={{ lg: '21.875rem' }} mb={4}>
+            <Flex 
+                p={8} 
+                flexDir={{ base: "column", lg: "row" }}
+                m="auto"
+                w={{ base: "20rem", md: "48rem", lg: "60rem", xl: "75rem" }}
+            >
+                <Box fontWeight="bold" fontFamily="heading" fontSize={{ base: "1.25rem", md: "1.25rem", lg: "1.5rem" }} color="brand.primaryBlack" w={{ lg: '21.875rem' }} mb={4}>
                     <Text>{names.nombreDeLaAutora}</Text>
                 </Box>
                 <Box display={{ lg: "none" }}>
-                    <LinkBox fontFamily="heading" fontSize={{ base: "1.5rem", md: "1.5rem", lg: "2rem" }} textDecoration="underline" color="brand.primaryGray" mb={4}>
+                    <LinkBox fontFamily="heading" fontSize={{ base: "1.25rem", md: "1.25rem", lg: "1.5rem" }}textDecoration="underline" color="brand.primaryGray" mb={4}>
                         <LinkOverlay href="#artTreasures">Obras</LinkOverlay>
                     </LinkBox>
                 </Box>
@@ -36,9 +41,19 @@ const ViewArtist = ({ names }) => {
                             p: ({ nodo, ...props }) => < p style={{ paddingBottom: '0.625rem', paddingTop: '0.625rem'}}  {...props} />
                         }}>{names.biografia}</ReactMarkdown></Box>
             </Flex>
-            <Box id="artTreasures" pl={8} pr={8} fontWeight="bold" fontFamily="heading" fontSize={{ base: "1.5rem", md: "1.5rem", lg: "2rem" }} color="brand.primaryBlack" w={{ lg: '21.875rem' }}>
-                    <Text>Obras</Text>
-                </Box>
+            <Box 
+                id="artTreasures"
+                pl={8} 
+                pr={8} 
+                fontWeight="bold" 
+                fontFamily="heading" 
+                color="brand.primaryBlack" 
+                w={{ lg: '21.875rem' }}
+                m="auto"
+                w={{ base: "20rem", md: "48rem", lg: "60rem", xl: "75rem" }}
+                >
+                <Text fontSize={{ base: "1.25rem", md: "1.25rem", lg: "1.5rem" }}>Obras</Text>
+            </Box>
         </>
     )
 }
