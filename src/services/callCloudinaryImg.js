@@ -23,4 +23,9 @@ const url = buildUrl('Edelmira_Losilla_q8a8vz', {
 
 /*
 	https://www.youtube.com/watch?v=n7VeENVQntY
+	https://www.contentful.com/blog/2021/09/08/personalized-image-social-sharing-with-cloudinary-nextjs/
+	https://morioh.com/p/b3754ba3cfa1
+	https://github.com/mayashavin/cloudinary-api
+	https://cloudinary.com/blog/how_to_serve_videos_in_next_js_applications_with_cloudinary
+	https://spacejelly.dev/posts/how-to-use-cloudinary-images-in-next-js-with-blurred-placeholders/#step-3-using-cloudinarys-url-builder-for-dynamically-generated-images
 */
