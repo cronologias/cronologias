@@ -6,7 +6,9 @@ import Footer from '../../components/footer'
 
 import {
   Box,
-  Center
+  Center,
+  Image,
+  Heading,
 } from "@chakra-ui/react"
 
 function searchArtist({ dataArtist }) {
@@ -14,10 +16,35 @@ function searchArtist({ dataArtist }) {
     <>
       <Header />
       <Box 
-        bg="brand.primaryBlack" 
-        w="100%" 
-        h="320px"> 
-      </Box>
+            fontFamily="body"
+            w="100%" 
+            h={{ base: "266px", lg: "331px" }}
+            position="relative"
+        >
+            <Image 
+                src="/background.png"
+                w="100%" 
+                h="100%"
+                objectFit="cover"
+            />
+            <Box
+                position="absolute"
+                zIndex="2"
+                bottom="1.25rem"
+                ml="2rem"
+                mr="2rem"
+            >
+                <Heading
+                as="h2"
+                color="brand.baseColor"
+                fontStyle="bold"
+                pb="1.563rem"
+                fontSize="2rem"
+                >
+                Búsqueda de artistas
+                </Heading>
+            </Box>
+        </Box>
       <Center 
           flexDir="column"
           m="auto"

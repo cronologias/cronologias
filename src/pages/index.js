@@ -1,76 +1,76 @@
-import Link from "next/link";
-import { Box, Center, Image, Text} from "@chakra-ui/react";
-import MobileSlider from "../components/mobileSlider";
-import Header from "../components/header";
-import CuratorsCards from "../components/curatorsCards";
-import Footer from "../components/footer";
-import {getApiRes} from "../services/callApi";
+import Link from 'next/link';
+import { Box, Center, Image, Text} from '@chakra-ui/react';
+import MobileSlider from '../components/mobileSlider';
+import Header from '../components/header';
+import CuratorsCards from '../components/curatorsCards';
+import Footer from '../components/footer';
+import {getApiRes} from '../services/callApi';
 
 function homePage({curatorsData, museumData}) {
   let emphasisWord = {
-    color: "#E6AA92",
-    fontFamily: "Kulim Park, sans-serif",
-    fontWeight: "bold",
+    color: '#E6AA92',
+    fontFamily: 'Kulim Park, sans-serif',
+    fontWeight: 'bold',
   };
   let normalParagraph = {
-    color: "brand.primaryBlack",
-    fontFamily: "Cousine, monospace",
+    color: 'brand.primaryBlack',
+    fontFamily: 'Cousine, monospace',
   };
   return (
     <>
       <Header/>
-      <Box bg="brand.fifhtOrange" width="100%" >
+      <Box bg='brand.fifhtOrange' width='100%' >
         <Image
-          src="/animation.gif"
-          m="auto"
-          w={{ base: "22.5rem", md:"30rem"}}
+          src='/animation.gif'
+          m='auto'
+          w={{ base: '22.5rem', md:'30rem'}}
         />
         <Box
-          w="100%"
-          bg="brand.thirdOrange"
-          h={{ base: "15.75rem", md: "8.75rem", xl: "7.75rem" }}
-          p="2.375rem"
-          mb={{ base: "2rem", md:"2.25rem", lg:"2.5rem"}}
+          w='100%'
+          bg='brand.thirdOrange'
+          h={{ base: '15.75rem', md: '8.75rem', xl: '7.75rem' }}
+          p='2.375rem'
+          mb={{ base: '2rem', md:'2.25rem', lg:'2.5rem'}}
         >
-          <Text fontSize={{ base: "1rem", lg: "1.125rem" }}>
+          <Text fontSize={{ base: '1rem', lg: '1.125rem' }}>
             <span style={emphasisWord}></span>
-            <span style={emphasisWord}>CRONOLOGÍAS DE LO INVISIBLE</span>{" "}
+            <span style={emphasisWord}>CRONOLOGÍAS DE LO INVISIBLE</span>{' '}
             <span style={normalParagraph}>
               es una exposición historiográfica de las artistas visuales en
               Costa Rica de los años 1900 a 1979. Muestra los resultados de las
               investigaciones realizadas por
-            </span>{" "}
-            <span style={emphasisWord}>Sussy Vargas Alvarado</span>{" "}
-            <span style={normalParagraph}>y</span>{" "}
+            </span>{' '}
+            <span style={emphasisWord}>Sussy Vargas Alvarado</span>{' '}
+            <span style={normalParagraph}>y</span>{' '}
             <span style={emphasisWord}>Susana Sánchez Carballo</span>
           </Text>
         </Box>
       </Box>
       <Center
-        alignItems="start"
-        color="brand.primaryBlack"
-        flexDir={{ base: "column", md: "row" }} 
-        fontFamily="heading"
-        fontSize={{ base: "1.25rem", md: "1.25rem", lg: "1.5rem" }}
+        alignItems='start'
+        color='brand.primaryBlack'
+        flexDir={{ base: 'column', md: 'row' }} 
+        fontFamily='heading'
+        fontSize={{ base: '1.25rem', md: '1.25rem', lg: '1.5rem' }}
         fontWeight={700}
-        m="auto"
-        w={{ base: "20rem", md: "48rem", lg: "60rem", xl: "75rem" }}
-        justifyContent="space-between"
-        mb={{ base: "2rem", md:"2.25rem", lg:"2.5rem"}}
+        m='auto'
+        w={{ base: '20rem', md: '48rem', lg: '60rem', xl: '75rem' }}
+        justifyContent='space-between'
+        mb={{ base: '2rem', md:'2.25rem', lg:'2.5rem'}}
       >
         <Box
-          w={{ base: "100%", md: "16.938rem" }}
-          mb="1rem"
+          w={{ base: '100%', md: '16.938rem' }}
+          mb='1rem'
         >
           <h2>Sobre la investigación</h2>
         </Box>
         <Box
-          fontFamily="body"
+          fontFamily='body'
           fontWeight={300}
-          mb={{ base: "2rem" }}
-          fontSize={{ base: "1rem", lg: "1.125rem" }}
-          w={{ base: "20rem", md: "24.4rem", lg: "36.25rem", xl:"43.125rem" }} 
-          m={{ md: "0" }}
+          mb={{ base: '2rem' }}
+          fontSize={{ base: '1rem', lg: '1.125rem' }}
+          w={{ base: '20rem', md: '24.4rem', lg: '36.25rem', xl:'43.125rem' }} 
+          m={{ md: '0' }}
         >
           <p>
             La muestra recopila obras de 54 artistas que estaban presentes y
@@ -80,11 +80,11 @@ function homePage({curatorsData, museumData}) {
             ...
           </p>
           <Box
-          textAlign="end"
-          textDecoration="underline"
+          textAlign='end'
+          textDecoration='underline'
           >
             <Link
-              href="/about-investigation">
+              href='/about-investigation'>
               <a>Leer más</a>
             </Link>
           </Box>
@@ -92,12 +92,12 @@ function homePage({curatorsData, museumData}) {
 
       </Center>
       <Box
-        w={{ base: "20rem", md: "48rem", lg: "60rem", xl: "75rem" }}
-        m="auto"
-        textAlign="start"
-        fontFamily="heading"
-        fontSize={{ base: "1.25rem", md: "1.25rem", lg: "1.5rem" }}
-        color="brand.primaryBlack"
+        w={{ base: '20rem', md: '48rem', lg: '60rem', xl: '75rem' }}
+        m='auto'
+        textAlign='start'
+        fontFamily='heading'
+        fontSize={{ base: '1.25rem', md: '1.25rem', lg: '1.5rem' }}
+        color='brand.primaryBlack'
         fontWeight={700}
         mb={4}
       >
@@ -107,16 +107,16 @@ function homePage({curatorsData, museumData}) {
       <CuratorsCards curators={curatorsData} />
       <Center>
         <Box
-        bg="brand.primaryOrange"
-        color="brand.baseColor"
-        fontSize={{ base: "1rem", lg: "1.125rem" }}
-        fontFamily="body"
+        bg='brand.primaryOrange'
+        color='brand.baseColor'
+        fontSize={{ base: '1rem', lg: '1.125rem' }}
+        fontFamily='body'
         fontWeight={700}
         p={4}
-        mb={{ base: "2rem", md:"2.25rem", lg:"2.5rem"}}
+        mb={{ base: '2rem', md:'2.25rem', lg:'2.5rem'}}
         >
           <Link
-            href="/search-artist">
+            href='/search-artist'>
             <a>Búsqueda de artistas</a>
           </Link>
         </Box>

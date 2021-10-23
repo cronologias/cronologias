@@ -4,7 +4,7 @@ import {
   Image,
   HStack,
   Center
-} from "@chakra-ui/react"
+} from '@chakra-ui/react'
 
 function Galery(props) {
   return ( 
@@ -30,37 +30,37 @@ function Galery(props) {
               <Box >
                 <Image w={
                     {
-                      base: "16rem",
-                      md: "28rem",
-                      lg: "44rem",
-                      xl: "50rem"
+                      base: '16rem',
+                      md: '28rem',
+                      lg: '44rem',
+                      xl: '50rem'
                     }
                   }
                   h={
                     {
-                      lg: "30rem"
+                      lg: '30rem'
                     }
                   }
                   src={
                     worksImg.img
                   }
-                  alt="Galeria del Artista" >
+                  alt='Galeria del Artista' >
                   </Image>
                   </Box>
-                  <Box bg="brand.primaryOrange"
+                  <Box bg='brand.primaryOrange'
                     w={
                       {
-                        base: "4rem",
-                        md: "15rem",
-                        lg: "14rem",
-                        xl: "16rem"
+                        base: '4rem',
+                        md: '15rem',
+                        lg: '14rem',
+                        xl: '16rem'
                       }
                     }
                     h={
                       {
-                        base: "16rem",
-                        md: "28rem",
-                        lg: "30rem"
+                        base: '16rem',
+                        md: '28rem',
+                        lg: '30rem'
                       }
                     } >
                     </Box>
@@ -82,41 +82,41 @@ function Galery(props) {
                             lg: 8
                           }
                         } >
-                        <Box bg="brand.primaryBlack"
+                        <Box bg='brand.primaryBlack'
                           w={
                             {
-                              base: "4rem",
-                              md: "15rem",
-                              lg: "14rem",
-                              xl: "16rem"
+                              base: '4rem',
+                              md: '15rem',
+                              lg: '14rem',
+                              xl: '16rem'
                             }
                           }
                           h={
                             {
-                              base: "16rem",
-                              md: "28rem",
-                              lg: "30rem"
+                              base: '16rem',
+                              md: '28rem',
+                              lg: '30rem'
                             }
                           } >
                           </Box>
                           <Box >
                             <Image w={
                                 {
-                                  base: "16rem",
-                                  md: "28rem",
-                                  lg: "44rem",
-                                  xl: "50rem"
+                                  base: '16rem',
+                                  md: '28rem',
+                                  lg: '44rem',
+                                  xl: '50rem'
                                 }
                               }
                               h={
                                 {
-                                  lg: "30rem"
+                                  lg: '30rem'
                                 }
                               }
                               src={
                                 worksImg.img
                               }
-                              alt="Galeria del Artista" >
+                              alt='Galeria del Artista' >
                               </Image>
                               </Box>
                               </HStack>
