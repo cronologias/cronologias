@@ -4,10 +4,9 @@ import Link from "next/link";
 import { SimpleGrid, Center, Box, AspectRatio, Image, Text, Stack, } from "@chakra-ui/react";
 
 function Card({ names }) {
-  //console.log('viey', names)
   //const router = useRouter()
   return (
-    <Link href={`/searchArtist/${names.id}`} as={`/searchArtist/${names.id}`}>
+    <Link href={`/search-artist/${names.id}`} as={`/search-artist/${names.id}`}>
       <a>
         <Box key={names} mb={4}>
           <AspectRatio 
@@ -41,7 +40,7 @@ function CardAccordion({ names }) {
       <SimpleGrid columns={[2, 2]}>
         {names.map((val, data) => {
           return (
-            <Link href={'searchArtist/[id]'} as={`/searchArtist/${names.id}`}>
+            <Link key={data} href={`/search-artist/${val.id}`} as={`/search-artist/${val.id}`}>
               <a>
                 <Box key={data} mr={4} mb={4}>
                   <AspectRatio 

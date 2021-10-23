@@ -1,19 +1,19 @@
 import { getApiRes } from '../../services/callApi'
 import Header from '../../components/header'
-import ViewArtist from '../../components/viewArtist'
+import {ViewArtist} from '../../components/viewArtist'
 import Footer from '../../components/footer'
-
+import Galery from '../../components/artistGalery'
 import {
   Box,
   Center
 } from "@chakra-ui/react"
 
 function dynamicViewArtist({ dataView }) {
-  console.log(dataView)
   return (
     <>
       <Header />
       <ViewArtist names={dataView}/>
+      <Galery images={dataView.obrasDeLaAutora}/>
       <Footer />
     </>
   )
@@ -21,10 +21,12 @@ function dynamicViewArtist({ dataView }) {
 
 export default dynamicViewArtist
 
-export async function getStaticsPaths() {
-  const bodyView =`query Myquery {allTarjetaAutoras(filter: {id: {eq: ${id}}}) {id imagenDeLaArtista nombreDeLaAutora biografia obrasDeLaAutora {id}}}`
+export async function getStaticPaths() {
+  const URl= process.env.NEXT_URL;
+  const TOKEN= process.env.NEXT_TOKEN;
+  const bodyView =`query Myquery {allTarjetaAutoras {id}}`
   const getView = await getApiRes(URl,TOKEN, bodyView);
-  const dataView = getView.data;
+  const dataView = getView.data.allTarjetaAutoras;
 
   const paths = dataView.map(artist => {
     return {
@@ -32,8 +34,8 @@ export async function getStaticsPaths() {
     }
   })
   return {
-    paths: []
-    fallback: true
+    paths,
+    fallback: false
   }
 }
 
@@ -47,10 +49,9 @@ export async function getStaticProps ( { params } ) {
   const URl= process.env.NEXT_URL;
   const TOKEN= process.env.NEXT_TOKEN;
   //necesito ver la petición de esta vista pedir a steph o a jose ${params.id} pasar dentro de body
-  const bodyView =`query Myquery {allTarjetaAutoras(filter: {id: {eq: ${params.id}}}) {id imagenDeLaArtista nombreDeLaAutora biografia obrasDeLaAutora {id}}}`
+  const bodyView =`query Myquery {allTarjetaAutoras(filter: {id: {eq: ${params.id}}}) {id imagenDeLaArtista nombreDeLaAutora biografia obrasDeLaAutora {id imagenDeLaObraDeLaArtista}}}`
   const getView = await getApiRes(URl,TOKEN, bodyView);
-  const dataView = getView.data;
- 
+  const dataView = getView.data.allTarjetaAutoras[0];
   return {
     props: {
       dataView
