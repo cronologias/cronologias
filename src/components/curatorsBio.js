@@ -9,6 +9,7 @@ import email from '../../public/email.svg'
 
 
 function CuratorsBio(props) {
+    console.log(props.curators)
     const [show, setShow] = React.useState(false)
     const handleToggle = () => setShow(!show)
     return (
@@ -19,8 +20,10 @@ function CuratorsBio(props) {
         w="100%" 
         h={{ base: "266px", lg: "331px" }}
         position="relative"
+        // bgImage="url('/background.png')"
+        // backgroundSize="cover"
         >
-             <Image 
+            <Image 
                 w="100%"
                 src="/background.png"
                 w="100%" 
@@ -41,13 +44,13 @@ function CuratorsBio(props) {
                 pb="1.563rem"
                 fontSize="2rem"
                 >
-                {props.curators.nombreDeLaCuradora}
+                {props.curators[0].nombreDeLaCuradora}
                 </Heading>
                 <Text
                 color="brand.baseColor"
                 fontSize={{ base: "1rem", lg: "1.125rem" }}
                 >
-                {props.curatorsShort}
+                {props.curators[0].breveDescripcionDeLaCuradora}
                 </Text>
             </Box>
         </Box>
@@ -68,11 +71,11 @@ function CuratorsBio(props) {
                     h={{base: "10.375rem", md:"31.5rem", lg: "18.563rem", xl:"23.75rem"}}
                     >
                         <Image 
-                        src={props.curators.imagenDeLaCuradora}
+                        src={props.curators[0].imagenDeLaCuradora}
                         w="100%" 
                         h="100%"
                         objectFit="cover"
-                        alt={props.curators.nombreDeLaCuradora}
+                        alt={props.curators[0].nombreDeLaCuradora}
                         />
                     </Box>
                     <Flex
@@ -128,7 +131,7 @@ function CuratorsBio(props) {
                         <ReactMarkdown 
                         components={{
                             p: ({ nodo, ...props }) => < p style={{}}  {...props} />
-                        }}>{props.curators.cuerpoDeLaBiografia}</ReactMarkdown>
+                        }}>{props.curators[0].cuerpoDeLaBiografia}</ReactMarkdown>
                     </Collapse>
                     <Container alignContent centerContent>
                         <Button size="sm" onClick={handleToggle} mt="1rem" _active={{ bg: "brand.secondaryGray" }} _focus={{ boxShadow: "none" }}>
@@ -142,7 +145,7 @@ function CuratorsBio(props) {
                 display={{ base: "none", lg: "block" }}>
                     <ReactMarkdown  components={{
                         p: ({ nodo, ...props }) => < p style={{}}  {...props} />
-                    }}>{props.curators.cuerpoDeLaBiografia}</ReactMarkdown>
+                    }}>{props.curators[0].cuerpoDeLaBiografia}</ReactMarkdown>
                 </Box>
             </Flex>
             <Footer></Footer>

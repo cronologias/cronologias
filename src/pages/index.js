@@ -132,11 +132,11 @@ export async function getStaticProps () {
   const URl= process.env.NEXT_URL;
   const TOKEN= process.env.NEXT_TOKEN;
   
-  const curatorsInfo ='query MyQuery{ allTarjetaCuradoras{ nombreDeLaCuradora enlaceDeLaImagen breveDescripcionDeLaCuradora }}'
+  const curatorsInfo ='query MyQuery{ allBiografiaCuradoras{ id nombreDeLaCuradora imagenDeLaCuradora breveDescripcionDeLaCuradora }}'
   const museumInfo ='query MyQuery {allVisitaLaExposicions{ enlaceDeLaImagen, tituloDeLaTarjeta}}'
   
   const getCurators = await getApiRes(URl,TOKEN, curatorsInfo)
-  const curatorsData = getCurators.data.allTarjetaCuradoras
+  const curatorsData = getCurators.data.allBiografiaCuradoras
   
   const getMuseum = await getApiRes(URl,TOKEN, museumInfo)
   const museumData = getMuseum.data.allVisitaLaExposicions

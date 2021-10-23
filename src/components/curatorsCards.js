@@ -1,12 +1,10 @@
+import Link from "next/link";
 import {
-    LinkBox,
     Text,
     Image,
     Heading,
-    LinkOverlay,
     Box,
     Flex,
-    Center,
     HStack,
 } from "@chakra-ui/react"
 
@@ -34,49 +32,54 @@ function CuratorsCards(props) {
         spacing={{ base:"0.700rem", md:"1rem", lg:"2rem" }}
         alignItems="normal"
         mb={8}>
-            {props.curators.map((element, id) => (
-                <LinkBox
-                key={`curators-card-${id}`}
+            {props.curators.map((element, index) => (
+                <Box
                 w={{base:"9.75rem", md:"15rem"}}
                 >
-                    <Box 
-                    w="100%"
-                    h={{base:"14.875rem", md:"20.125rem"}}
+                    <Link
+                    href={`/curator-bio/${element.id}`} as={`/curator-bio/${element.id}`}
+                    key={`curators-card-${index}`}
                     >
-                    <Image 
-                        mr="0"
-                        src={element.enlaceDeLaImagen} 
-                        display="inline-block" 
-                        w="100%" 
-                        h="100%"
-                        objectFit={{base:"cover",lg:"cover" }}
-                        alt={element.nombreDeLaCuradora} 
-                        pb="7px"
-                        />
-                    </Box>
-                    <Heading
-                    as="h3"
-                    href="#" 
-                    textStyle="body"
-                    fontSize={{ base:"1.125rem"}}
-                    fontWeight={300}
-                    fontFamily="body"
-                    mb={3}
-                    >
-                        <LinkOverlay 
-                        href="/curator-bio"
-                        >
-                            {element.nombreDeLaCuradora} 
-                        </LinkOverlay>
-                    </Heading>
-                    <Text
-                    fontSize={{ base:"1rem"}}
-                    fontFamily="body"
-                    fontWeight={300}
-                    >
-                        {element.breveDescripcionDeLaCuradora} 
-                    </Text>
-                </LinkBox>
+                        <a>
+                            <Box 
+                            w="100%"
+                            h={{base:"14.875rem", md:"20.125rem"}}
+                            >
+                            <Image 
+                                mr="0"
+                                src={element.imagenDeLaCuradora} 
+                                display="inline-block" 
+                                w="100%" 
+                                h="100%"
+                                objectFit={{base:"cover",lg:"cover" }}
+                                alt={element.nombreDeLaCuradora} 
+                                pb="7px"
+                                />
+                            </Box>
+                            <Heading
+                            as="h3"
+                            href="#" 
+                            textStyle="body"
+                            fontSize={{ base:"1.125rem"}}
+                            fontWeight={300}
+                            fontFamily="body"
+                            mb={3}
+                            >
+                                <Text>
+                                    {element.nombreDeLaCuradora} 
+                                </Text>
+                            </Heading>
+                            <Text
+                            fontSize={{ base:"1rem"}}
+                            fontFamily="body"
+                            fontWeight={300}
+                            >
+                                {element.breveDescripcionDeLaCuradora} 
+                            </Text>
+                        </a>
+                    </Link>
+                </Box>
+                
             ))}
         </HStack>
     </Flex>
