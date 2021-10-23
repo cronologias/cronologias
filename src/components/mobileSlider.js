@@ -24,11 +24,11 @@ function MobileSlider(props) {
             align="start"
             >
                 <HStack 
-                    w={{ base: "20rem", md: "40rem", lg: "60rem", xl: "75rem" }}
+                    w={{ base: "20rem", md: "48rem", lg: "60rem", xl: "75rem" }}
                     m="auto"
                     textAlign="start"
                     mb={4}
-                    spacing={{ base:"0.5rem", md:"0.6rem", lg:"2.438rem" }}>
+                    spacing={{ base:"0.5rem", md:"0.6rem", lg:"1.5rem" }}>
                     {props.mobleSlides.map((slide, sid) => (
                         <LinkBox  key={`slide-card-${sid}`}>
                             <Box 
