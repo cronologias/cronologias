@@ -1,10 +1,11 @@
 import React from "react";
-import { Box, Collapse, Button, Container, Flex, Text } from "@chakra-ui/react";
+import { Box, Collapse, Button, Container, Flex, Text, Image } from "@chakra-ui/react";
 import ReactMarkdown from 'react-markdown';
 import { ChevronDownIcon, ChevronUpIcon } from "@chakra-ui/icons";
 import {getApiRes} from "../../services/callApi"
 import Header from "../../components/header";
 import Footer from "../../components/footer";
+
 
 function AboutInvestigation({ investigationData }) {
     const [show, setShow] = React.useState(false)
@@ -13,12 +14,18 @@ function AboutInvestigation({ investigationData }) {
         <>
         <Header/> 
         <Box 
-        bg="brand.primaryBlack"
-        w="100%"
-        h="331px"
+            bgImage="url('/background.png')" 
+        // bg="brand.primaryBlack"
+        // w="100%"
+        // h="331px"
         >
-
+            {/* <Image 
+                w="100%"
+                src="/background.png"
+                zIndex="0"
+            /> */}
         </Box>
+            <p zIndex="1">Hola</p>
             <Flex 
                 p={8} 
                 flexDir={{ base: "column", lg: "row" }}
