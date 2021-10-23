@@ -29,12 +29,12 @@ function CuratorsCards(props) {
             <h2>Curadoras</h2>
         </Box>
         <HStack 
-        spacing={{ base:"0.700rem", md:"1rem", lg:"2rem" }}
+        spacing={{ base:"0.700rem", md:"1rem", lg:"1.5rem" }}
         alignItems="normal"
         mb={8}>
             {props.curators.map((element, index) => (
                 <Box
-                w={{base:"9.75rem", md:"15rem"}}
+                w={{base:"9.75rem", md:"15rem", lg:"24rem"}}
                 >
                     <Link
                     href={`/curator-bio/${element.id}`} as={`/curator-bio/${element.id}`}
@@ -43,7 +43,7 @@ function CuratorsCards(props) {
                         <a>
                             <Box 
                             w="100%"
-                            h={{base:"14.875rem", md:"20.125rem"}}
+                            h={{base:"14.875rem", md:"20.125rem", lg:"240px"}}
                             >
                             <Image 
                                 mr="0"
@@ -63,11 +63,10 @@ function CuratorsCards(props) {
                             fontSize={{ base:"1.125rem"}}
                             fontWeight={300}
                             fontFamily="body"
-                            mb={3}
+                            mb={1}
+                            fontWeight="bold"
                             >
-                                <Text>
-                                    {element.nombreDeLaCuradora} 
-                                </Text>
+                                {element.nombreDeLaCuradora} 
                             </Heading>
                             <Text
                             fontSize={{ base:"1rem"}}

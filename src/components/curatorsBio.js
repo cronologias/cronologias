@@ -20,8 +20,6 @@ function CuratorsBio(props) {
         w="100%" 
         h={{ base: "266px", lg: "331px" }}
         position="relative"
-        // bgImage="url('/background.png')"
-        // backgroundSize="cover"
         >
             <Image 
                 w="100%"
@@ -29,6 +27,7 @@ function CuratorsBio(props) {
                 w="100%" 
                 h="100%"
                 objectFit="cover"
+                alt=""
             />
             <Box
             position="absolute"
