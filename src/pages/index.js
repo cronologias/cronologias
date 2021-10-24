@@ -28,7 +28,7 @@ function homePage({curatorsData, museumData}) {
         <Box
           w='100%'
           bg='brand.thirdOrange'
-          h={{ base: '15.75rem', md: '8.75rem', xl: '7.75rem' }}
+          h={{ base: '16.75rem', md: '8.75rem', xl: '7.75rem' }}
           p='2.375rem'
           mb={{ base: '2rem', md:'2.25rem', lg:'2.5rem'}}
         >
@@ -73,11 +73,10 @@ function homePage({curatorsData, museumData}) {
           m={{ md: '0' }}
         >
           <p>
-            La muestra recopila obras de 54 artistas que estaban presentes y
-            notablemente activas, no solo en el campo artístico y académico
-            del país, sino también a escala internacional; mujeres cuyas
-            prácticas artísticas no se limitaban a la pintura, al grabado, etc
-            ...
+          La muestra recopila obras de 54 artistas que estaban presentes y notablemente activas, no solo en el campo 
+          artístico y académico del país, sino también a escala internacional; mujeres cuyas prácticas artísticas no se 
+          limitaban a la pintura, al grabado, a la escultura, a la cerámica, o a la fotografía, sino también a la gestión cultural, 
+          a la producción editorial y a la docencia en escuelas, colegios y universidades.
           </p>
           <Box
           textAlign='end'
@@ -114,6 +113,7 @@ function homePage({curatorsData, museumData}) {
         fontWeight={700}
         p={4}
         mb={{ base: '2rem', md:'2.25rem', lg:'2.5rem'}}
+        _hover={{ bg: 'brand.secondaryBlack'}}
         >
           <Link
             href='/search-artist'>

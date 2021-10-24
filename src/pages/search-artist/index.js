@@ -45,14 +45,8 @@ function searchArtist({ dataArtist }) {
                 </Heading>
             </Box>
         </Box>
-      <Center 
-          flexDir="column"
-          m="auto"
-          w={{ base: "360px", md: "768px", lg: "960px", xl: "1200px" }}
-        >
         <SearchBar names={dataArtist}></SearchBar>
         <AccordionSearch names={dataArtist}></AccordionSearch>
-      </Center>
       <Footer />
     </>
   )
@@ -67,7 +61,7 @@ export async function getStaticProps () {
   const bodyArtist ='query Myquery{allTarjetaAutoras(first:54) {id nombreDeLaAutora imagenDeLaArtista}}';
   const getArtist = await getApiRes(URl,TOKEN, bodyArtist);
   const dataArtist =getArtist.data.allTarjetaAutoras;
- 
+
   return {
     props: {
       dataArtist

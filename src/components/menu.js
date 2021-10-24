@@ -54,15 +54,14 @@ function MenuHam() {
                     />
                 }
                 mr={4}
-                p={4}
+                p={2}
                 onClick={onOpen}
                 _hover={{ bg: 'brand.secondaryOrange', borderRadius: 'none' }}
-                _active={{ bg: 'brand.baseColor', boxShadow: 'none', borderRadius: 'none' }}
+                _active={{ bg: 'brand.secondaryOrange', boxShadow: 'none', borderRadius: 'none' }}
                 _focus={{ boxShadow: 'none', borderRadius: 'none', border: '0.125rem solid', borderColor: 'brand.primaryBlack' }}
             >
             </IconButton>
 
-            {/* este es el drawer */}
             <Drawer
                 size='100%'
                 placement={placement}
@@ -75,9 +74,9 @@ function MenuHam() {
                         mr={{ base: '1rem', md: '6rem' }}
                         mt={8}
                         size={{ base: '1.5rem', md: '2rem', lg: '2.25rem' }}
-                        p={4}
+                        p={2}
                         _hover={{ bg: 'brand.secondaryOrange', borderRadius: 'none' }}
-                        _active={{ bg: 'brand.baseColor', boxShadow: 'none', borderRadius: 'none' }}
+                        _active={{ bg: 'brand.secondaryOrange', boxShadow: 'none', borderRadius: 'none' }}
                         _focus={{ boxShadow: 'none', borderRadius: 'none', border: '0.125rem solid', borderColor: 'brand.primaryBlack' }}
                     >
                     </DrawerCloseButton>
@@ -181,16 +180,16 @@ function MenuHam() {
                                                 </Box>
                                                 <Box fontSize={{ base: '1rem', md: '1.25rem' }} ml={2}>
                                                     <AccordionPanel fontWeight={300} border='none' pb={4}>
-                                                        {/* add respect this https://chakra-ui.com/docs/navigation/link 
-                              use react Router
-                            */}
-                                                        Susana Sánchez Carballo
+                                                        <Link
+                                                            href='/'>
+                                                            <a>Susana Sánchez Carballo</a>
+                                                        </Link>
                                                     </AccordionPanel>
                                                     <AccordionPanel fontWeight={300} border='none' pb={4}>
-                                                        {/* add respect this https://chakra-ui.com/docs/navigation/link 
-                              use react Router
-                            */}
-                                                        Sussy Vargas Alvarado
+                                                    <Link
+                                                            href='/'>
+                                                            <a>Sussy Vargas Alvarado</a>
+                                                        </Link>
                                                     </AccordionPanel>
                                                 </Box>
                                             </AccordionItem>
@@ -219,23 +218,10 @@ function MenuHam() {
                                     mb={8}
                                 >
                                     <Box pr={2}>
-                                        <BsClock></BsClock>
-                                    </Box>
-                                    Línea de Tiempo
-                                </ListItem>
-
-                                <ListItem
-                                    alignItems='center'
-                                    display='flex'
-                                    flexDir='row'
-                                    mb={8}
-                                >
-                                    <Box pr={2}>
                                         <BsFileEarmark></BsFileEarmark>
                                     </Box>
                                     Documentación
                                 </ListItem>
-
                                 <ListItem
                                     alignItems='center'
                                     display='flex'

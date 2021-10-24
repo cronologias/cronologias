@@ -34,11 +34,11 @@ function CuratorsCards(props) {
         mb={8}>
             {props.curators.map((element, index) => (
                 <Box
+                key={`curators-card-${index}`}
                 w={{base:"9.75rem", md:"15rem", lg:"24rem"}}
                 >
                     <Link
                     href={`/curator-bio/${element.id}`} as={`/curator-bio/${element.id}`}
-                    key={`curators-card-${index}`}
                     >
                         <a>
                             <Box 

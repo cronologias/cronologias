@@ -48,7 +48,7 @@ function AccordionSearch({names}){
             display='flex' 
             flexDir='row' 
             mb={4}
-            w='22.5rem'
+            w='20rem'
             >
             <Box
               pt={3.5} 

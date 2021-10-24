@@ -63,7 +63,7 @@ position='relative'
                 </Box>
                 <Box 
                     ml='-10px'
-                    mt={{base:'5.125rem', md:'3.125rem'}}
+                    mt={{base:'9.125remrem', md:'3.125rem'}}
                     display={{lg:'none', xl:'none'}}
                     w='0.25rem'
                     h={{ base: '28.75rem', md: '16.375rem', lg:'24rem' }}
