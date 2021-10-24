@@ -15,7 +15,7 @@ function documentation({documentationData}){
                             <Image w={{ base: "16rem", md:"28rem" ,lg: "44rem", xl:"50rem"}} 
                             h={{lg:"30rem"}} 
                             src={documentationData.data.allDocumentacions.enlaceDocumentacion} 
-                            alt="Galeria del Artista">
+                            alt="Documentación">
                             </Image>
                         </Box>
                         <Box
@@ -36,7 +36,7 @@ function documentation({documentationData}){
                             <Image w={{ base: "16rem", md:"28rem" , lg: "44rem", xl:"50rem"}} 
                             h={{lg:"30rem"}}
                             src={documentationData.data.allDocumentacions.enlaceDocumentacion} 
-                            alt="Galeria del Artista">
+                            alt="Documentación">
                             </Image>
                         </Box>
                     </HStack>
