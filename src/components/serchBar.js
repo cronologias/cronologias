@@ -7,7 +7,12 @@ const SearchBar = ({ names }) => {
   const [serchTerm, setSerchTerm] = useState('')
 
   return (
-    <div>
+    <>
+    <Center 
+      m="0 auto"
+      w={{ base: "20rem", md: "48rem", lg: "60rem", xl: "75rem" }}
+      mb={{ base: '2rem', md:'2.25rem', lg:'2.5rem'}}
+    >
       <Stack spacing={4} w="100%" h="100%" m="0 auto" pt={8} fontFamily="body">
         <Text>Búsqueda por nombre o apellido </Text>
         <InputGroup 
@@ -46,7 +51,8 @@ const SearchBar = ({ names }) => {
           })}
         </SimpleGrid>
       </Stack>
-    </div>
+    </Center>
+    </>
   )
 }
 export { SearchBar }

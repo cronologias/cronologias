@@ -34,7 +34,7 @@ function Card({ names }) {
 
 function CardAccordion({ names }) {
   return (
-    <Center alignContent w="full" m="auto" mt={4}>
+    <Center alignContent w='full' m='auto' mt={4}>
       <SimpleGrid columns={[2, 2]}>
         {names.map((val, data) => {
           return (

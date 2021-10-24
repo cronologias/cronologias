@@ -6,24 +6,24 @@ import {
     Box,
     Flex,
     HStack,
-} from "@chakra-ui/react"
+} from '@chakra-ui/react'
 
 function CuratorsCards(props) {
     return (
     <>
     <Flex
-        alignItems="start"
-        flexDir={{ base: "column", md: "row" }} 
-        m="auto"
-        w={{ base: "20rem", md: "48rem", lg: "60rem", xl: "75rem" }}
-        justifyContent="space-between"
-        mb={{ base: "2rem", md:"2.25rem", lg:"2.5rem"}}
+        alignItems='start'
+        flexDir={{ base: 'column', md: 'row' }} 
+        m='auto'
+        w={{ base: '20rem', md: '48rem', lg: '60rem', xl: '75rem' }}
+        justifyContent='space-between'
+        mb={{ base: '2rem', md:'2.25rem', lg:'2.5rem'}}
     >
         <Box
 
-            fontFamily="heading"
-            fontSize={{ base: "1.25rem", md: "1.25rem", lg: "1.5rem" }}
-            color="brand.primaryBlack"
+            fontFamily='heading'
+            fontSize={{ base: '1.25rem', md: '1.25rem', lg: '1.5rem' }}
+            color='brand.primaryBlack'
             fontWeight={700}
         >
             <h2>Curadoras</h2>
@@ -34,11 +34,11 @@ function CuratorsCards(props) {
         mb={8}>
             {props.curators.map((element, index) => (
                 <Box
+                key={`curators-card-${index}`}
                 w={{base:"9.75rem", md:"15rem", lg:"24rem"}}
                 >
                     <Link
                     href={`/curator-bio/${element.id}`} as={`/curator-bio/${element.id}`}
-                    key={`curators-card-${index}`}
                     >
                         <a>
                             <Box 
