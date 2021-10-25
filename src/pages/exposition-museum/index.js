@@ -6,17 +6,17 @@ import Header from "../../components/header"
 import Footer from "../../components/footer"
 
 function expositionMuseum({ expositionData }) {
-    console.log(expositionData)
+    // console.log(expositionData.data.visitaLaExposicion.tituloDeLaTarjeta)
     return (
         <>
             <Header />
-            {/* <AspectRatio maxW="100%" h="25rem" mb={8}>
+            <AspectRatio maxW="50%" h="25rem" mb={8}>
                 <iframe
                     title={expositionData.data.visitaLaExposicion.tituloDeLaTarjeta}
                     src= {expositionData.data.visitaLaExposicion.recorrido360}
                     allowFullScreen
                 />
-            </AspectRatio> */}
+            </AspectRatio>
             <Center alignItems="start"
                 flexDir={{ base: "column", md: "row" }}
                 justifyContent="space-between"
@@ -48,14 +48,14 @@ function expositionMuseum({ expositionData }) {
                                 w={{ base: "10rem", md: "11.62rem", lg: "17rem" }}
                                 h={{ base: "9rem", md: "11rem" }}
                                 fontFamily="heading"
-                                fontSize={{ base: "1rem", md: "1.5rem" }}
+                                fontSize={{ base: "1rem", md: "1.5rem"}}
                             >
-                                <Center pt={{ base: "2rem", md: "2.6rem", lg: "2.7rem" }}>
+                                <Center pt={{ base: "2rem", md: "2.6rem", lg: "2.9rem" }}>
                                     <BsFillCalendar2WeekFill size={"2rem"}
                                         style={{ margin: 15 }}
                                     >
                                     </BsFillCalendar2WeekFill>
-                                    <Box w={{ base: "4.9rem", md: "7.4rem", lg: "8rem" }}>
+                                    <Box w={{ base: "4.9rem", md: "7.4rem", lg: "8rem", xl:"8.9rem"}}>
                                         <span>{expositionData.data.visitaLaExposicion.fechaDeLaExposicion}</span>
                                         <span>{expositionData.data.visitaLaExposicion.fechaDeFinalizacionDeLaExposicion}</span>
                                     </Box>
@@ -106,9 +106,9 @@ function expositionMuseum({ expositionData }) {
                                             color="brand.secondaryBlue"
                                         >
                                             <Link
-                                                href="https://goo.gl/maps/Gp2TVVXAPuQRu8dQA"
+                                                href={expositionData.data.visitaLaExposicion.ubicacionDelMuseo}
                                             >
-                                                <a>{expositionData.data.visitaLaExposicion.ubicacionDelMuseo}</a>
+                                                <a>San José</a>
                                             </Link>
                                         </Box>
                                     </Center>
@@ -126,7 +126,7 @@ export default expositionMuseum
 export async function getStaticProps() {
     const URl = process.env.NEXT_URL;
     const TOKEN = process.env.NEXT_TOKEN;
-    const bodyExposition = 'query MyQuery { allVisitaLaExposicions {recorrido360 tituloDeLaTarjeta fechaDeFinalizacionDeLaExposicion fechaDeLaExposicion ubicacionDelMuseo}}'
+    const bodyExposition = 'query MyQuery {visitaLaExposicion {tituloDeLaTarjeta fechaDeLaExposicion fechaDeFinalizacionDeLaExposicion ubicacionDelMuseo recorrido360}}'
     const getExposition = await getApiRes(URl, TOKEN, bodyExposition)
     const expositionData = getExposition
     return {
