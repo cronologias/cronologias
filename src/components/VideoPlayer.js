@@ -4,10 +4,10 @@ import { Video, CloudinaryContext } from "cloudinary-react";
 const VideoPlayer = () => {
   const videoRef = useRef();
   return (
-    <CloudinaryContext cloud_name="https://res.cloudinary.com/cronologias-invisible/video/upload/v1634869855/cronologias/360/hola_ihbzhs.mp4">
+    <CloudinaryContext cloud_name="cronologias-invisible">
     	<div>
         <Video
-          publicId="hola_ihbzhs"
+          publicId="https://res.cloudinary.com/cronologias-invisible/video/upload/v1635173303/cronologias/video%20360%20museo%20del%20jade/ejemplo_otpdfd.mp4"
           width="100%"
           controls
           innerRef={videoRef}
@@ -17,7 +17,7 @@ const VideoPlayer = () => {
   );
 };
 
-cloudinary.videoTag('hola_ihbzhs.mp4').toHtml()
+//  cloudinary.videoTag('hola_ihbzhs.mp4').toHtml()
 
 export default VideoPlayer;
 

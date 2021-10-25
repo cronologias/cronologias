@@ -11,7 +11,7 @@ const url = buildUrl('Edelmira_Losilla_q8a8vz', {
 });
 
 // Img settings
-<div className={styles.card}>
+<div >
   <Image
     src={url}
     alt=""
