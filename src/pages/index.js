@@ -5,10 +5,22 @@ import Header from "../components/header";
 import CuratorsCards from "../components/curatorsCards";
 import Footer from "../components/footer";
 import {getApiRes} from "../services/callApi";
+import { buildUrl } from 'cloudinary-build-url';
+
 //import Head from "next/head";
 //import VideoPlayer from "../components/VideoPlayer";
 
 function homePage({curatorsData, museumData}) {
+
+  const urlImg = buildUrl('Edelmira_Losilla_q8a8vz', {
+    cloud: {
+      cloudName:'cronologias-invisible',
+    },
+      q=70,
+      width="600px",
+      height="300px"
+    }
+  );
   let emphasisWord = {
     color: "#E6AA92",
     fontFamily: "Kulim Park, sans-serif",
@@ -91,7 +103,6 @@ function homePage({curatorsData, museumData}) {
             </Link>
           </Box>
         </Box>
-
       </Center>
       <Box
         w={{ base: "20rem", md: "48rem", lg: "60rem", xl: "75rem" }}
@@ -123,6 +134,14 @@ function homePage({curatorsData, museumData}) {
           </Link>
         </Box>
       </Center>
+      <image
+        src={urlImg}
+        alt=""
+        q={70}
+        width={"500px"}
+        height={"500px"}
+      />
+
       <Footer></Footer>
     </>
   );

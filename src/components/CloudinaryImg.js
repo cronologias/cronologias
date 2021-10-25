@@ -6,7 +6,7 @@ import { buildUrl } from 'cloudinary-build-url';
 // Call cloudinary 
 const url = buildUrl('Edelmira_Losilla_q8a8vz', {
     cloud: {
-      cloudName: 'Cronologias invisible',
+      cloudName: 'cronologias-invisible',
     }
 });
 
@@ -20,6 +20,16 @@ const url = buildUrl('Edelmira_Losilla_q8a8vz', {
   />
   <h3>Edelmira Image</h3>
 </div>
+
+const urlImg = buildUrl('Edelmira_Losilla_q8a8vz', {
+  cloud: {
+    cloudName: 'cronologias-invisible',
+  },
+    q=70,
+    width="600px",
+    height="300px"
+  }
+);
 
 /*
 	https://www.youtube.com/watch?v=n7VeENVQntY
