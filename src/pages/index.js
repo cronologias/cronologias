@@ -5,8 +5,8 @@ import Header from "../components/header";
 import CuratorsCards from "../components/curatorsCards";
 import Footer from "../components/footer";
 import {getApiRes} from "../services/callApi";
-import Head from "next/head";
-import VideoPlayer from "../components/VideoPlayer";
+//import Head from "next/head";
+//import VideoPlayer from "../components/VideoPlayer";
 
 function homePage({curatorsData, museumData}) {
   let emphasisWord = {
