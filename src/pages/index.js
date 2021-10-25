@@ -14,24 +14,9 @@ import React from "react";
 
 export default function IndexPage() {
   return (
-    <div>
-      <Head>
-        <title>Video Player with Cloudinary</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <header>
-        <h1>Video Player</h1>
-      </header>
-      <section >
-        <p>
-          There is no one who loves pain itself, who seeks after it and wants to
-          have it
-        </p>
-      </section>
-      <section>
+      <>
         <VideoPlayer />
-      </section>
-    </div>
+      </>
   );
 }
 
