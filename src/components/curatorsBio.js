@@ -9,7 +9,6 @@ import email from '../../public/email.svg'
 
 
 function CuratorsBio(props) {
-    console.log(props.curators)
     const [show, setShow] = React.useState(false)
     const handleToggle = () => setShow(!show)
     return (
@@ -41,7 +40,7 @@ function CuratorsBio(props) {
                 color="brand.baseColor"
                 fontStyle="bold"
                 pb="1.563rem"
-                fontSize="2rem"
+                fontSize={{ base: '1.75rem', md: '1.85rem', lg: '2rem' }}
                 >
                 {props.curators[0].nombreDeLaCuradora}
                 </Heading>
