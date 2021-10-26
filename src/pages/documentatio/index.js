@@ -4,7 +4,6 @@ import Header from "../../components/header"
 import Footer from "../../components/footer"
 
 function documentation({documentationData}){
-    console.log(documentationData.data.allDocumentacions.enlaceDocumentacion)
     return(
         <>
             <Header/>
