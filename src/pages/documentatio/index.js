@@ -14,8 +14,7 @@ function documentation({documentationData}){
                             <Image w={{ base: "16rem", md:"28rem" ,lg: "44rem", xl:"50rem"}} 
                             h={{lg:"30rem"}} 
                             src={documentationData.data.allDocumentacions.enlaceDocumentacion} 
-                            alt="Documentación">
-                            </Image>
+                            alt="Documentación"/>
                         </Box>
                         <Box
                             bg="brand.primaryOrange"
@@ -35,8 +34,7 @@ function documentation({documentationData}){
                             <Image w={{ base: "16rem", md:"28rem" , lg: "44rem", xl:"50rem"}} 
                             h={{lg:"30rem"}}
                             src={documentationData.data.allDocumentacions.enlaceDocumentacion} 
-                            alt="Documentación">
-                            </Image>
+                            alt="Documentación"/>
                         </Box>
                     </HStack>
                 </Center>   
