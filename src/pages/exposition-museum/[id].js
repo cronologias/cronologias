@@ -4,9 +4,8 @@ import ExpositionMuseum from "../../components/viewExpositions";
 
 function ExpositionContainer({ expositionData}) {
   return (
-      <>
+    
       <ExpositionMuseum expositionData={expositionData}/>
-      </>
 
   )
 }
