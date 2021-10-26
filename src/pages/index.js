@@ -33,7 +33,6 @@ function homePage({curatorsData, museumData}) {
           mb={{ base: '2rem', md:'2.25rem', lg:'2.5rem'}}
         >
           <Text fontSize={{ base: '1rem', lg: '1.125rem' }}>
-            <span style={emphasisWord}></span>
             <span style={emphasisWord}>CRONOLOGÍAS DE LO INVISIBLE</span>{' '}
             <span style={normalParagraph}>
               es una exposición historiográfica de las artistas visuales en
