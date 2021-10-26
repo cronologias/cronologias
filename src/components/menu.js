@@ -181,13 +181,13 @@ function MenuHam() {
                                                 <Box fontSize={{ base: '1rem', md: '1.25rem' }} ml={2}>
                                                     <AccordionPanel fontWeight={300} border='none' pb={4}>
                                                         <Link
-                                                            href='/'>
+                                                            href='/curator-bio/64001243'>
                                                             <a>Susana Sánchez Carballo</a>
                                                         </Link>
                                                     </AccordionPanel>
                                                     <AccordionPanel fontWeight={300} border='none' pb={4}>
                                                     <Link
-                                                            href='/'>
+                                                            href='/curator-bio/64001348'>
                                                             <a>Sussy Vargas Alvarado</a>
                                                         </Link>
                                                     </AccordionPanel>
