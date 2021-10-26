@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 import {
   Accordion,
@@ -9,17 +9,17 @@ import {
   Box,
   Center,
   Stack,
-} from "@chakra-ui/react"
+} from '@chakra-ui/react'
 
 import { 
   BsSearch, 
-} from "react-icons/bs"
+} from 'react-icons/bs'
 
-import { CardAccordion } from "./card";
+import { CardAccordion } from './card';
 
 function AccordionSearch({names}){
   const order = names.sort((a, b) => (a.nombreDeLaAutora > b.nombreDeLaAutora ? 1 : a.nombreDeLaAutora < b.nombreDeLaAutora ? -1 : 0))
-  let style = {color: "#EB5529"}
+  let style = {color: '#EB5529'}
   let newObject = {}
   order.forEach(element => {
     const letter = element.nombreDeLaAutora.charAt(0)
@@ -32,22 +32,23 @@ function AccordionSearch({names}){
   return (
     <>
       <Center 
-        alignItems="start"
-        flexDir={{ base: "column", md: "row" }}
-        justifyContent="space-between"
-        fontFamily="heading"
-        m="auto"
-        w={{ base: "20rem", md: "48rem", lg: "60rem", xl: "75rem" }}
+        alignItems='start'
+        flexDir={{ base: 'column', md: 'row' }}
+        justifyContent='space-between'
+        fontFamily='heading'
+        m='auto'
+        mb='5.25rem'
+        w={{ base: '20rem', md: '48rem', lg: '60rem', xl: '75rem' }}
       >
         <Box
-          fontSize={{ base: "1.25rem", md: "1.25rem", lg: "1.5rem"}}
+          fontSize={{ base: '1.25rem', md: '1.25rem', lg: '1.5rem'}}
           fontWeight={700}
         >
           <Stack 
-            display="flex" 
-            flexDir="row" 
+            display='flex' 
+            flexDir='row' 
             mb={4}
-            w="22.5rem"
+            w='20rem'
             >
             <Box
               pt={3.5} 
@@ -65,27 +66,27 @@ function AccordionSearch({names}){
               return (
                 <AccordionItem
                   key={key}
-                  bg="brand.primaryOrange" 
-                  fontSize={{ base: "1rem"}}
-                  m="auto"
-                  w={{ base: "20rem", md: "24.4rem", lg: "36.25", xl:"43.125rem" }} 
+                  bg='brand.primaryOrange' 
+                  fontSize={{ base: '1rem'}}
+                  m='auto'
+                  w={{ base: '20rem', md: '24.4rem', lg: '36.25', xl:'43.125rem' }} 
                 >
-                  <AccordionButton color="brand.baseColor" fontWeight={700}>
+                  <AccordionButton color='brand.baseColor' fontWeight={700}>
                     <Box 
-                      flex="1" 
-                      fontSize={{ base: "1rem", md: "1.125rem", lg: "1.25rem"}}
-                      textAlign="left"
-                      textStyle="subtitle" 
+                      flex='1' 
+                      fontSize={{ base: '1rem', md: '1.125rem', lg: '1.25rem'}}
+                      textAlign='left'
+                      textStyle='subtitle' 
                     >
                       {val}
                     </Box>
                     <AccordionIcon 
-                      boxSize={{ base: "1.5rem", md: "1.75rem", lg: "2rem"}} 
+                      boxSize={{ base: '1.5rem', md: '1.75rem', lg: '2rem'}} 
                     />
                   </AccordionButton>
               
                   <AccordionPanel 
-                    bg="brand.baseColor" 
+                    bg='brand.baseColor' 
                     pb={4}
                   >
                     <CardAccordion names={artist}/> 

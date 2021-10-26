@@ -1,22 +1,22 @@
 import { Box, LinkOverlay, LinkBox, Center, AspectRatio, Flex } from '@chakra-ui/react'
 import Link from "next/link"
 import { BsFillCalendar2WeekFill, BsGeoAlt } from "react-icons/bs"
-import { getApiRes } from "../../services/callApi"
-import Header from "../../components/header"
-import Footer from "../../components/footer"
+import { getApiRes } from "../services/callApi"
+import Header from "./header"
+import Footer from "./footer"
 
-function expositionMuseum({ expositionData }) {
-    // console.log(expositionData.data.visitaLaExposicion.tituloDeLaTarjeta)
+function ExpositionMuseum({ expositionData }) {
+    console.log(expositionData)
     return (
         <>
             <Header />
-            <AspectRatio maxW="50%" h="25rem" mb={8}>
+            {/* <AspectRatio maxW="50%" h="25rem" mb={8}>
                 <iframe
-                    title={expositionData.data.visitaLaExposicion.tituloDeLaTarjeta}
-                    src= {expositionData.data.visitaLaExposicion.recorrido360}
+                    title={expositionData.data.allVisitaLaExposicions.tituloDeLaTarjeta}
+                    src= {expositionData.data.allVisitaLaExposicions.recorrido360}
                     allowFullScreen
                 />
-            </AspectRatio>
+            </AspectRatio> */}
             <Center alignItems="start"
                 flexDir={{ base: "column", md: "row" }}
                 justifyContent="space-between"
@@ -55,10 +55,10 @@ function expositionMuseum({ expositionData }) {
                                         style={{ margin: 15 }}
                                     >
                                     </BsFillCalendar2WeekFill>
-                                    <Box w={{ base: "4.9rem", md: "7.4rem", lg: "8rem", xl:"8.9rem"}}>
-                                        <span>{expositionData.data.visitaLaExposicion.fechaDeLaExposicion}</span>
-                                        <span>{expositionData.data.visitaLaExposicion.fechaDeFinalizacionDeLaExposicion}</span>
-                                    </Box>
+                                    {/* <Box w={{ base: "4.9rem", md: "7.4rem", lg: "8rem", xl:"8.9rem"}}>
+                                        <span>{expositionData.data.allVisitaLaExposicions.fechaDeLaExposicion}</span>
+                                        <span>{expositionData.data.allVisitaLaExposicions.fechaDeFinalizacionDeLaExposicion}</span>
+                                    </Box> */}
                                 </Center>
                             </Box>
                             <Box bgColor="brand.secondaryOrange"
@@ -105,11 +105,11 @@ function expositionMuseum({ expositionData }) {
                                         <Box textDecoration="underline"
                                             color="brand.secondaryBlue"
                                         >
-                                            <Link
-                                                href={expositionData.data.visitaLaExposicion.ubicacionDelMuseo}
+                                            {/* <Link
+                                                href={expositionData.data.allVisitaLaExposicions.ubicacionDelMuseo}
                                             >
                                                 <a>San José</a>
-                                            </Link>
+                                            </Link> */}
                                         </Box>
                                     </Center>
                                 </Box>
@@ -122,11 +122,11 @@ function expositionMuseum({ expositionData }) {
         </>
     )
 }
-export default expositionMuseum
+export default ExpositionMuseum
 export async function getStaticProps() {
     const URl = process.env.NEXT_URL;
     const TOKEN = process.env.NEXT_TOKEN;
-    const bodyExposition = 'query MyQuery {visitaLaExposicion {tituloDeLaTarjeta fechaDeLaExposicion fechaDeFinalizacionDeLaExposicion ubicacionDelMuseo recorrido360}}'
+    const bodyExposition = 'query MyQuery {allVisitaLaExposicions {tituloDeLaTarjeta enlaceDeLaImagen fechaDeLaExposicion fechaDeFinalizacionDeLaExposicion ubicacionDelMuseo recorrido360}}'
     const getExposition = await getApiRes(URl, TOKEN, bodyExposition)
     const expositionData = getExposition
     return {
