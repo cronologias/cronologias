@@ -4,6 +4,7 @@ import MobileSlider from "../components/mobileSlider";
 import Header from "../components/header";
 import CuratorsCards from "../components/curatorsCards";
 import Footer from "../components/footer";
+import Image from 'next/image'
 import {getApiRes} from "../services/callApi";
 import { buildUrl } from 'cloudinary-build-url';
 
@@ -12,15 +13,13 @@ import { buildUrl } from 'cloudinary-build-url';
 
 function homePage({curatorsData, museumData}) {
 
-  const urlImg = buildUrl('Edelmira_Losilla_q8a8vz', {
-    cloud: {
-      cloudName:'cronologias-invisible',
-    },
-      q=70,
-      width="600px",
-      height="300px"
+  const urlImg = buildUrl('https://res.cloudinary.com/cronologias-invisible/image/upload/v1634090448/cronologias/Edelmira%20Losilla/Edelmira_Losilla_q8a8vz.png', {
+      cloud: {
+        cloudName:'cronologias-invisible',
+      }
     }
   );
+  console.log(urlImg);
   let emphasisWord = {
     color: "#E6AA92",
     fontFamily: "Kulim Park, sans-serif",
@@ -136,7 +135,7 @@ function homePage({curatorsData, museumData}) {
       </Center>
       <image
         src={urlImg}
-        alt=""
+        alt="1234"
         q={70}
         width={"500px"}
         height={"500px"}
