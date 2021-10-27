@@ -22,7 +22,7 @@ function Galery(props) {
                 mt={ { base: 5, lg: 8 }} 
               >
                 <Box >
-                  <Link href="/">
+                  <Link href={`/modal/${worksImg.id}`} as={`/modal/${worksImg.id}`}>
                     <a>
                       <Image 
                         w={ { base: "11.5rem", md: "28rem", lg: "40rem", xl: "53rem"} }
@@ -51,7 +51,7 @@ function Galery(props) {
                   h={{ base: "16rem", md: "28rem", lg: "30rem" }} >
                 </Box>
                 <Box >
-                  <Link href="/">
+                  <Link href={`/modal/${worksImg.id}`} as={`/modal/${worksImg.id}`}>
                     <a>
                       <Image 
                         w={ { base: "11.5rem", md: "28rem", lg: "40rem", xl: "53rem"} }
