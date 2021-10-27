@@ -4,7 +4,6 @@ import MobileSlider from "../components/mobileSlider";
 import Header from "../components/header";
 import CuratorsCards from "../components/curatorsCards";
 import Footer from "../components/footer";
-import Image from 'next/image'
 import {getApiRes} from "../services/callApi";
 import { buildUrl } from 'cloudinary-build-url';
 
@@ -13,7 +12,7 @@ import { buildUrl } from 'cloudinary-build-url';
 
 function homePage({curatorsData, museumData}) {
 
-  const urlImg = buildUrl('https://res.cloudinary.com/cronologias-invisible/image/upload/v1634090448/cronologias/Edelmira%20Losilla/Edelmira_Losilla_q8a8vz.png', {
+  const urlImg = buildUrl('Edelmira_Losilla_q8a8vz', {
       cloud: {
         cloudName:'cronologias-invisible',
       }
@@ -133,13 +132,14 @@ function homePage({curatorsData, museumData}) {
           </Link>
         </Box>
       </Center>
-      <image
+      <Image
         src={urlImg}
         alt="1234"
         q={70}
         width={"500px"}
         height={"500px"}
       />
+      <h3>Cloudinary - Dynamic</h3>
 
       <Footer></Footer>
     </>
