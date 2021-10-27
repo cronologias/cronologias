@@ -141,14 +141,25 @@ function MenuHam() {
                                                     w={{ base: '16rem', md: '25rem' }}
                                                     >
                                                     <AccordionPanel fontWeight={300} border='none'>
-
-                                                        Museo del Jade y de la Cultura Precolombina
+                                                        <Link
+                                                            href='/exposition-museum/63998842'>
+                                                            <a>Museo del Jade y de la Cultura Precolombina</a>
+                                                        </Link>
+                                                        
                                                     </AccordionPanel>
                                                     <AccordionPanel fontWeight={300} border='none'>
-                                                        Museo Dr. Rafael Ángel Calderon Guardia
+                                                        <Link
+                                                            href='/exposition-museum/63998873'>
+                                                            <a>Museo Dr. Rafael Ángel Calderon Guardia</a>
+                                                        </Link>
+                                                        
                                                     </AccordionPanel>
                                                     <AccordionPanel fontWeight={300} border='none'>
-                                                        Biblioteca Nacional
+                                                        <Link
+                                                            href='/exposition-museum/63998876'>
+                                                            <a>Biblioteca Nacional</a>
+                                                        </Link>
+                                                        
                                                     </AccordionPanel>
                                                 </Box>
                                             </AccordionItem>
