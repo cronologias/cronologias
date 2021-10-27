@@ -7,10 +7,10 @@ import {
     from '@chakra-ui/icons'
 
 const Slider = (props) => {
-    const [currentSlide, setCurrentSlide] = useState(0);
-
+    const position = props.position;
+    const [currentSlide, setCurrentSlide] = useState(position);
     const slidesCount = props.slides.length;
-
+    console.log(position, props.slides);
     const prevSlide = () => {
         setCurrentSlide((s) => (s === 0 ? slidesCount - 1 : s - 1));
     };
@@ -32,7 +32,7 @@ const Slider = (props) => {
                 <Flex w='full' {...carouselStyle} >
                     {props.slides.map((slide, sid) => (
                         <Box key={`slide-${sid}`} flex='none' maxW='100%'>
-                            <Image src={slide.img} />
+                            <Image src={slide.imagenDeLaObraDeLaArtista} />
                             <Box bg='brand.primaryBlack' p={7} mb={50}>
                             <Heading as='h2' fontSize='1.75rem' mb={4} color='brand.baseColor'>
                                 {slide.title}
