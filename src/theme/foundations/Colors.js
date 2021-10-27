@@ -10,5 +10,6 @@ export const colors = {
         fourthOrange: '#E6AA92',
         fifhtOrange: '#F05023',
         baseColor: '#FFFFFF', 
+        secondaryBlue: '#0000ff',
     },
 }

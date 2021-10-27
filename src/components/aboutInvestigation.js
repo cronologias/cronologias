@@ -36,7 +36,7 @@ position='relative'
         color='brand.baseColor'
         fontStyle='bold'
         pb='1.563rem'
-        fontSize='2rem'
+        fontSize={{ base: '1.75rem', md: '1.85rem', lg: '2rem' }}
         >
             Sobre la investigación
         </Heading>
@@ -53,11 +53,11 @@ position='relative'
                 <Box 
                 fontWeight={700} 
                 fontFamily='heading' 
-                fontSize={{ base: '1.25rem', md: '1.25rem', lg: '1.5rem' }}
                 color='brand.primaryBlack'
                 mb={4}
                 >
                     <Heading
+                        fontSize={{ base: '1.25rem', md: '1.25rem', lg: '1.5rem' }}
                         as='h3'
                     >{investigationData.data.sobreLaInvestigacion.tituloDeLaInvestigacion}</Heading>
                 </Box>
