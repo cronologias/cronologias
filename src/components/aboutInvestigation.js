@@ -99,7 +99,7 @@ position='relative'
                     }}>{investigationData.data.sobreLaInvestigacion.cuerpoDeLaInvestigacion}</ReactMarkdown>
                 </Box>
             </Flex>
-            <Footer></Footer>
+            <Footer />
         </>
     )
 }

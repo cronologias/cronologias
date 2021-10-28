@@ -15,7 +15,7 @@ import {
   BsSearch, 
 } from 'react-icons/bs'
 
-import { CardAccordion } from './card';
+import  CardAccordion  from './cardAccordion';
 
 function AccordionSearch({names}){
   const order = names.sort((a, b) => (a.nombreDeLaAutora > b.nombreDeLaAutora ? 1 : a.nombreDeLaAutora < b.nombreDeLaAutora ? -1 : 0))

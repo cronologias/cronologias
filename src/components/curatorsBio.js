@@ -92,8 +92,7 @@ function CuratorsBio(props) {
                             >
                                 <Image 
                                 src={webSite} 
-                                alt="Cronologias de lo Invisible">
-                                </Image>
+                                alt="Cronologias de lo Invisible" />
                             </Link>
                             <Link 
                             href="#"
@@ -102,8 +101,7 @@ function CuratorsBio(props) {
                             >
                                 <Image 
                                 src={email} 
-                                alt="Cronologias de lo Invisible">
-                                </Image>
+                                alt="Cronologias de lo Invisible" />
                             </Link>
                         </HStack>
                     </Flex>

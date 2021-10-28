@@ -29,7 +29,7 @@ function homePage({curatorsData, museumData}) {
           w='100%'
           bg='brand.thirdOrange'
           h={{ base: '16.75rem', md: '8.75rem', xl: '7.75rem' }}
-          p='1.375rem'
+          p={{base: '1.375rem'}}
           mb={{ base: '2rem', md:'2.25rem', lg:'2.5rem'}}
         >
           <Text fontSize={{ base: '1rem', lg: '1.125rem' }}>
