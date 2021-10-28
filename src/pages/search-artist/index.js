@@ -6,7 +6,6 @@ import Footer from '../../components/footer'
 
 import {
   Box,
-  Center,
   Image,
   Heading,
 } from "@chakra-ui/react"

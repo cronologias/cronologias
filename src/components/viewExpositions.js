@@ -10,13 +10,13 @@ function ExpositionMuseum({ expositionData }) {
             <Header />
             <Box 
             mb={8}
-            bg="brand.primaryOrange"
             >
-                <AspectRatio  maxW="100%" h="25rem" 
-                bg="brand.primaryOrange"
+                <AspectRatio  
                 _before = {{ pb:"none"}}
+                maxW="100%" h="25rem"
+                objectFit="cover"
                 >
-                    <iframe
+                    <iframe  
                         title={expositionData.tituloDeLaTarjeta}
                         src= {expositionData.recorrido360}
                         allowFullScreen

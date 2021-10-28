@@ -54,7 +54,7 @@ function CuratorsCards(props) {
                                 objectFit={{base:"cover",lg:"cover" }}
                                 alt={element.nombreDeLaCuradora} 
                                 pb="7px"
-                                />
+                            />
                             </Box>
                             <Heading
                             as="h3"

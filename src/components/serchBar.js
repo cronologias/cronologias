@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Stack, Input, InputRightElement, InputGroup, Box, SimpleGrid, Text } from "@chakra-ui/react";
 import { BsSearch } from "react-icons/bs";
-import { Card } from "./card";
+import SearchBarCard from "./searchBarCard";
 
 const SearchBar = ({ names }) => {
   const [serchTerm, setSerchTerm] = useState('')
@@ -58,7 +58,7 @@ const SearchBar = ({ names }) => {
             return '';
           }).map((val, key) => {
             return (
-              <Card key={key} names={val} />
+              <SearchBarCard key={key} names={val} />
             )
           })}
         </SimpleGrid>
