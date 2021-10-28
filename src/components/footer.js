@@ -17,8 +17,7 @@ function Footer(){
                 <Image 
                   w={{ base: '100px', md: '130px', lg: '150px' }} 
                   src={logo} 
-                  alt='Cronologias de lo Invisible'>
-                </Image>
+                  alt='Cronologias de lo Invisible' />
               </a>
             </Link>
           </Center> 
