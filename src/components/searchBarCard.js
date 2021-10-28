@@ -10,7 +10,10 @@ import {
 
 export default function SearchBarCard({ names }) {
     return (
-        <Link href={`/search-artist/${names.id}`} as={`/search-artist/${names.id}`}>
+            // {`/search-artist/${names.id}`} as={`/search-artist/${names.id}`}
+            // esta es la ruta correcto, se comenta por el momento para que las curadoras no entren a la vista de la 
+            // artista, ya que está en desarrollo
+        <Link href="/">
             <a>
                 <Box key={names} mb={4}>
                     <AspectRatio
