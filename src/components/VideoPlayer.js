@@ -25,7 +25,6 @@ export default VideoPlayer;
 
 npm i cloudinary
 npm i cloudinary-video-player
-npm i claudinary-core
 
 */
 // References: https://cloudinary.com/blog/how_to_serve_videos_in_next_js_applications_with_cloudinary

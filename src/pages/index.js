@@ -12,7 +12,7 @@ import { buildUrl } from 'cloudinary-build-url';
 
 function homePage({curatorsData, museumData}) {
 
-  const urlImg = buildUrl('Edelmira_Losilla_q8a8vz', {
+  const urlImg = buildUrl('cronologias/edelmira_losilla/Edelmira_Losilla_hlzswo.png', {
       cloud: {
         cloudName:'cronologias-invisible',
       }
