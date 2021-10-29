@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
-import { Text, Box, Flex, Heading, Image, IconButton } from '@chakra-ui/react';
-import {
-    ChevronLeftIcon,
-    ChevronRightIcon,
-}
-    from '@chakra-ui/icons'
-
+import { Text, Box, Flex, Heading, IconButton } from '@chakra-ui/react';
+import {ChevronLeftIcon,ChevronRightIcon,}from '@chakra-ui/icons'
+import Image from 'next/image'
 const Slider = (props) => {
+    let url = '/cronologias-invisible';
     const [currentSlide, setCurrentSlide] = useState(0);
 
     const slidesCount = props.slides.length;
@@ -22,7 +19,7 @@ const Slider = (props) => {
         transition: 'all .5s',
         ml: `-${currentSlide * 100}%`,
     };
-
+    let url = '/cronologias-invisible';
     return (
         <Flex
             alignItems='center'
@@ -31,6 +28,8 @@ const Slider = (props) => {
             <Flex w='full' overflow='hidden' pos='relative'>
                 <Flex w='full' {...carouselStyle} >
                     {props.slides.map((slide, sid) => (
+                        url = '/cronologias-invisible',
+                        slide.img ===""? url= url: url = slide.img,
                         <Box key={`slide-${sid}`} flex='none' maxW='100%'>
                             <Image src={slide.img} />
                             <Box bg='brand.primaryBlack' p={7} mb={50}>

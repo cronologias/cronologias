@@ -1,5 +1,6 @@
 import React from 'react';
-import { Box, Collapse, Button, Container, Flex, Text, Image, Heading } from '@chakra-ui/react';
+import Image from 'next/image';
+import { Box, Collapse, Button, Container, Flex, Heading } from '@chakra-ui/react';
 import ReactMarkdown from 'react-markdown';
 import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons';
 import Header from './header';
@@ -20,8 +21,7 @@ position='relative'
 >
     <Image 
         src='/background.png'
-        w='100%' 
-        h='100%'
+        layout='fill'
         objectFit='cover'
     />
     <Box
