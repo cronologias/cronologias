@@ -5,7 +5,6 @@ import {
   Image,
   HStack,
   Center,
-  Text,
 } from "@chakra-ui/react"
 
 function Galery(props) {
