@@ -39,7 +39,7 @@ function searchArtist({ dataArtist }) {
                 color="brand.baseColor"
                 fontStyle="bold"
                 pb="1.563rem"
-                fontSize="2rem"
+                fontSize={{ base: '1.75rem', md: '1.85rem', lg: '2rem' }}
                 >
                 Búsqueda de artistas
                 </Heading>

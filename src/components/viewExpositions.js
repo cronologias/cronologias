@@ -1,22 +1,28 @@
-import { Box, LinkOverlay, LinkBox, Center, AspectRatio, Flex } from '@chakra-ui/react'
-import Link from "next/link"
+import { Box, LinkOverlay, LinkBox, Center, AspectRatio, Flex, Text } from '@chakra-ui/react'
 import { BsFillCalendar2WeekFill, BsGeoAlt } from "react-icons/bs"
 import { getApiRes } from "../services/callApi"
 import Header from "./header"
 import Footer from "./footer"
-
+import Link from "next/link";
 function ExpositionMuseum({ expositionData }) {
-    console.log(expositionData)
     return (
         <>
             <Header />
-            {/* <AspectRatio maxW="50%" h="25rem" mb={8}>
-                <iframe
-                    title={expositionData.data.allVisitaLaExposicions.tituloDeLaTarjeta}
-                    src= {expositionData.data.allVisitaLaExposicions.recorrido360}
-                    allowFullScreen
-                />
-            </AspectRatio> */}
+            <Box 
+            mb={8}
+            bg="brand.primaryOrange"
+            >
+                <AspectRatio  maxW="100%" h="25rem" 
+                bg="brand.primaryOrange"
+                _before = {{ pb:"none"}}
+                >
+                    <iframe
+                        title={expositionData.tituloDeLaTarjeta}
+                        src= {expositionData.recorrido360}
+                        allowFullScreen
+                    />
+                </AspectRatio>
+            </Box>
             <Center alignItems="start"
                 flexDir={{ base: "column", md: "row" }}
                 justifyContent="space-between"
@@ -29,7 +35,7 @@ function ExpositionMuseum({ expositionData }) {
                     fontSize={{ base: "1.25rem", md: "1.25rem", lg: "1.5rem" }}
                     fontWeight="bold"
                     fontFamily="heading"
-                    mb={4}
+                    mb={8}
                 >
                     <LinkBox color="brand.secondaryOrange"
                         fontSize={{ base: "1.5rem", md: "1.5rem", lg: "1.75rem" }}
@@ -37,39 +43,53 @@ function ExpositionMuseum({ expositionData }) {
                         <LinkOverlay>Exposición</LinkOverlay>
                     </LinkBox>
                     <LinkBox fontWeight={500}>
-                        <LinkOverlay> Museo del Jade y de la Cultura Precolombina </LinkOverlay>
+                        <LinkOverlay> {expositionData.tituloDeLaTarjeta} </LinkOverlay>
                     </LinkBox>
                 </Box>
                 <Flex flexDir="column" >
-                    <Box>
+                    <Box
+                    mb={8}
+                    >
                         <Center>
                             <Box border="2px"
                                 borderColor="brand.secondaryOrange"
-                                w={{ base: "10rem", md: "11.62rem", lg: "17rem" }}
+                                w={{ base: "11rem", md: "12.81rem", lg: "19.40rem" }}
                                 h={{ base: "9rem", md: "11rem" }}
                                 fontFamily="heading"
-                                fontSize={{ base: "1rem", md: "1.5rem"}}
+                                fontSize={{ base: '1rem', lg: '1.125rem' }}
+
                             >
-                                <Center pt={{ base: "2rem", md: "2.6rem", lg: "2.9rem" }}>
-                                    <BsFillCalendar2WeekFill size={"2rem"}
+                                <Center 
+                                pt={{ base: "2.5rem", md: "2.7rem", lg: "3.5rem" }}
+                                pr={4}
+                                >
+                                    <BsFillCalendar2WeekFill w={{base:"1.5rem", md:"2rem"}}
                                         style={{ margin: 15 }}
                                     >
                                     </BsFillCalendar2WeekFill>
-                                    {/* <Box w={{ base: "4.9rem", md: "7.4rem", lg: "8rem", xl:"8.9rem"}}>
-                                        <span>{expositionData.data.allVisitaLaExposicions.fechaDeLaExposicion}</span>
-                                        <span>{expositionData.data.allVisitaLaExposicions.fechaDeFinalizacionDeLaExposicion}</span>
-                                    </Box> */}
+                                    <Box >
+                                        <Text >
+                                            {expositionData.fechaDeLaExposicion}
+                                        </Text>
+                                        <Text >
+                                            {expositionData.fechaDeFinalizacionDeLaExposicion}
+                                        </Text>
+                                    </Box>
                                 </Center>
                             </Box>
                             <Box bgColor="brand.secondaryOrange"
-                                w={{ base: "9rem", md: "12.81rem", lg: "19.40rem" }}
+                                w={{ base: "9rem", md: "11.62rem", lg: "17rem" }}
                                 h={{ base: "9rem", md: "11rem" }}
-                                fontSize={{ base: "1.5rem", md: "2rem" }}
+                                fontSize={{ base: '1.25rem', md: '1.25rem', lg: '1.5rem' }}
                                 fontFamily="heading"
                                 color="brand.baseColor"
                             >
                                 <Center>
-                                    <Box pt={{ base: "2.9rem", md: "3.5rem", lg: "3.5rem" }}>
+                                    <Box 
+                                    fontSize={{ base: '1.25rem', md: '1.25rem', lg: '1.75rem' }}
+                                    pt={{ base: "3rem", md: "3.7rem", lg: "4rem" }}
+                                    pr={2}
+                                    >
                                         Fechas
                                     </Box>
                                 </Center>
@@ -77,18 +97,22 @@ function ExpositionMuseum({ expositionData }) {
                         </Center>
                     </Box>
 
-                    <Box m={{ md: "2rem" }}>
+                    <Box m={{ md: "2rem" }}                                
+                    mb={{base:"2rem", lg:"4rem"}}>
                         <Box>
                             <Center>
                                 <Box bgColor="brand.secondaryOrange"
-                                    w={{ base: "10rem", md: "11.62rem", lg: "17rem" }}
+                                    w={{ base: "11rem", md: "11.62rem", lg: "17rem" }}
                                     h={{ base: "9rem", md: "11rem" }}
-                                    fontSize={{ base: "1.5rem", md: "2rem" }}
+                                    fontSize={{ base: '1.25rem', md: '1.25rem', lg: '1.5rem' }}
                                     fontFamily="heading"
                                     color="brand.baseColor"
                                 >
                                     <Center>
-                                        <Box pt={{ base: "2.9rem",  md: "3.5rem" ,lg: "3.5rem" }}>
+                                        <Box 
+                                        fontSize={{ base: '1.25rem', md: '1.25rem', lg: '1.75rem' }}
+                                        pt={{ base: "3rem", md: "3.7rem", lg: "4rem" }}
+                                        pr={2}>
                                             Ubicación
                                         </Box>
                                     </Center>
@@ -98,18 +122,20 @@ function ExpositionMuseum({ expositionData }) {
                                     w={{ base: "9rem", md: "12.81rem", lg: "19.40rem" }}
                                     h={{ base: "9rem", md: "11rem" }}
                                     fontFamily="heading"
-                                    fontSize={{ base: "1rem", md: "1.5rem" }}
+                                    fontSize={{ base: '1rem', lg: '1.125rem' }}
                                 >
-                                    <Center pt={{ base: "2.3rem", md: "3rem",lg: "3rem" }}>
-                                        <BsGeoAlt size="2rem" style={{ margin: 10 }}></BsGeoAlt>
+                                    <Center                                     
+                                    pt={{ base: "3rem", md: "3.7rem", lg: "4rem" }}
+                                    pr={2}>
+                                        <BsGeoAlt w={{base:"1.5rem", md:"2rem"}} style={{ margin: 10 }}></BsGeoAlt>
                                         <Box textDecoration="underline"
                                             color="brand.secondaryBlue"
                                         >
-                                            {/* <Link
-                                                href={expositionData.data.allVisitaLaExposicions.ubicacionDelMuseo}
+                                            <Link
+                                                href={expositionData.ubicacionDelMuseo}
                                             >
                                                 <a>San José</a>
-                                            </Link> */}
+                                            </Link>
                                         </Box>
                                     </Center>
                                 </Box>

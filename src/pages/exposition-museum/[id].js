@@ -5,7 +5,7 @@ import ExpositionMuseum from "../../components/viewExpositions";
 function ExpositionContainer({ expositionData}) {
   return (
       <>
-      <ExpositionMuseum expositions={expositionData}/>
+      <ExpositionMuseum expositionData={expositionData}/>
       </>
 
   )
@@ -35,7 +35,7 @@ export async function getStaticProps ({params}) {
     const TOKEN= process.env.NEXT_TOKEN;
     const bodyExposition =`query MyQuery {allVisitaLaExposicions (filter: {id: {eq: ${params.id}}}) {id tituloDeLaTarjeta enlaceDeLaImagen fechaDeLaExposicion fechaDeFinalizacionDeLaExposicion ubicacionDelMuseo recorrido360}}`
     const getExposition = await getApiRes(URl,TOKEN, bodyExposition)
-    const expositionData = getExposition.data.allVisitaLaExposicions
+    const expositionData = getExposition.data.allVisitaLaExposicions[0]
     return{
         props: {
             expositionData,
