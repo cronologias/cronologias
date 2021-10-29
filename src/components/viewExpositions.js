@@ -5,18 +5,17 @@ import Header from "./header"
 import Footer from "./footer"
 import Link from "next/link";
 function ExpositionMuseum({ expositionData }) {
+    console.log(expositionData.recorrido360)
     return (
         <>
             <Header />
             <Box 
             mb={8}
             >
-                <AspectRatio  
+                <AspectRatio  maxW="100%" h="25rem" 
                 _before = {{ pb:"none"}}
-                maxW="100%" h="25rem"
-                objectFit="cover"
                 >
-                    <iframe  
+                    <iframe
                         title={expositionData.tituloDeLaTarjeta}
                         src= {expositionData.recorrido360}
                         allowFullScreen
