@@ -8,11 +8,11 @@ import {
 
 const Slider = (props) => {
     const position = props.position;
-    const [currentSlide, setCurrentSlide] = useState(position);
+    const [currentSlide, setCurrentSlide] = useState(Number(position));
     const slidesCount = props.slides.length;
-    console.log(position, props.slides);
+    console.log(currentSlide)
     const prevSlide = () => {
-        setCurrentSlide((s) => (s === 0 ? slidesCount - 1 : s - 1));
+        setCurrentSlide((s) => (s === 0 ? slidesCount - 1 : s - 1 ));
     };
     const nextSlide = () => {
         setCurrentSlide((s) => (s === slidesCount - 1 ? 0 : s + 1));
