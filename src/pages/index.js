@@ -28,7 +28,7 @@ function homePage({curatorsData, museumData}) {
         <Box
           w='100%'
           bg='brand.thirdOrange'
-          h={{ base: '16.75rem', md: '8.75rem', xl: '7.75rem' }}
+          h={{ base: '16.75rem', "400px":"13.75rem" , md: '8.75rem', xl: '7.75rem' }}
           p={{base: '1.375rem'}}
           mb={{ base: '2rem', md:'2.25rem', lg:'2.5rem'}}
         >
@@ -68,7 +68,7 @@ function homePage({curatorsData, museumData}) {
           fontWeight={300}
           mb={{ base: '2rem' }}
           fontSize={{ base: '1rem', lg: '1.125rem' }}
-          w={{ base: '20rem',  "2sm": "23rem", md: '24.4rem', lg: '36.25rem', xl:'43.125rem' }} 
+          w={{ base: '20rem',  "2sm": "24rem", md: '24.4rem', lg: '36.25rem', xl:'43.125rem' }} 
           m={{ md: '0' }}
         >
           <p>

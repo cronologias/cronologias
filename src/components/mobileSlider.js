@@ -24,7 +24,7 @@ function MobileSlider(props) {
             align='start'
             >
                 <HStack 
-                    w={{ base: "20rem", md: "48rem", lg: "60rem", xl: "75rem" }}
+                    w={{ base: "20rem", "2sm": "24rem" ,md: "48rem", lg: "60rem", xl: "75rem" }}
                     m="auto"
                     textAlign="start"
                     mb={4}
