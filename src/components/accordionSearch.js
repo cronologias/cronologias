@@ -38,7 +38,7 @@ function AccordionSearch({names}){
         fontFamily='heading'
         m='auto'
         mb='5.25rem'
-        w={{ base: '20rem', md: '48rem', lg: '60rem', xl: '75rem' }}
+        w={{ base: '20rem', "2sm":"25rem", md: '48rem', lg: '60rem', xl: '75rem' }}
       >
         <Box
           fontSize={{ base: '1.25rem', md: '1.25rem', lg: '1.5rem'}}
@@ -69,7 +69,7 @@ function AccordionSearch({names}){
                   bg='brand.primaryOrange' 
                   fontSize={{ base: '1rem'}}
                   m='auto'
-                  w={{ base: '20rem', md: '24.4rem', lg: '36.25', xl:'43.125rem' }} 
+                  w={{ base: '20rem', "2sm":"25rem", md: '24.4rem', lg: '36.25', xl:'43.125rem' }} 
                 >
                   <AccordionButton color='brand.baseColor' fontWeight={700}>
                     <Box 
