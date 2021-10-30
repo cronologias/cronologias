@@ -35,21 +35,20 @@ function Galery(props) {
                 mt={ { base: 5, lg: 8 }} 
               >
                 <Box >
-                      <Image 
-                      data-index={index}
-                        w={ { base: "11.5rem", md: "28rem", lg: "40rem", xl: "53rem"} }
-                        h={ {base: "16rem", md: "28rem", lg: "30rem"} }
-                        objectFit="cover" 
-                        src={worksImg.imagenDeLaObraDeLaArtista}
-                        alt="Galeria del Artista" 
-                        data-index={index}
-                        onClick={
-                          (e)=>{
-                            count(e); 
-                            onOpen();
-                          }
-                        }>
-                      </Image>
+                  <Image 
+                  data-index={index}
+                    w={ { base: "11.5rem", md: "28rem", lg: "40rem", xl: "53rem"} }
+                    h={ {base: "16rem", md: "28rem", lg: "30rem"} }
+                    objectFit="cover" 
+                    src={worksImg.imagenDeLaObraDeLaArtista}
+                    alt="Galeria del Artista" 
+                    data-index={index}
+                    onClick={
+                      (e)=>{
+                        count(e); 
+                        onOpen();
+                      }
+                    } />
                 </Box>
                 <Box bg="brand.primaryOrange"
                   w={ {base: "4rem",md: "15rem", lg: "14rem", xl: "16rem"} }

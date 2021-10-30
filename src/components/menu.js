@@ -231,7 +231,9 @@ function MenuHam() {
                                     <Box pr={2}>
                                         <FaUsers></FaUsers>
                                     </Box>
-                                    Colaboradores
+                                    <Link href='/collaborators'>
+                                        <a>Colaboradores</a>
+                                    </Link>
                                 </ListItem>
                             </List>
                         </Center>
