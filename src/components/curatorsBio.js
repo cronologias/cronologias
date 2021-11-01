@@ -48,6 +48,7 @@ function CuratorsBio(props) {
                 <Text
                 color="brand.baseColor"
                 fontSize={{ base: "1rem", lg: "1.125rem" }}
+                fontWeight={300}
                 >
                 {props.curators[0].breveDescripcionDeLaCuradora}
                 </Text>
@@ -57,18 +58,17 @@ function CuratorsBio(props) {
                 p={8} 
                 flexDir={{ base: "column", lg: "row" }}
                 m="auto"
-                w={{ base: "20rem", md: "48rem", lg:"57rem", xl:"75rem" }}
+                w={{ base: "20rem", "2sm":"30rem", md: "48rem", lg:"57rem", xl:"75rem" }}
                 justifyContent="space-between"
                 > 
-                
                 <Box 
-                w={{ base: "16rem", md: "44rem", lg:"24.188rem", xl:"30.625rem" }}
+                w={{ base: "16rem", "2sm":"26rem", md: "44rem", lg:"24.188rem", xl:"30.625rem" }}
                 mb={4}
                 >
                     <Box
                     position="relative"
                     w="full"
-                    h={{base: "10.375rem", md:"31.5rem", lg: "18.563rem", xl:"23.75rem"}}
+                    h={{base: "10.375rem", "2sm":"14.375rem", md:"31.5rem", lg: "18.563rem", xl:"23.75rem"}}
                     >
                         <Image 
                         src={props.curators[0].imagenDeLaCuradora}
@@ -106,7 +106,7 @@ function CuratorsBio(props) {
                 </Box>
                 <Box 
                     ml="-10px"
-                    mt={{base:"14.6rem", md:"35.4rem"}}
+                    mt={{base:"16.6rem", "2sm":"20.5rem" , md:"37.4rem"}}
                     display={{lg:"none", xl:"none"}}
                     w="0.25rem"
                     h={{ base: "33rem", md: "33.4rem" }}

@@ -11,7 +11,10 @@ export default function CardAccordion({ names }) {
           let url = '/cronologias-invisible';
           val.imagenDeLaArtista === ''? url= url: url= val.imagenDeLaArtista;
           return (
-            <Link key={data} href={`/search-artist/${val.id}`} as={`/search-artist/${val.id}`}>
+            // esta es la ruta correcto, se comenta por el momento para que las curadoras no entren a la vista de la 
+            // artista, ya que está en desarrollo
+            // {`/search-artist/${val.id}`} as={`/search-artist/${val.id}`}
+            <Link key={data} href="/">
               <a>
                 <Box key={data} mr={4} mb={4}>
                   <AspectRatio 

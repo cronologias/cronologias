@@ -25,7 +25,7 @@ function MobileSlider(props) {
             align='start'
             >
                 <HStack 
-                    w={{ base: "20rem", md: "48rem", lg: "60rem", xl: "75rem" }}
+                    w={{ base: "20rem", "2sm": "24rem" ,md: "48rem", lg: "60rem", xl: "75rem" }}
                     m="auto"
                     textAlign="start"
                     mb={4}
@@ -34,8 +34,8 @@ function MobileSlider(props) {
                         slide.enlaceDeLaImagen === ''? url = url: url = slide.enlaceDeLaImagen,
                             <Link href={`/exposition-museum/${slide.id}`} as={`/exposition-museum/${slide.id}`} key={sid}>
                             <a>
-                                <LinkBox key={`slide-card-${sid}`}>
-                                <Box 
+                                <LinkBox >
+                                <Box key={`slide-card-${sid}`}
                                 w={{ base:'14.938rem', md:'18rem', lg:'24rem' }}
                                 h={{ base:'13.75rem', md:'14rem', lg:'16.875rem' }}
                                 borderBottom='4px' 

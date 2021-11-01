@@ -46,10 +46,9 @@ position='relative'
                 p={8} 
                 flexDir={{ base: 'column', lg: 'row' }}
                 m='auto'
-                w={{ base: '20rem', md: '48rem', lg: '60rem', xl: '75rem' }}
+                w={{ base: '20rem', "2sm":"30rem", md: '48rem', lg: '60rem', xl: '75rem' }}
                 justifyContent='space-between'
                 > 
-                
                 <Box 
                 fontWeight={700} 
                 fontFamily='heading' 
@@ -63,10 +62,10 @@ position='relative'
                 </Box>
                 <Box 
                     ml='-10px'
-                    mt={{base:'9.125remrem', md:'3.125rem'}}
+                    mt={{base:"4rem", "2sm":"3rem" , md:"3rem"}}
                     display={{lg:'none', xl:'none'}}
                     w='0.25rem'
-                    h={{ base: '28.75rem', md: '16.375rem', lg:'24rem' }}
+                    h={{ base: '28.75rem', md: '15rem', lg:'24rem' }}
                     bg='brand.primaryOrange'
                     position='absolute'
                 >
