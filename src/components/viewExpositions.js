@@ -5,15 +5,14 @@ import Header from "./header"
 import Footer from "./footer"
 import Link from "next/link";
 function ExpositionMuseum({ expositionData }) {
+    console.log(expositionData.recorrido360)
     return (
         <>
             <Header />
             <Box 
             mb={8}
-            bg="brand.primaryOrange"
             >
                 <AspectRatio  maxW="100%" h="25rem" 
-                bg="brand.primaryOrange"
                 _before = {{ pb:"none"}}
                 >
                     <iframe
@@ -28,10 +27,10 @@ function ExpositionMuseum({ expositionData }) {
                 justifyContent="space-between"
                 display="flex"
                 m="auto"
-                w={{ base: "20rem", md: "48rem", lg: "60rem", xl: "75rem" }}
+                w={{ base: "20rem", "2sm":"24rem", md: "48rem", lg: "60rem", xl: "75rem" }}
             >
                 <Box
-                    w={{ md: "20rem", lg: "27rem" }}
+                    w={{ md: "20rem",  lg: "27rem" }}
                     fontSize={{ base: "1.25rem", md: "1.25rem", lg: "1.5rem" }}
                     fontWeight="bold"
                     fontFamily="heading"
@@ -53,7 +52,7 @@ function ExpositionMuseum({ expositionData }) {
                         <Center>
                             <Box border="2px"
                                 borderColor="brand.secondaryOrange"
-                                w={{ base: "11rem", md: "12.81rem", lg: "19.40rem" }}
+                                w={{ base: "11rem", "2sm":"14rem", md: "12.81rem", lg: "19.40rem" }}
                                 h={{ base: "9rem", md: "11rem" }}
                                 fontFamily="heading"
                                 fontSize={{ base: '1rem', lg: '1.125rem' }}
@@ -78,7 +77,7 @@ function ExpositionMuseum({ expositionData }) {
                                 </Center>
                             </Box>
                             <Box bgColor="brand.secondaryOrange"
-                                w={{ base: "9rem", md: "11.62rem", lg: "17rem" }}
+                                w={{ base: "9rem",  md: "11.62rem", lg: "17rem" }}
                                 h={{ base: "9rem", md: "11rem" }}
                                 fontSize={{ base: '1.25rem', md: '1.25rem', lg: '1.5rem' }}
                                 fontFamily="heading"
@@ -102,7 +101,7 @@ function ExpositionMuseum({ expositionData }) {
                         <Box>
                             <Center>
                                 <Box bgColor="brand.secondaryOrange"
-                                    w={{ base: "11rem", md: "11.62rem", lg: "17rem" }}
+                                    w={{ base: "11rem", "2sm":"14rem", md: "11.62rem", lg: "17rem" }}
                                     h={{ base: "9rem", md: "11rem" }}
                                     fontSize={{ base: '1.25rem', md: '1.25rem', lg: '1.5rem' }}
                                     fontFamily="heading"

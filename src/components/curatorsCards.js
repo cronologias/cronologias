@@ -15,7 +15,7 @@ function CuratorsCards(props) {
         alignItems='start'
         flexDir={{ base: 'column', md: 'row' }} 
         m='auto'
-        w={{ base: '20rem', md: '48rem', lg: '60rem', xl: '75rem' }}
+        w={{ base: '20rem', "2sm": "24rem" , md: '48rem', lg: '60rem', xl: '75rem' }}
         justifyContent='space-between'
         mb={{ base: '2rem', md:'2.25rem', lg:'2.5rem'}}
     >
@@ -35,7 +35,7 @@ function CuratorsCards(props) {
             {props.curators.map((element, index) => (
                 <Box
                 key={`curators-card-${index}`}
-                w={{base:"9.75rem", md:"15rem", lg:"24rem"}}
+                w={{base:"9.75rem", "2sm": "11.75rem", md:"15rem", lg:"24rem"}}
                 >
                     <Link
                     href={`/curator-bio/${element.id}`} as={`/curator-bio/${element.id}`}
@@ -54,7 +54,7 @@ function CuratorsCards(props) {
                                 objectFit={{base:"cover",lg:"cover" }}
                                 alt={element.nombreDeLaCuradora} 
                                 pb="7px"
-                                />
+                            />
                             </Box>
                             <Heading
                             as="h3"
