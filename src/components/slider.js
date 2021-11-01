@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
-import { Text, Box, Flex, Heading, IconButton } from '@chakra-ui/react';
-import {ChevronLeftIcon,ChevronRightIcon,}from '@chakra-ui/icons'
-import Image from 'next/image'
+import { Text, Box, Flex, Heading, Image, IconButton } from '@chakra-ui/react';
+import {
+    ChevronLeftIcon,
+    ChevronRightIcon,
+}
+    from '@chakra-ui/icons'
+
 const Slider = (props) => {
-    let url = '/cronologias-invisible';
-    const [currentSlide, setCurrentSlide] = useState(0);
-
+    const position = props.position;
+    const [currentSlide, setCurrentSlide] = useState(Number(position));
     const slidesCount = props.slides.length;
-
+    console.log(currentSlide)
     const prevSlide = () => {
-        setCurrentSlide((s) => (s === 0 ? slidesCount - 1 : s - 1));
+        setCurrentSlide((s) => (s === 0 ? slidesCount - 1 : s - 1 ));
     };
     const nextSlide = () => {
         setCurrentSlide((s) => (s === slidesCount - 1 ? 0 : s + 1));
@@ -19,7 +22,7 @@ const Slider = (props) => {
         transition: 'all .5s',
         ml: `-${currentSlide * 100}%`,
     };
-    let url = '/cronologias-invisible';
+
     return (
         <Flex
             alignItems='center'
@@ -28,10 +31,8 @@ const Slider = (props) => {
             <Flex w='full' overflow='hidden' pos='relative'>
                 <Flex w='full' {...carouselStyle} >
                     {props.slides.map((slide, sid) => (
-                        url = '/cronologias-invisible',
-                        slide.img ===""? url= url: url = slide.img,
                         <Box key={`slide-${sid}`} flex='none' maxW='100%'>
-                            <Image src={slide.img} />
+                            <Image src={slide.imagenDeLaObraDeLaArtista} />
                             <Box bg='brand.primaryBlack' p={7} mb={50}>
                             <Heading as='h2' fontSize='1.75rem' mb={4} color='brand.baseColor'>
                                 {slide.title}

@@ -264,7 +264,7 @@ function MenuHam() {
                                     _hover={{ bg: 'rgba(0, 0, 0, 0.04)'}}
                                     >
                                         <Link
-                                            href='/'>
+                                            href='/collaborators'>
                                             <a>Colaboradores</a>
                                         </Link>
                                     </Box>

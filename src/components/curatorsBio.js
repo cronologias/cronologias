@@ -138,7 +138,7 @@ function CuratorsBio(props) {
                 fontSize={{ base: "1rem", md: "1rem", lg: "1.125rem" }} 
                 display={{ base: "none", lg: "block" }}>
                     <ReactMarkdown  components={{
-                        p: ({ nodo, ...props }) => < p style={{ paddingBottom: '0.625rem', paddingTop: '0.625rem'}}  {...props} />
+                        p: ({ nodo, ...props }) => < p style={{paddingBottom: '0.625rem', paddingTop: '0.625rem'}}  {...props} />
                     }}>{props.curators[0].cuerpoDeLaBiografia}</ReactMarkdown>
                 </Box>
             </Flex>
