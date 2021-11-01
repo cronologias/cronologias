@@ -1,11 +1,12 @@
 import React from "react";
-import { Box, Collapse, Button, Container, Flex, Text, Image, Link, HStack, Heading } from "@chakra-ui/react";
+import Image from "next/image";
+import { Box, Collapse, Button, Container, Flex, Text, Link, HStack, Heading } from "@chakra-ui/react";
 import ReactMarkdown from 'react-markdown';
 import { ChevronDownIcon, ChevronUpIcon } from "@chakra-ui/icons";
+import { BsEnvelope,BsGlobe2 } from 'react-icons/bs'
 import Header from "./header";
 import Footer from "./footer";
-import webSite from '../../public/webSite.svg'
-import email from '../../public/email.svg'
+
 
 
 function CuratorsBio(props) {
@@ -20,11 +21,11 @@ function CuratorsBio(props) {
         h={{ base: "266px", lg: "331px" }}
         position="relative"
         >
-            <Image 
+            <Image
+            //pendiente cambio de imagen 
                 w="100%"
                 src="/background.png"
-                w="100%" 
-                h="100%"
+                layout='fill'
                 objectFit="cover"
                 alt=""
             />
@@ -65,13 +66,13 @@ function CuratorsBio(props) {
                 mb={4}
                 >
                     <Box
+                    position="relative"
                     w="full"
                     h={{base: "10.375rem", "2sm":"14.375rem", md:"31.5rem", lg: "18.563rem", xl:"23.75rem"}}
                     >
                         <Image 
                         src={props.curators[0].imagenDeLaCuradora}
-                        w="100%" 
-                        h="100%"
+                        layout='fill'
                         objectFit="cover"
                         alt={props.curators[0].nombreDeLaCuradora}
                         />
@@ -84,24 +85,21 @@ function CuratorsBio(props) {
                         <HStack 
                         spacing={{ base:"1.25rem", md:"2rem" }}
                         alignItems="center"
+                        position="relative"
                         >
                             <Link 
                             href="#"
                             w={{ base: "1.5rem" }}
                             h={{ base: "1.5rem" }}
                             >
-                                <Image 
-                                src={webSite} 
-                                alt="Cronologias de lo Invisible" />
+                                <BsGlobe2/>
                             </Link>
                             <Link 
                             href="#"
                             w={{ base: "1.5rem"}}
                             h={{ base: "1.5rem"}}
                             >
-                                <Image 
-                                src={email} 
-                                alt="Cronologias de lo Invisible" />
+                                <BsEnvelope/>
                             </Link>
                         </HStack>
                     </Flex>
@@ -140,7 +138,7 @@ function CuratorsBio(props) {
                 fontSize={{ base: "1rem", md: "1rem", lg: "1.125rem" }} 
                 display={{ base: "none", lg: "block" }}>
                     <ReactMarkdown  components={{
-                        p: ({ nodo, ...props }) => < p style={{}}  {...props} />
+                        p: ({ nodo, ...props }) => < p style={{paddingBottom: '0.625rem', paddingTop: '0.625rem'}}  {...props} />
                     }}>{props.curators[0].cuerpoDeLaBiografia}</ReactMarkdown>
                 </Box>
             </Flex>
