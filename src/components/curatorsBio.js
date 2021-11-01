@@ -22,8 +22,6 @@ function CuratorsBio(props) {
         position="relative"
         >
             <Image
-            //pendiente cambio de imagen 
-                w="100%"
                 src="/background.png"
                 layout='fill'
                 objectFit="cover"
