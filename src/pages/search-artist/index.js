@@ -57,7 +57,7 @@ export async function getStaticProps () {
   const URl= process.env.NEXT_URL;
   const TOKEN= process.env.NEXT_TOKEN;
   
-  const bodyArtist ='query Myquery{allTarjetaAutoras(first:54) {id nombreDeLaAutora imagenDeLaArtista}}';
+  const bodyArtist ='query Myquery{allTarjetaAutoras(first:54) {id nombreDeLaAutora imagenDeLaArtista }}';
   const getArtist = await getApiRes(URl,TOKEN, bodyArtist);
   const dataArtist =getArtist.data.allTarjetaAutoras;
 

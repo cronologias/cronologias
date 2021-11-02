@@ -10,7 +10,7 @@ const Slider = (props) => {
     const position = props.position;
     const [currentSlide, setCurrentSlide] = useState(Number(position));
     const slidesCount = props.slides.length;
-    console.log(currentSlide)
+    console.log(props.slides.obrasDeLaAutora)
     const prevSlide = () => {
         setCurrentSlide((s) => (s === 0 ? slidesCount - 1 : s - 1 ));
     };
@@ -34,11 +34,14 @@ const Slider = (props) => {
                         <Box key={`slide-${sid}`} flex='none' maxW='100%'>
                             <Image src={slide.imagenDeLaObraDeLaArtista} />
                             <Box bg='brand.primaryBlack' p={7} mb={50}>
+                            <Text fontSize='0.75rem' color='brand.baseColor' pb='0.75rem'>
+                                {slide.derechoDeAutor}
+                            </Text>
                             <Heading as='h2' fontSize='1.75rem' mb={4} color='brand.baseColor'>
-                                {slide.title}
+                                {slide.tTuloDeLaObra}
                             </Heading>
                             <Text fontSize='1rem' color='brand.baseColor'>
-                                {slide.text}
+                                {slide.informaciNExtra}
                             </Text>
                             </Box>
                         </Box>
