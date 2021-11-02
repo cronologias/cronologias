@@ -28,8 +28,7 @@ function Galery(props) {
                         h={ {base: "16rem", md: "28rem", lg: "30rem"} }
                         objectFit="cover" 
                         src={worksImg.imagenDeLaObraDeLaArtista}
-                        alt="Galeria del Artista" >
-                      </Image>
+                        alt="Galeria del Artista" />
                     </a>
                   </Link>
                 </Box>
@@ -57,8 +56,7 @@ function Galery(props) {
                         h={ {base: "16rem", md: "28rem", lg: "30rem"} }
                         objectFit="cover" 
                         src={worksImg.imagenDeLaObraDeLaArtista}
-                        alt="Galeria del Artista" >
-                      </Image>
+                        alt="Galeria del Artista" />
                     </a>
                   </Link>
                 </Box>

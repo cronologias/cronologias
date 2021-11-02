@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Stack, Input, InputRightElement, InputGroup, Box, SimpleGrid, Text } from "@chakra-ui/react";
 import { BsSearch } from "react-icons/bs";
-import { Card } from "./card";
+import SearchBarCard from "./searchBarCard";
 
 const SearchBar = ({ names }) => {
   const [serchTerm, setSerchTerm] = useState('')
@@ -10,7 +10,7 @@ const SearchBar = ({ names }) => {
     <>
     <Box
       m="0 auto"
-      w={{ base: "20rem", md: "48rem", lg: "60rem", xl: "75rem" }}
+      w={{ base: "20rem", "2sm":"25rem", md: "48rem", lg: "60rem", xl: "75rem" }}
       mb={{ base: '2rem', md:'2.25rem', lg:'2.5rem'}}
     >
       <Stack 
@@ -22,7 +22,7 @@ const SearchBar = ({ names }) => {
         fontFamily="body">
         <Text>Búsqueda por nombre o apellido </Text>
         <InputGroup 
-          w={{ base: "20rem", md: "48rem", lg: "60rem", xl: "75rem" }} 
+          w={{ base: "20rem","2sm":"25rem", md: "48rem", lg: "60rem", xl: "75rem" }} 
           m="0 auto" 
           bg="brand.baseColor"
         >
@@ -58,7 +58,7 @@ const SearchBar = ({ names }) => {
             return '';
           }).map((val, key) => {
             return (
-              <Card key={key} names={val} />
+              <SearchBarCard key={key} names={val} />
             )
           })}
         </SimpleGrid>
