@@ -2,10 +2,10 @@ import { getApiRes } from '../../services/callApi'
 import Header from '../../components/header'
 import CardCollaborators from '../../components/cardsCollaborators'
 import Footer from '../../components/footer'
+import Image from "next/image";
 
 import {
   Box,
-  Image,
   Heading,
 } from "@chakra-ui/react"
 
@@ -21,8 +21,7 @@ function viewCollaborators({ collaboratorsData, institucionData }) {
         >
             <Image 
                 src="/background.png"
-                w="100%" 
-                h="100%"
+                layout='fill'
                 objectFit="cover"
             />
             <Box

@@ -5,8 +5,6 @@ import Footer from '../../components/footer'
 import Galery from '../../components/artistGalery'
 
 function dynamicViewArtist({ dataView }) {
-  console.log(dataView)
-  console.log(dataView.obrasDeLaAutora)
   return (
     <>
       <Header />

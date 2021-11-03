@@ -1,9 +1,11 @@
 import React from "react";
-import { Flex, SimpleGrid,  Box, Text, Image, Link} from "@chakra-ui/react";
+import  Image  from "next/image";
+import { Flex, SimpleGrid,  Box, Text, Link} from "@chakra-ui/react";
 import { BsFacebook, BsInstagram, BsTwitter, BsGlobe2 } from 'react-icons/bs'
 
 const CardCollaborators = ({ collaboratorsData, institucionData, index}) => {
   let style = {color: '#EB5529', width:'24px'}
+  let url = '/cronologias-invisible'
   return (
     <>
       <Box
@@ -30,6 +32,7 @@ const CardCollaborators = ({ collaboratorsData, institucionData, index}) => {
           spacing={{base:2, md:4, lg:8, xl:20}}
         > 
           {collaboratorsData.map((person, index) => {
+            person.imagenDelColaborador ===''? url=url: url= person.imagenDelColaborador;
             return (
               <Flex 
                 alignItems='center'
@@ -41,8 +44,8 @@ const CardCollaborators = ({ collaboratorsData, institucionData, index}) => {
                 w={{base:'20rem', '2sm':'25rem', md:'22rem', lg:'25rem'}}
               >
 
-                <Box w={{base:'7.5rem', '2sm':'8rem'}}  mr={{base:2.5, '2sm': 3}}>
-                  <Image h="7rem"  src={person.imagenDelColaborador} alt={person.nombreDelColaborador} />
+                <Box w={{base:'7.5rem', '2sm':'8rem'}}  mr={{base:2.5, '2sm': 3}} h="7rem" position='relative'>
+                  <Image layout='fill' objectFit='contain' src={url} alt={person.nombreDelColaborador} />
                 </Box>
 
                 <Box>
@@ -127,6 +130,8 @@ const CardCollaborators = ({ collaboratorsData, institucionData, index}) => {
           spacing={{base:2, md:4, lg:8, xl:20}}
         > 
           {institucionData.map((institucion, index) => {
+            url='/cronologias-invisible'
+            institucion.imagenDeLaInstitucion ===''? url=url: url= institucion.imagenDeLaInstitucion;
             return (
               <Flex 
                 alignItems='center'
@@ -138,8 +143,8 @@ const CardCollaborators = ({ collaboratorsData, institucionData, index}) => {
                 w={{base:'20rem', '2sm':'25rem', md:'22rem', lg:'25rem'}}
               >
 
-                <Box w={{base:'7.5rem', '2sm':'8rem'}}  mr={{base:2.5, '2sm': 3}}>
-                  <Image h="7rem"  src={institucion.imagenDeLaInstitucion} alt={institucion.nombreDeLaInstitucion} />
+                <Box w={{base:'7.5rem', '2sm':'8rem'}}  mr={{base:2.5, '2sm': 3}} h="7rem" position='relative'>
+                  <Image layout='fill' objectFit='contain' src={url} alt={institucion.nombreDeLaInstitucion} />
                 </Box>
 
                 <Box>
