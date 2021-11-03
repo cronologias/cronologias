@@ -3,10 +3,9 @@ import Header from '../../components/header'
 import { SearchBar } from '../../components/serchBar'
 import AccordionSearch from '../../components/accordionSearch'
 import Footer from '../../components/footer'
-
+import Image from "next/image";
 import {
   Box,
-  Image,
   Heading,
 } from "@chakra-ui/react"
 
@@ -22,8 +21,7 @@ function searchArtist({ dataArtist }) {
         >
             <Image 
                 src="/background.png"
-                w="100%" 
-                h="100%"
+                layout='fill'
                 objectFit="cover"
             />
             <Box

@@ -1,15 +1,17 @@
 import React from "react";
-//import Link from "next/link";
-import { Flex, SimpleGrid,  Box, Text, Image, Link} from "@chakra-ui/react";
+import  Image  from "next/image";
+import { Flex, SimpleGrid,  Box, Text, Link} from "@chakra-ui/react";
 import { BsFacebook, BsInstagram, BsTwitter, BsGlobe2 } from 'react-icons/bs'
 
-const CardCollaborators = ({ collaboratorsData, institucionData }) => {
+const CardCollaborators = ({ collaboratorsData, institucionData, index}) => {
   let style = {color: '#EB5529', width:'24px'}
+  let url = '/cronologias-invisible'
   return (
     <>
       <Box
+        key={index}
         m='auto'
-        w={{ base: '20rem', "2sm":"25rem", md: '48rem', lg: '60rem', xl: '75rem' }} 
+        w={{ base: '20rem', "2sm":"25rem", md: '44rem', lg:'54rem', xl: '74rem' }} 
       >
 
         <Text 
@@ -24,14 +26,16 @@ const CardCollaborators = ({ collaboratorsData, institucionData }) => {
 
         <SimpleGrid 
           align="start"
-          columns={{base:1, md:2, lg:3}} 
+          columns={{base:1, md:2, lg:2, xl:3}} 
           fontFamily='body'
           mb={{ base: "2rem", md:"2.25rem", lg:"2.5rem"}}
-          spacing={{base:2, md:8, lg:8}}
+          spacing={{base:2, md:4, lg:8, xl:20}}
         > 
           {collaboratorsData.map((person, index) => {
+            person.imagenDelColaborador ===''? url=url: url= person.imagenDelColaborador;
             return (
               <Flex 
+                alignItems='center'
                 border='2px'
                 borderColor="brand.primaryOrange"
                 flexDir="row"
@@ -40,53 +44,61 @@ const CardCollaborators = ({ collaboratorsData, institucionData }) => {
                 w={{base:'20rem', '2sm':'25rem', md:'22rem', lg:'25rem'}}
               >
 
-                <Box w={{base:'7.5rem', '2sm':'8rem'}}  mr={{base:2.5, '2sm': 3}}>
-                  <Image h="7rem"  src={person.imagenDelColaborador} alt={person.nombreDelColaborador} />
+                <Box w={{base:'7.5rem', '2sm':'8rem'}}  mr={{base:2.5, '2sm': 3}} h="7rem" position='relative'>
+                  <Image layout='fill' objectFit='contain' src={url} alt={person.nombreDelColaborador} />
                 </Box>
 
                 <Box>
                   <Text
                     fontSize={{ base: '1.1rem'}}
-                    fontWeight={700} mb={2} >
+                    fontWeight={700}
+                  >
                     {person.nombreDelColaborador}
+                  </Text>
+                  
+                  <Text
+                    fontSize={{ base: '1rem', md: '1.2rem'}}
+                    fontWeight={300}
+                    mb={2}
+                    w={{ base:'12rem', "2sm":"13rem"}}
+                  >
+                    {person.profesion}
                   </Text>
 
                   <Flex 
                     align="center"
                     flexDir="row" 
-                    justifyContent='space-between'
-                    mb={2}
                     w={28}
                   >
-                    <Link href='/'>
-                      <a>
-                        <BsFacebook style={style} />
-                      </a>
-                    </Link>
-                    <Link href='/'>
-                      <a>
-                      <BsInstagram style={style} />
-                      </a>
-                    </Link>
-                    <Link href='/'>
-                      <a>
-                        <BsTwitter style={style} />
-                      </a>
-                    </Link>
-                    <Link href='/'>
-                      <a>
-                        <BsGlobe2 style={style} />
-                      </a>
-                    </Link>
+                    {person.enlace.map((link, key) => {
+                      const router = link.enlaceASitioWebYRedesSociales
+                      const icons = () => {
+                        if(router.search('facebook') >= 1) {
+                          return (
+                            <BsFacebook style={style} />
+                          )
+                        } else if (router.search('instagram') >= 1) {
+                          return (
+                            <BsInstagram style={style} />
+                          )
+                        } else if (router.search('twitter') >= 1) {
+                          return (
+                            <BsTwitter style={style} />
+                          )
+                        } else {
+                          return (
+                            <BsGlobe2 style={style} />
+                          )
+                        } 
+                      }
+                      return (
+                        <>
+                          <Link mr={2} key={key} href={link.enlaceASitioWebYRedesSociales} isExternal children={icons(link.enlaceASitioWebYRedesSociales)}>                   
+                          </Link>   
+                        </>
+                      )
+                    })}
                   </Flex>
-                  
-                  <Text
-                    fontSize={{ base: '1rem', md: '1.2rem'}}
-                    fontWeight={300}
-                    w={{ base:'12rem', "2sm":"13rem"}}
-                  >
-                    {person.profesion}
-                  </Text>
                 </Box>
             
               </Flex>
@@ -98,7 +110,7 @@ const CardCollaborators = ({ collaboratorsData, institucionData }) => {
       
       <Box
         m='auto'
-        w={{ base: '20rem', "2sm":"25rem", md: '48rem', lg: '60rem', xl: '75rem' }} 
+        w={{ base: '20rem', "2sm":"25rem", md: '44rem', lg:'54rem', xl: '74rem' }} 
       >
         <Text 
           fontFamily='heading'
@@ -112,12 +124,14 @@ const CardCollaborators = ({ collaboratorsData, institucionData }) => {
 
         <SimpleGrid 
           align="start"
-          columns={{base:1, md:2, lg:3}} 
+          columns={{base:1, md:2, lg:2, xl:3}} 
           fontFamily='body'
           mb={{ base: "2rem", md:"2.25rem", lg:"2.5rem"}}
-          spacing={{base:2, md:8, lg:8}}
+          spacing={{base:2, md:4, lg:8, xl:20}}
         > 
           {institucionData.map((institucion, index) => {
+            url='/cronologias-invisible'
+            institucion.imagenDeLaInstitucion ===''? url=url: url= institucion.imagenDeLaInstitucion;
             return (
               <Flex 
                 alignItems='center'
@@ -129,8 +143,8 @@ const CardCollaborators = ({ collaboratorsData, institucionData }) => {
                 w={{base:'20rem', '2sm':'25rem', md:'22rem', lg:'25rem'}}
               >
 
-                <Box w={{base:'7.5rem', '2sm':'8rem'}}  mr={{base:2.5, '2sm': 3}}>
-                  <Image h="7rem"  src={institucion.imagenDeLaInstitucion} alt={institucion.nombreDeLaInstitucion} />
+                <Box w={{base:'7.5rem', '2sm':'8rem'}}  mr={{base:2.5, '2sm': 3}} h="7rem" position='relative'>
+                  <Image layout='fill' objectFit='contain' src={url} alt={institucion.nombreDeLaInstitucion} />
                 </Box>
 
                 <Box>
@@ -143,30 +157,37 @@ const CardCollaborators = ({ collaboratorsData, institucionData }) => {
                   <Flex 
                     align="center"
                     flexDir="row" 
-                    justifyContent='space-between'
                     mb={2}
                     w={28}
                   >
-                    <Link href={institucion.enlaceASitioWebYRedesSociales} isExternal>
-                    
-                        <BsFacebook style={style} />
-                      
-                    </Link>
-                    <Link href={institucion.enlaceASitioWebYRedesSociales} isExternal>
-                      
-                      <BsInstagram style={style} />
-                      
-                    </Link>
-                    <Link href={institucion.enlaceASitioWebYRedesSociales} isExternal>
-                      
-                        <BsTwitter style={style} />
-                      
-                    </Link>
-                    <Link href={institucion.enlaceASitioWebYRedesSociales} isExternal>
-                    
-                        <BsGlobe2 style={style} />
-                        
-                    </Link>
+                    {institucion.enlaceASitioWebYRedesSociales.map((link, key) => {
+                      const router = link.enlaceASitioWebYRedesSociales
+                      const icons = () => {
+                        if(router.search('facebook') >= 1) {
+                          return (
+                            <BsFacebook style={style} />
+                          )
+                        } else if (router.search('instagram') >= 1) {
+                          return (
+                            <BsInstagram style={style} />
+                          )
+                        } else if (router.search('twitter') >= 1) {
+                          return (
+                            <BsTwitter style={style} />
+                          )
+                        } else {
+                          return (
+                            <BsGlobe2 style={style} />
+                          )
+                        } 
+                      }
+                      return (
+                        <>
+                          <Link mr={2} key={key} href={link.enlaceASitioWebYRedesSociales} isExternal children={icons(link.enlaceASitioWebYRedesSociales)}>                   
+                          </Link>   
+                        </>
+                      )
+                    })}
                   </Flex>
                 </Box>
             
@@ -180,19 +201,3 @@ const CardCollaborators = ({ collaboratorsData, institucionData }) => {
 }
 
 export default CardCollaborators
-
-
-/*
-{institucion.enlaceASitioWebYRedesSociales.map((link) => {
-    return (
-      <>
-        <Link href={link.enlaceASitioWebYRedesSociales} isExternal>                   
-          <BsFacebook style={style} />
-        </Link>
-        
-      </>
-    )
-  })}
-
-
-*/

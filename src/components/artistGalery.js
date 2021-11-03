@@ -19,7 +19,6 @@ function Galery(props) {
   const [indexSlide, setindexSlide] = useState(0)
   const { isOpen, onOpen, onClose } = useDisclosure()
   const count = (e) => {
-    console.log(e.target.dataset.index)
     setindexSlide(e.target.dataset.index)
   }
   let url = '/cronologias-invisible';
