@@ -80,7 +80,7 @@ position='relative'
                     <Collapse startingHeight={460} in={show} >
                         <ReactMarkdown 
                         components={{
-                            p: ({ nodo, ...props }) => < p style={{}}  {...props} />
+                            p: ({ nodo, ...props }) => < p style={{ paddingBottom: '0.625rem', paddingTop: '0.625rem'}}  {...props} />
                         }}>{investigationData.data.sobreLaInvestigacion.cuerpoDeLaInvestigacion}</ReactMarkdown>
                     </Collapse>
                     <Container alignContent centerContent>
@@ -94,7 +94,7 @@ position='relative'
                 fontSize={{ base: '1rem', md: '1rem', lg: '1.125rem' }} 
                 display={{ base: 'none', lg: 'block' }}>
                     <ReactMarkdown  components={{
-                        p: ({ nodo, ...props }) => < p style={{}}  {...props} />
+                        p: ({ nodo, ...props }) => < p style={{ paddingBottom: '0.625rem', paddingTop: '0.625rem'}}  {...props} />
                     }}>{investigationData.data.sobreLaInvestigacion.cuerpoDeLaInvestigacion}</ReactMarkdown>
                 </Box>
             </Flex>
