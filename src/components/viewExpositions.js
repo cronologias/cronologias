@@ -5,7 +5,6 @@ import Header from './header'
 import Footer from './footer'
 import Link from 'next/link';
 function ExpositionMuseum({ expositionData }) {
-    console.log(expositionData.recorrido360)
     return (
         <>
             <Header museumMenu= {expositionData} />

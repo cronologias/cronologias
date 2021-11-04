@@ -1,14 +1,16 @@
-import React from 'react';
-import Link from 'next/link';
+import React from "react";
+import Link from "next/link";
+import Image from "next/image"
 import {
     Box,
     AspectRatio,
-    Image,
     Text,
     Stack,
 } from '@chakra-ui/react';
 
 export default function SearchBarCard({ names }) {
+    let url =  '/cronologias-invisible'
+    names.imagenDeLaArtista ===""? url= url: url = names.imagenDeLaArtista
     return (
             // {`/search-artist/${names.id}`} as={`/search-artist/${names.id}`}
             // esta es la ruta correcto, se comenta por el momento para que las curadoras no entren a la vista de la 
@@ -22,8 +24,10 @@ export default function SearchBarCard({ names }) {
                         h={{ base: '8.6rem', md: '9.75rem', lg: '9.75rem', xl: '10rem' }}
                     >
                     <Image
-                        src={names.imagenDeLaArtista}
+                        src={url}
                         alt={names.imagenDeLaArtista}
+                        layout='fill'
+                        objectFit='cover'
                     />
                     </AspectRatio>
                     <Stack

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Box, Collapse, Button, Container, Flex, Text, Image, Heading } from '@chakra-ui/react';
+import Image from 'next/image';
+import { Box, Collapse, Button, Container, Flex, Heading } from '@chakra-ui/react';
 import ReactMarkdown from 'react-markdown';
 import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons';
 import Header from './header';
@@ -20,8 +21,7 @@ position='relative'
 >
     <Image 
         src='/background.png'
-        w='100%' 
-        h='100%'
+        layout='fill'
         objectFit='cover'
     />
     <Box
@@ -80,8 +80,8 @@ position='relative'
                     <Collapse startingHeight={460} in={show} >
                         <ReactMarkdown 
                         components={{
-                            p: ({ nodo, ...props }) => < p style={{}}  {...props} />
-                        }}>{props.investigationData.data.sobreLaInvestigacion.cuerpoDeLaInvestigacion}</ReactMarkdown>
+                            p: ({ nodo, ...props }) => < p style={{ paddingBottom: '0.625rem', paddingTop: '0.625rem'}}  {...props} />
+                        }}>{investigationData.data.sobreLaInvestigacion.cuerpoDeLaInvestigacion}</ReactMarkdown>
                     </Collapse>
                     <Container alignContent centerContent>
                         <Button size='sm' onClick={handleToggle} mt='1rem' _active={{ bg: 'brand.secondaryGray' }} _focus={{ boxShadow: 'none' }}>
@@ -94,8 +94,8 @@ position='relative'
                 fontSize={{ base: '1rem', md: '1rem', lg: '1.125rem' }} 
                 display={{ base: 'none', lg: 'block' }}>
                     <ReactMarkdown  components={{
-                        p: ({ nodo, ...props }) => < p style={{}}  {...props} />
-                    }}>{props.investigationData.data.sobreLaInvestigacion.cuerpoDeLaInvestigacion}</ReactMarkdown>
+                        p: ({ nodo, ...props }) => < p style={{ paddingBottom: '0.625rem', paddingTop: '0.625rem'}}  {...props} />
+                    }}>{investigationData.data.sobreLaInvestigacion.cuerpoDeLaInvestigacion}</ReactMarkdown>
                 </Box>
             </Flex>
             <Footer />

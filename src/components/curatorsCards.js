@@ -1,12 +1,6 @@
-import Link from 'next/link';
-import {
-    Text,
-    Image,
-    Heading,
-    Box,
-    Flex,
-    HStack,
-} from '@chakra-ui/react'
+import Link from "next/link";
+import {Text, Heading, Box, Flex, HStack,} from '@chakra-ui/react'
+import Image from 'next/image'
 
 function CuratorsCards(props) {
     return (
@@ -42,16 +36,16 @@ function CuratorsCards(props) {
                     >
                         <a>
                             <Box 
-                            w='100%'
-                            h={{base:'14.875rem', md:'20.125rem', lg:'240px'}}
+                            w="100%"
+                            h={{base:"14.875rem", md:"20.125rem", lg:"240px"}}
+                            position='relative'
                             >
                             <Image 
                                 mr='0'
                                 src={element.imagenDeLaCuradora} 
-                                display='inline-block' 
-                                w='100%' 
-                                h='100%'
-                                objectFit={{base:'cover',lg:'cover' }}
+                                display="inline-block" 
+                                layout='fill'
+                                objectFit="cover"
                                 alt={element.nombreDeLaCuradora} 
                                 pb='7px'
                             />

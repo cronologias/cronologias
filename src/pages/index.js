@@ -6,6 +6,7 @@ import CuratorsCards from '../components/curatorsCards';
 import Footer from '../components/footer';
 import {getApiRes} from '../services/callApi';
 
+
 function homePage({curatorsData, museumData}) {
   let emphasisWord = {
     color: '#E6AA92',
