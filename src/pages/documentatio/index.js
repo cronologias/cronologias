@@ -52,14 +52,12 @@ function documentation({documentationData}){
                                 <Box w={ { base: "11.5rem", md: "28rem", lg: "40rem", xl: "53rem"} }
                                     h={ {base: "16rem", md: "28rem", lg: "30rem"} } position='relative'>
                                     <Link href="/">
-                                        <a>
                                             <Image 
                                                 layout='fill'
                                                 objectFit="cover" 
                                                 src={url}
                                                 alt="Documentación">
                                             </Image>
-                                        </a>
                                     </Link>
                                 </Box>
                         </HStack>
