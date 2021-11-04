@@ -14,7 +14,6 @@ function dynamicViewArtist({ dataView }) {
     </>
   )
 }
-
 export default dynamicViewArtist
 
 export async function getStaticPaths() {
