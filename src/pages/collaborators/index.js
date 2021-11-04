@@ -1,15 +1,15 @@
 import { getApiRes } from '../../services/callApi'
 import Header from '../../components/header'
-import { SearchBar } from '../../components/serchBar'
-import AccordionSearch from '../../components/accordionSearch'
+import CardCollaborators from '../../components/cardsCollaborators'
 import Footer from '../../components/footer'
 import Image from "next/image";
+
 import {
   Box,
   Heading,
 } from "@chakra-ui/react"
 
-function searchArtist({ dataArtist }) {
+function viewCollaborators({ collaboratorsData, institucionData }) {
   return (
     <>
       <Header />
@@ -38,30 +38,35 @@ function searchArtist({ dataArtist }) {
                 pb="1.563rem"
                 fontSize={{ base: '1.75rem', md: '1.85rem', lg: '2rem' }}
                 >
-                Búsqueda de artistas
+                Colaboradores
                 </Heading>
             </Box>
         </Box>
-        <SearchBar names={dataArtist}></SearchBar>
-        <AccordionSearch names={dataArtist}></AccordionSearch>
-      <Footer />
+        <CardCollaborators collaboratorsData={collaboratorsData} institucionData={institucionData}/>
+        <Footer />
     </>
   )
 }
 
-export default searchArtist
+export default viewCollaborators
 
 export async function getStaticProps () {
   const URl= process.env.NEXT_URL;
   const TOKEN= process.env.NEXT_TOKEN;
   
-  const bodyArtist ='query Myquery{allTarjetaAutoras(first:54) {id nombreDeLaAutora imagenDeLaArtista}}';
-  const getArtist = await getApiRes(URl,TOKEN, bodyArtist);
-  const dataArtist =getArtist.data.allTarjetaAutoras;
+  const collaborartorsInfo ='query MyQuery{ allPersonaColaboradoras{ id imagenDelColaborador nombreDelColaborador profesion enlace { id enlaceASitioWebYRedesSociales }}}'
+  const institucionInfo ='query MyQuery{ allInstitucionColaboradoras{ id nombreDeLaInstitucion imagenDeLaInstitucion enlaceASitioWebYRedesSociales{ id enlaceASitioWebYRedesSociales}}}'
+  
+  const getCollaborators = await getApiRes(URl,TOKEN, collaborartorsInfo)
+  const collaboratorsData = getCollaborators.data.allPersonaColaboradoras
+  
+  const getInstitucion = await getApiRes(URl,TOKEN, institucionInfo)
+  const institucionData = getInstitucion.data.allInstitucionColaboradoras
 
-  return {
+  return{
     props: {
-      dataArtist
+      collaboratorsData,
+      institucionData,
     }
   }
 }

@@ -4,7 +4,6 @@ import Header from "../../components/header"
 import Footer from "../../components/footer"
 
 function documentation({documentationData}){
-    console.log(documentationData.data)
     return(
         <>
             <Header/>
@@ -19,7 +18,7 @@ function documentation({documentationData}){
                                 mt={ { base: 5, lg: 8 }} 
                             >
                                 <Box >
-                                    <Link href="/">
+                                    <Link href="/" isExternal>
                                         <a>
                                             <Image 
                                                 w={ { base: "11.5rem", md: "28rem", lg: "40rem", xl: "53rem"} }
