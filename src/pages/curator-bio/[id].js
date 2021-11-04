@@ -1,13 +1,12 @@
-import React from "react";
-import {getApiRes} from "../../services/callApi"
-import CuratorsBio from "../../components/curatorsBio";
+import React from 'react';
+import {getApiRes} from '../../services/callApi'
+import CuratorsBio from '../../components/curatorsBio';
 
-function CuratorsContainer({ curatorsBioData}) {
+function CuratorsContainer({ curatorsBioData, museumData}) {
   return (
       <>
-      <CuratorsBio curators={curatorsBioData}/>
+      <CuratorsBio curators={curatorsBioData} museumData={museumData} />
       </>
-
   )
 }
 export default CuratorsContainer
@@ -37,11 +36,14 @@ export async function getStaticProps ({params}) {
     const bodyCuratorsBio =`query MyQuery {allBiografiaCuradoras (filter: {id: {eq: ${params.id}}}) {id nombreDeLaCuradora,imagenDeLaCuradora,cuerpoDeLaBiografia, breveDescripcionDeLaCuradora}}`
     const getCuratorsBio = await getApiRes(URl,TOKEN, bodyCuratorsBio)
     const curatorsBioData = getCuratorsBio.data.allBiografiaCuradoras
-    const getCuratorsShort = await getApiRes(URl,TOKEN, curatorsShortInfo)
-    const curatorsShortData = getCuratorsShort.data.allTarjetaCuradoras[0].breveDescripcionDeLaCuradora
+    const museumInfo ='query MyQuery {allVisitaLaExposicions {id tituloDeLaTarjeta}}'
+    const getMuseum = await getApiRes(URl,TOKEN, museumInfo)
+    const museumData = getMuseum.data.allVisitaLaExposicions
+
     return{
         props: {
             curatorsBioData,
+            museumData
         }
     }
 }

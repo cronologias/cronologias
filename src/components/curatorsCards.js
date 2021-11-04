@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from 'next/link';
 import {
     Text,
     Image,
@@ -15,7 +15,7 @@ function CuratorsCards(props) {
         alignItems='start'
         flexDir={{ base: 'column', md: 'row' }} 
         m='auto'
-        w={{ base: '20rem', "2sm": "24rem" , md: '48rem', lg: '60rem', xl: '75rem' }}
+        w={{ base: '20rem', '2sm': '24rem' , md: '48rem', lg: '60rem', xl: '75rem' }}
         justifyContent='space-between'
         mb={{ base: '2rem', md:'2.25rem', lg:'2.5rem'}}
     >
@@ -29,48 +29,48 @@ function CuratorsCards(props) {
             <h2>Curadoras</h2>
         </Box>
         <HStack 
-        spacing={{ base:"0.700rem", md:"1rem", lg:"1.5rem" }}
-        alignItems="normal"
+        spacing={{ base:'0.700rem', md:'1rem', lg:'1.5rem' }}
+        alignItems='normal'
         mb={8}>
             {props.curators.map((element, index) => (
                 <Box
                 key={`curators-card-${index}`}
-                w={{base:"9.75rem", "2sm": "11.75rem", md:"15rem", lg:"24rem"}}
+                w={{base:'9.75rem', '2sm': '11.75rem', md:'15rem', lg:'24rem'}}
                 >
                     <Link
                     href={`/curator-bio/${element.id}`} as={`/curator-bio/${element.id}`}
                     >
                         <a>
                             <Box 
-                            w="100%"
-                            h={{base:"14.875rem", md:"20.125rem", lg:"240px"}}
+                            w='100%'
+                            h={{base:'14.875rem', md:'20.125rem', lg:'240px'}}
                             >
                             <Image 
-                                mr="0"
+                                mr='0'
                                 src={element.imagenDeLaCuradora} 
-                                display="inline-block" 
-                                w="100%" 
-                                h="100%"
-                                objectFit={{base:"cover",lg:"cover" }}
+                                display='inline-block' 
+                                w='100%' 
+                                h='100%'
+                                objectFit={{base:'cover',lg:'cover' }}
                                 alt={element.nombreDeLaCuradora} 
-                                pb="7px"
+                                pb='7px'
                             />
                             </Box>
                             <Heading
-                            as="h3"
-                            href="#" 
-                            textStyle="body"
-                            fontSize={{ base:"1.125rem"}}
+                            as='h3'
+                            href='#' 
+                            textStyle='body'
+                            fontSize={{ base:'1.125rem'}}
                             fontWeight={300}
-                            fontFamily="body"
+                            fontFamily='body'
                             mb={1}
-                            fontWeight="bold"
+                            fontWeight='bold'
                             >
                                 {element.nombreDeLaCuradora} 
                             </Heading>
                             <Text
-                            fontSize={{ base:"1rem"}}
-                            fontFamily="body"
+                            fontSize={{ base:'1rem'}}
+                            fontFamily='body'
                             fontWeight={300}
                             >
                                 {element.breveDescripcionDeLaCuradora} 

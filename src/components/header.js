@@ -4,7 +4,7 @@ import { Box, Flex, Spacer, Image } from '@chakra-ui/react'
 import MenuHam from './menu'
 import logo from '../../public/logoNegro.svg'
 
-function Header() {
+function Header(props) {
     return (
         <>
             <Flex bg='brand.primaryOrange' alignItems='center'>
@@ -16,7 +16,7 @@ function Header() {
                     </Link>
                 </Box>
                 <Spacer />
-                <MenuHam></MenuHam>
+                <MenuHam  museumMenu={props.museumMenu} />
             </Flex>
         </>
     )

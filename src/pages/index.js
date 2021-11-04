@@ -18,7 +18,7 @@ function homePage({curatorsData, museumData}) {
   };
   return (
     <>
-      <Header/>
+      <Header museumMenu={museumData} />
       <Box bg='brand.fifhtOrange' width='100%' >
         <Image
           src='/animation.gif'
@@ -28,7 +28,7 @@ function homePage({curatorsData, museumData}) {
         <Box
           w='100%'
           bg='brand.thirdOrange'
-          h={{ base: '16.75rem', "400px":"13.75rem" , md: '8.75rem', xl: '7.75rem' }}
+          h={{ base: '16.75rem', '400px':'13.75rem' , md: '8.75rem', xl: '7.75rem' }}
           p={{base: '1.375rem'}}
           mb={{ base: '2rem', md:'2.25rem', lg:'2.5rem'}}
         >
@@ -53,7 +53,7 @@ function homePage({curatorsData, museumData}) {
         fontSize={{ base: '1.25rem', md: '1.25rem', lg: '1.5rem' }}
         fontWeight={700}
         m='auto'
-        w={{ base: '20rem', "2sm": "23rem", md: '48rem', lg: '60rem', xl: '75rem' }}
+        w={{ base: '20rem', '2sm': '23rem', md: '48rem', lg: '60rem', xl: '75rem' }}
         justifyContent='space-between'
         mb={{ base: '2rem', md:'2.25rem', lg:'2.5rem'}}
       >
@@ -68,7 +68,7 @@ function homePage({curatorsData, museumData}) {
           fontWeight={300}
           mb={{ base: '2rem' }}
           fontSize={{ base: '1rem', lg: '1.125rem' }}
-          w={{ base: '20rem',  "2sm": "24rem", md: '24.4rem', lg: '36.25rem', xl:'43.125rem' }} 
+          w={{ base: '20rem',  '2sm': '24rem', md: '24.4rem', lg: '36.25rem', xl:'43.125rem' }} 
           m={{ md: '0' }}
         >
           <p>

@@ -1,16 +1,16 @@
 import React from 'react'
-import Link from "next/link";
+import Link from 'next/link';
 import {
   Box,
   Image,
   HStack,
   Center,
-} from "@chakra-ui/react"
+} from '@chakra-ui/react'
 
 function Galery(props) {
   return (
     <> 
-      <Box mb={{ base: "2rem", md:"2.25rem", lg:"2.5rem"}}>
+      <Box mb={{ base: '2rem', md:'2.25rem', lg:'2.5rem'}}>
         {props.images.map((worksImg, index) => (
           index % 2 === 0 ?
             <Center 
@@ -21,20 +21,20 @@ function Galery(props) {
                 mt={ { base: 5, lg: 8 }} 
               >
                 <Box >
-                  <Link href="/">
+                  <Link href='/'>
                     <a>
                       <Image 
-                        w={ { base: "11.5rem", md: "28rem", lg: "40rem", xl: "53rem"} }
-                        h={ {base: "16rem", md: "28rem", lg: "30rem"} }
-                        objectFit="cover" 
+                        w={ { base: '11.5rem', md: '28rem', lg: '40rem', xl: '53rem'} }
+                        h={ {base: '16rem', md: '28rem', lg: '30rem'} }
+                        objectFit='cover' 
                         src={worksImg.imagenDeLaObraDeLaArtista}
-                        alt="Galeria del Artista" />
+                        alt='Galeria del Artista' />
                     </a>
                   </Link>
                 </Box>
-                <Box bg="brand.primaryOrange"
-                  w={ {base: "4rem",md: "15rem", lg: "14rem", xl: "16rem"} }
-                  h={ { base: "16rem", md: "28rem", lg: "30rem" }} >
+                <Box bg='brand.primaryOrange'
+                  w={ {base: '4rem',md: '15rem', lg: '14rem', xl: '16rem'} }
+                  h={ { base: '16rem', md: '28rem', lg: '30rem' }} >
                 </Box>
               </HStack>
             </Center> :
@@ -44,19 +44,19 @@ function Galery(props) {
                 mt={{ base: 5, lg: 8 }} 
               >
                 <Box 
-                  bg="brand.primaryBlack"
-                  w={{ base: "4rem", md: "15rem", lg: "14rem", xl: "16rem" }}
-                  h={{ base: "16rem", md: "28rem", lg: "30rem" }} >
+                  bg='brand.primaryBlack'
+                  w={{ base: '4rem', md: '15rem', lg: '14rem', xl: '16rem' }}
+                  h={{ base: '16rem', md: '28rem', lg: '30rem' }} >
                 </Box>
                 <Box >
-                  <Link href="/">
+                  <Link href='/'>
                     <a>
                       <Image 
-                        w={ { base: "11.5rem", md: "28rem", lg: "40rem", xl: "53rem"} }
-                        h={ {base: "16rem", md: "28rem", lg: "30rem"} }
-                        objectFit="cover" 
+                        w={ { base: '11.5rem', md: '28rem', lg: '40rem', xl: '53rem'} }
+                        h={ {base: '16rem', md: '28rem', lg: '30rem'} }
+                        objectFit='cover' 
                         src={worksImg.imagenDeLaObraDeLaArtista}
-                        alt="Galeria del Artista" />
+                        alt='Galeria del Artista' />
                     </a>
                   </Link>
                 </Box>
