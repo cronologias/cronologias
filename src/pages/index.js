@@ -5,7 +5,7 @@ import Header from '../components/header';
 import CuratorsCards from '../components/curatorsCards';
 import Footer from '../components/footer';
 import {getApiRes} from '../services/callApi';
-
+import Head from 'next/head';
 
 function homePage({curatorsData, museumData}) {
   let emphasisWord = {
@@ -19,6 +19,9 @@ function homePage({curatorsData, museumData}) {
   };
   return (
     <>
+      <Head>
+        <link rel="icon" type="image/svg" sizes="42x42" href="/logoCrono.png"/>
+      </Head>
       <Header museumMenu={museumData} />
       <Box bg='brand.fifhtOrange' width='100%' >
         <Image

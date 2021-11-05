@@ -6,7 +6,7 @@ import { ChevronDownIcon, ChevronUpIcon } from "@chakra-ui/icons";
 import { BsEnvelope,BsGlobe2 } from 'react-icons/bs'
 import Header from "./header";
 import Footer from "./footer";
-
+import Head from 'next/head';
 
 
 function CuratorsBio(props) {
@@ -14,6 +14,9 @@ function CuratorsBio(props) {
     const handleToggle = () => setShow(!show)
     return (
         <>
+        <Head>
+            <link rel="icon" type="image/svg" sizes="42x42" href="/logoCrono.png"/>
+        </Head>
         <Header museumMenu={props.museumData} /> 
         <Box 
         fontFamily='body'

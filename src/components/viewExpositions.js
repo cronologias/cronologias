@@ -4,9 +4,13 @@ import { getApiRes } from '../services/callApi'
 import Header from './header'
 import Footer from './footer'
 import Link from 'next/link';
+import Head from 'next/head';
 function ExpositionMuseum({ expositionData }) {
     return (
         <>
+        <Head>
+            <link rel="icon" type="image/svg" sizes="42x42" href="/logoCrono.png"/>
+        </Head>
             <Header museumMenu= {expositionData} />
             <Box 
             position="relative"

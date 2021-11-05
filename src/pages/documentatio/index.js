@@ -3,11 +3,15 @@ import { getApiRes } from "../../services/callApi"
 import Image from 'next/image'
 import Header from "../../components/header"
 import Footer from "../../components/footer"
+import Head from 'next/head';
 
 function documentation({ documentationData }) {
     let url = '/cronologias-invisible'
     return (
         <>
+        <Head>
+            <link rel="icon" type="image/svg" sizes="42x42" href="/logoCrono.png"/>
+        </Head>
             <Header />
             <Box mb={{ base: "2rem", md: "2.25rem", lg: "2.5rem" }}>
                 {documentationData.data.allDocumentacions.map((documentation, index) => (

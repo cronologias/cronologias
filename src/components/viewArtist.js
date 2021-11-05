@@ -1,13 +1,25 @@
 import React from 'react';
-import { Box, Collapse, Button, Container, Flex, LinkBox, LinkOverlay, Text } from '@chakra-ui/react';
+import { Box, Collapse, Button, Container, Flex, LinkBox, LinkOverlay, Text, position,} from '@chakra-ui/react';
 import ReactMarkdown from 'react-markdown';
 import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons';
-
+import Image from "next/image"
+import ArtistAnimation from './ArtistAnimation';
 const ViewArtist = ({ names }) => {
     const [show, setShow] = React.useState(false)
     const handleToggle = () => setShow(!show)
+    let url = '/cronologias-invisible';
+    names.imagenDeLaArtista === ''? url= url: url= names.imagenDeLaArtista;
+
     return (
         <>
+            <Box as='main'
+                position='relative'
+                w='100%'
+                h= {{base:'18.75rem',md:'28.125rem', lg:'37.5rem'}}
+            >
+                <Image src={url} alt={names.nombreDeLaAutora} layout="fill" objectFit='cover' />
+                <ArtistAnimation />
+            </Box>
             <Flex 
                 p={8} 
                 flexDir={{ base: 'column', lg: 'row' }}

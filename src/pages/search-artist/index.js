@@ -4,6 +4,7 @@ import { SearchBar } from '../../components/serchBar'
 import AccordionSearch from '../../components/accordionSearch'
 import Footer from '../../components/footer'
 import Image from "next/image";
+import Head from 'next/head';
 import {
   Box,
   Heading,
@@ -12,6 +13,9 @@ import {
 function searchArtist({ dataArtist, museumData }) {
   return (
     <>
+      <Head>
+        <link rel="icon" type="image/svg" sizes="42x42" href="/logoCrono.png"/>
+      </Head>
       <Header museumMenu={museumData} />
       <Box 
             fontFamily='body'
@@ -20,16 +24,9 @@ function searchArtist({ dataArtist, museumData }) {
             position='relative'
         >
             <Image 
-<<<<<<< HEAD
-                src='/background.png'
-                w='100%' 
-                h='100%'
-                objectFit='cover'
-=======
                 src="/background.png"
                 layout='fill'
                 objectFit="cover"
->>>>>>> 77e50ae40e8a1bacdf79a271f7fb89df796c91ce
             />
             <Box
                 position='absolute'

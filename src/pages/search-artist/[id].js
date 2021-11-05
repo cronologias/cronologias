@@ -3,10 +3,13 @@ import Header from '../../components/header'
 import {ViewArtist} from '../../components/viewArtist'
 import Footer from '../../components/footer'
 import Galery from '../../components/artistGalery'
-
+import Head from 'next/head';
 function dynamicViewArtist({ dataView }) {
   return (
     <>
+      <Head>
+        <link rel="icon" type="image/svg" sizes="42x42" href="/logoCrono.png"/>
+      </Head>
       <Header />
       <ViewArtist names={dataView}/>
       <Galery images={dataView.obrasDeLaAutora}/>

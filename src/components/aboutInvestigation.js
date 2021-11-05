@@ -81,7 +81,7 @@ position='relative'
                         <ReactMarkdown 
                         components={{
                             p: ({ nodo, ...props }) => < p style={{ paddingBottom: '0.625rem', paddingTop: '0.625rem'}}  {...props} />
-                        }}>{investigationData.data.sobreLaInvestigacion.cuerpoDeLaInvestigacion}</ReactMarkdown>
+                        }}>{props.investigationData.data.sobreLaInvestigacion.cuerpoDeLaInvestigacion}</ReactMarkdown>
                     </Collapse>
                     <Container alignContent centerContent>
                         <Button size='sm' onClick={handleToggle} mt='1rem' _active={{ bg: 'brand.secondaryGray' }} _focus={{ boxShadow: 'none' }}>
@@ -95,7 +95,7 @@ position='relative'
                 display={{ base: 'none', lg: 'block' }}>
                     <ReactMarkdown  components={{
                         p: ({ nodo, ...props }) => < p style={{ paddingBottom: '0.625rem', paddingTop: '0.625rem'}}  {...props} />
-                    }}>{investigationData.data.sobreLaInvestigacion.cuerpoDeLaInvestigacion}</ReactMarkdown>
+                    }}>{props.investigationData.data.sobreLaInvestigacion.cuerpoDeLaInvestigacion}</ReactMarkdown>
                 </Box>
             </Flex>
             <Footer />
