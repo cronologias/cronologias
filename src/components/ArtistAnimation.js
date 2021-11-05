@@ -6,22 +6,22 @@ ssr: false,
 })
 const brushRadius = 50;
 const imageOpacity = 0.15;
-const imgHeight = 450
 export default (props) => {
 	const setup = (p5, canvasParentRef) => {
-        p5.createCanvas(window.innerWidth, imgHeight).parent(canvasParentRef);
-        p5.fill(`rgba(0, 0, 0, ${1 - imageOpacity})`);
-        p5.rect(0, 0, window.innerWidth, imgHeight);
+        let height = window.innerWidth >= 960 ? 600 : window.innerWidth >= 768 ? 450 : 300;
+        p5.createCanvas(window.innerWidth, height).parent(canvasParentRef);
+        p5.fill(`rgba(244, 120, 67, ${1 - imageOpacity})`);
+        p5.rect(0, 0, window.innerWidth, height);
 
 	};
     const mouseMoved = (p5) => {
         p5.erase();
         p5.strokeWeight(brushRadius);
-        p5.line(pmouseX, pmouseY, mouseX, mouseY);
+        p5.line(p5.pmouseX, p5.pmouseY, p5.mouseX, p5.mouseY);
         p5.noErase();
             return false;
     }
 
-	return <Sketch setup={setup} mouseMoved={mouseMoved} />;
+	return <Sketch setup={setup} mouseMoved={mouseMoved} style={{position:'absolute',top:'0',height:'100%'}}/>;
 };
 

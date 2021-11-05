@@ -18,7 +18,9 @@ const ViewArtist = ({ names }) => {
                 h= {{base:'18.75rem',md:'28.125rem', lg:'37.5rem'}}
             >
                 <Image src={url} alt={names.nombreDeLaAutora} layout="fill" objectFit='cover' />
+                <Box h= {{base:'18.75rem',md:'28.125rem', lg:'37.5rem'}}>
                 <ArtistAnimation />
+                </Box>
             </Box>
             <Flex 
                 p={8} 
