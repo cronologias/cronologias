@@ -3,10 +3,13 @@ import Header from '../../components/header'
 import {ViewArtist} from '../../components/viewArtist'
 import Footer from '../../components/footer'
 import Galery from '../../components/artistGalery'
-
+import Head from 'next/head';
 function dynamicViewArtist({ dataView }) {
   return (
     <>
+      <Head>
+        <link rel="icon" type="image/svg" sizes="42x42" href="/logoCrono.png"/>
+      </Head>
       <Header />
       <ViewArtist names={dataView}/>
       <Galery images={dataView.obrasDeLaAutora}/>
@@ -14,7 +17,6 @@ function dynamicViewArtist({ dataView }) {
     </>
   )
 }
-
 export default dynamicViewArtist
 
 export async function getStaticPaths() {
@@ -38,7 +40,7 @@ export async function getStaticPaths() {
 export async function getStaticProps ( { params } ) {
   const URl= process.env.NEXT_URL;
   const TOKEN= process.env.NEXT_TOKEN;
-  const bodyView =`query Myquery {allTarjetaAutoras(filter: {id: {eq: ${params.id}}}) {id imagenDeLaArtista nombreDeLaAutora biografia obrasDeLaAutora {id imagenDeLaObraDeLaArtista}}}`
+  const bodyView =`query Myquery {allTarjetaAutoras(filter: {id: {eq: ${params.id}}}) {id imagenDeLaArtista nombreDeLaAutora biografia obrasDeLaAutora {id derechoDeAutor informaciNExtra tTuloDeLaObra imagenDeLaObraDeLaArtista}}}`
   const getView = await getApiRes(URl,TOKEN, bodyView);
   const dataView = getView.data.allTarjetaAutoras[0];
   return {

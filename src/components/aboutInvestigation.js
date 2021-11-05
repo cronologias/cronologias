@@ -1,17 +1,18 @@
 import React from 'react';
-import { Box, Collapse, Button, Container, Flex, Text, Image, Heading } from '@chakra-ui/react';
+import Image from 'next/image';
+import { Box, Collapse, Button, Container, Flex, Heading } from '@chakra-ui/react';
 import ReactMarkdown from 'react-markdown';
 import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons';
 import Header from './header';
 import Footer from './footer';
 
 
-function AboutInvestigation({ investigationData }) {
+function AboutInvestigation(props) {
     const [show, setShow] = React.useState(false)
     const handleToggle = () => setShow(!show)
     return (
         <>
-        <Header/> 
+        <Header museumMenu={props.museumData} /> 
         <Box 
 fontFamily='body'
 w='100%' 
@@ -20,8 +21,7 @@ position='relative'
 >
     <Image 
         src='/background.png'
-        w='100%' 
-        h='100%'
+        layout='fill'
         objectFit='cover'
     />
     <Box
@@ -46,7 +46,7 @@ position='relative'
                 p={8} 
                 flexDir={{ base: 'column', lg: 'row' }}
                 m='auto'
-                w={{ base: '20rem', "2sm":"30rem", md: '48rem', lg: '60rem', xl: '75rem' }}
+                w={{ base: '20rem', '2sm':'30rem', md: '48rem', lg: '60rem', xl: '75rem' }}
                 justifyContent='space-between'
                 > 
                 <Box 
@@ -58,11 +58,11 @@ position='relative'
                     <Heading
                         fontSize={{ base: '1.25rem', md: '1.25rem', lg: '1.5rem' }}
                         as='h3'
-                    >{investigationData.data.sobreLaInvestigacion.tituloDeLaInvestigacion}</Heading>
+                    >{props.investigationData.data.sobreLaInvestigacion.tituloDeLaInvestigacion}</Heading>
                 </Box>
                 <Box 
                     ml='-10px'
-                    mt={{base:"4rem", "2sm":"3rem" , md:"3rem"}}
+                    mt={{base:'4rem', '2sm':'3rem' , md:'3rem'}}
                     display={{lg:'none', xl:'none'}}
                     w='0.25rem'
                     h={{ base: '28.75rem', md: '15rem', lg:'24rem' }}
@@ -80,8 +80,8 @@ position='relative'
                     <Collapse startingHeight={460} in={show} >
                         <ReactMarkdown 
                         components={{
-                            p: ({ nodo, ...props }) => < p style={{}}  {...props} />
-                        }}>{investigationData.data.sobreLaInvestigacion.cuerpoDeLaInvestigacion}</ReactMarkdown>
+                            p: ({ nodo, ...props }) => < p style={{ paddingBottom: '0.625rem', paddingTop: '0.625rem'}}  {...props} />
+                        }}>{props.investigationData.data.sobreLaInvestigacion.cuerpoDeLaInvestigacion}</ReactMarkdown>
                     </Collapse>
                     <Container alignContent centerContent>
                         <Button size='sm' onClick={handleToggle} mt='1rem' _active={{ bg: 'brand.secondaryGray' }} _focus={{ boxShadow: 'none' }}>
@@ -94,8 +94,8 @@ position='relative'
                 fontSize={{ base: '1rem', md: '1rem', lg: '1.125rem' }} 
                 display={{ base: 'none', lg: 'block' }}>
                     <ReactMarkdown  components={{
-                        p: ({ nodo, ...props }) => < p style={{}}  {...props} />
-                    }}>{investigationData.data.sobreLaInvestigacion.cuerpoDeLaInvestigacion}</ReactMarkdown>
+                        p: ({ nodo, ...props }) => < p style={{ paddingBottom: '0.625rem', paddingTop: '0.625rem'}}  {...props} />
+                    }}>{props.investigationData.data.sobreLaInvestigacion.cuerpoDeLaInvestigacion}</ReactMarkdown>
                 </Box>
             </Flex>
             <Footer />

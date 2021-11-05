@@ -1,6 +1,6 @@
-import React from "react";
-import {getApiRes} from "../../services/callApi"
-import ExpositionMuseum from "../../components/viewExpositions";
+import React from 'react';
+import {getApiRes} from '../../services/callApi'
+import ExpositionMuseum from '../../components/viewExpositions';
 
 function ExpositionContainer({ expositionData}) {
   return (
