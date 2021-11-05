@@ -12,10 +12,7 @@ export default function SearchBarCard({ names }) {
     let url =  '/cronologias-invisible'
     names.imagenDeLaArtista ===""? url= url: url = names.imagenDeLaArtista
     return (
-            // {`/search-artist/${names.id}`} as={`/search-artist/${names.id}`}
-            // esta es la ruta correcto, se comenta por el momento para que las curadoras no entren a la vista de la 
-            // artista, ya que está en desarrollo
-        <Link href='/'>
+        <Link href={`/search-artist/${names.id}`} as={`/search-artist/${names.id}`}>
             <a>
                 <Box key={names} mb={4}>
                     <AspectRatio
