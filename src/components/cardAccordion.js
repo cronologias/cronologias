@@ -22,7 +22,7 @@ export default function CardAccordion({ names }) {
                     w={{ base: '8.6rem', md: '9.75rem', lg: '9.75rem', xl: '16.8rem'}}
                     h={{ base: '8.6rem', md: '9.75rem', lg: '9.75rem', xl: '10rem'}}
                   >
-                    <Image src={url} alt={val.imagenDeLaArtista} layout="fill" objectFit='cover'/>
+                    <Image src={url} alt={val.imagenDeLaArtista} layout="fill" objectFit='cover' quality={50}/>
                   </AspectRatio>
                   <Stack 
                     align={{ base: 'center', md: 'stretch' }}
