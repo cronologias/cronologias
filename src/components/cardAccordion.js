@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image"
 import { SimpleGrid, Center, Box, AspectRatio, Text, Stack, } from "@chakra-ui/react";
+import { buildUrl } from 'cloudinary-build-url';
 
 export default function CardAccordion({ names }) {
   return (
@@ -10,6 +11,16 @@ export default function CardAccordion({ names }) {
         {names.map((val, data) => {
           let url = '/cronologias-invisible';
           val.imagenDeLaArtista === ''? url= url: url= val.imagenDeLaArtista;
+          let imgurl = buildUrl(url, {
+            cloud: {
+              cloudName: 'cronologias-invisible',
+            },
+            transformations: {
+              width:'270',
+              height:'160',
+              quality:'75',
+            }
+        });
           return (
             // esta es la ruta correcto, se comenta por el momento para que las curadoras no entren a la vista de la 
             // artista, ya que está en desarrollo
@@ -18,12 +29,12 @@ export default function CardAccordion({ names }) {
               <a>
                 <Box key={data} mr={4} mb={4}>
                   <AspectRatio 
-                    ratio={1 / 0}
+                    ratio={1 / 1}
                     w={{ base: '8.6rem', md: '9.75rem', lg: '9.75rem', xl: '16.8rem'}}
                     h={{ base: '8.6rem', md: '9.75rem', lg: '9.75rem', xl: '10rem'}}
                     
                   >
-                    <Image src={url} alt={val.imagenDeLaArtista} width={270} height={160} />
+                    <Image src={imgurl} alt={val.imagenDeLaArtista} layout='fill' objectFit='cover' quality={75}/>
                   </AspectRatio>
                   <Stack 
                     align={{ base: 'center', md: 'stretch' }}
