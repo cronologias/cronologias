@@ -4,12 +4,22 @@ import ReactMarkdown from 'react-markdown';
 import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons';
 import Image from "next/image"
 import ArtistAnimation from './ArtistAnimation';
+import { buildUrl } from 'cloudinary-build-url';
 const ViewArtist = ({ names }) => {
     const [show, setShow] = React.useState(false)
     const handleToggle = () => setShow(!show)
     let url = '/cronologias-invisible';
     names.imagenDeLaArtista === ''? url= url: url= names.imagenDeLaArtista;
-
+    let imgurl = buildUrl(url, {
+        cloud: {
+          cloudName: 'cronologias-invisible',
+        },
+        transformations: {
+          width:'1240',
+          height:'600',
+          quality:'75',
+        }
+    });
     return (
         <>
             <Box as='main'
@@ -17,7 +27,7 @@ const ViewArtist = ({ names }) => {
                 w='100%'
                 h= {{base:'18.75rem',md:'28.125rem', lg:'37.5rem'}}
             >
-                <Image src={url} alt={names.nombreDeLaAutora} layout="fill" objectFit='cover' />
+                <Image src={imgurl} alt={names.nombreDeLaAutora} layout="fill" objectFit='cover' />
                 <Box h= {{base:'18.75rem',md:'28.125rem', lg:'37.5rem'}}>
                 <ArtistAnimation />
                 </Box>

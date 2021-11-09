@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image"
+import { buildUrl } from 'cloudinary-build-url';
 import {
     Box,
     AspectRatio,
@@ -10,7 +11,17 @@ import {
 
 export default function SearchBarCard({ names }) {
     let url =  '/cronologias-invisible'
-    names.imagenDeLaArtista ===""? url= url: url = names.imagenDeLaArtista
+    names.imagenDeLaArtista ===""? url= url: url = names.imagenDeLaArtista;
+    let imgurl = buildUrl(url, {
+        cloud: {
+          cloudName: 'cronologias-invisible',
+        },
+        transformations: {
+          width:'270',
+          height:'160',
+          quality:'75',
+        }
+    });
     return (
         <Link href={`/search-artist/${names.id}`} as={`/search-artist/${names.id}`}>
             <a>
@@ -21,7 +32,7 @@ export default function SearchBarCard({ names }) {
                         h={{ base: '8.6rem', md: '9.75rem', lg: '9.75rem', xl: '10rem' }}
                     >
                     <Image
-                        src={url}
+                        src={imgurl}
                         alt={names.imagenDeLaArtista}
                         layout='fill'
                         objectFit='cover'

@@ -4,7 +4,7 @@ import Image from "next/image"
 import { SimpleGrid, Center, Box, AspectRatio, Text, Stack, } from "@chakra-ui/react";
 import { buildUrl } from 'cloudinary-build-url';
 
-export default function CardAccordion({ names }) {
+function CardAccordion({ names }) {
   return (
     <Center alignContent w='full' m='auto' mt={4}>
       <SimpleGrid columns={[2, 2]}>
@@ -53,4 +53,5 @@ export default function CardAccordion({ names }) {
     </Center>
   );
 }
+export default CardAccordion;
 
