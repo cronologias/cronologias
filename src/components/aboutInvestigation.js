@@ -61,16 +61,6 @@ position='relative'
                     >{props.investigationData.data.sobreLaInvestigacion.tituloDeLaInvestigacion}</Heading>
                 </Box>
                 <Box 
-                    ml='-10px'
-                    mt={{base:'4rem', '2sm':'3rem' , md:'3rem'}}
-                    display={{lg:'none', xl:'none'}}
-                    w='0.25rem'
-                    h={{ base: '28.75rem', md: '15rem', lg:'24rem' }}
-                    bg='brand.primaryOrange'
-                    position='absolute'
-                >
-                </Box>
-                <Box 
                     w={{lg:'36.313rem', xl:'38.125rem'}}
                     fontSize={{ base: '1rem', md: '1rem', lg: '1.125rem' }} 
                     display={{ base: 'block', lg: 'none' }}

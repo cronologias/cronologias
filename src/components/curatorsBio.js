@@ -106,16 +106,6 @@ function CuratorsBio(props) {
                     </Flex>
                 </Box>
                 <Box 
-                    ml="-10px"
-                    mt={{base:"14.6rem", md:"35.4rem"}}
-                    display={{lg:"none", xl:"none"}}
-                    w="0.25rem"
-                    h={{ base: "33rem", md: "33.4rem" }}
-                    bg="brand.primaryOrange"
-                    position="absolute"
-                >
-                </Box>
-                <Box 
                     w={{lg:'36.313rem', xl:'38.125rem'}}
                     fontSize={{ base: '1rem', md: '1rem', lg: '1.125rem' }} 
                     display={{ base: 'block', lg: 'none' }}

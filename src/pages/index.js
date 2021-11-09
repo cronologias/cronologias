@@ -34,7 +34,7 @@ function homePage({curatorsData, museumData}) {
           bg='brand.thirdOrange'
           h={{ base: '16.75rem', '400px':'13.75rem' , md: '8.75rem', xl: '7.75rem' }}
           p={{base: '1.375rem'}}
-          mb={{ base: '2rem', md:'2.25rem', lg:'2.5rem'}}
+          mb={{ base: '3rem', md:'4rem', lg:'5rem'}}
         >
           <Text fontSize={{ base: '1rem', lg: '1.125rem' }}>
             <span style={emphasisWord}>CRONOLOGÍAS DE LO INVISIBLE</span>{' '}
@@ -52,27 +52,34 @@ function homePage({curatorsData, museumData}) {
       <Center
         alignItems='start'
         color='brand.primaryBlack'
-        flexDir={{ base: 'column', md: 'row' }} 
+        flexDir={{ base: 'column', md: 'column' }} 
         fontFamily='heading'
         fontSize={{ base: '1.25rem', md: '1.25rem', lg: '1.5rem' }}
         fontWeight={700}
         m='auto'
         w={{ base: '20rem', '2sm': '23rem', md: '48rem', lg: '60rem', xl: '75rem' }}
         justifyContent='space-between'
-        mb={{ base: '2rem', md:'2.25rem', lg:'2.5rem'}}
+        mb={{ base: '3rem', md:'4rem', lg:'5rem'}}
       >
         <Box
-          w={{ base: '100%', md: '16.938rem' }}
           mb='1rem'
         >
-          <h2>Sobre la investigación</h2>
+          <Link
+              href='/about-investigation'>
+              <a>
+                <Image 
+                  src="/sobreLaInvestigacion.png"
+                  alt="Sobre la investigación"
+                />
+              </a>
+          </Link>
         </Box>
         <Box
           fontFamily='body'
           fontWeight={300}
           mb={{ base: '2rem' }}
           fontSize={{ base: '1rem', lg: '1.125rem' }}
-          w={{ base: '20rem',  '2sm': '24rem', md: '24.4rem', lg: '36.25rem', xl:'43.125rem' }} 
+          w={{ base: '20rem',  '2sm': '24rem', md: '24.4rem', lg: '40.25rem', xl:'43.125rem' }} 
           m={{ md: '0' }}
         >
           <p>
@@ -97,15 +104,15 @@ function homePage({curatorsData, museumData}) {
         w={{ base: '20rem', md: '48rem', lg: '60rem', xl: '75rem' }}
         m='auto'
         textAlign='start'
-        fontFamily='heading'
-        fontSize={{ base: '1.25rem', md: '1.25rem', lg: '1.5rem' }}
-        color='brand.primaryBlack'
-        fontWeight={700}
-        mb={4}
+        mb='1rem'
       >
-        <h2>Visita las exposiciones</h2>
+      <Image 
+        src="/vistaLasExpo.png"
+        alt="Visita las exposiciones"
+      />
       </Box>
       <MobileSlider mobleSlides={museumData}/>
+
       <CuratorsCards curators={curatorsData} />
       <Center>
         <Box
@@ -115,7 +122,7 @@ function homePage({curatorsData, museumData}) {
         fontFamily='body'
         fontWeight={700}
         p={4}
-        mb={{ base: '2rem', md:'2.25rem', lg:'2.5rem'}}
+        mb={{ base: '3rem', md:'4rem', lg:'5rem'}}
         _hover={{ bg: 'brand.secondaryBlack'}}
         >
           <Link
