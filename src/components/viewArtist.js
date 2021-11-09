@@ -12,12 +12,12 @@ const ViewArtist = ({ names }) => {
     names.imagenDeLaArtista === ''? url= url: url= names.imagenDeLaArtista;
     let imgurl = buildUrl(url, {
         cloud: {
-          cloudName: 'cronologias-invisible',
+            cloudName: 'cronologias-invisible',
         },
         transformations: {
-          width:'1240',
-          height:'600',
-          quality:'75',
+            width:'1175',
+            height:'769',
+            quality:'75',
         }
     });
     return (
