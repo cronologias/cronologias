@@ -46,6 +46,7 @@ function MenuHam() {
             <IconButton
                 aria-label='hambuerger menu'
                 bg='brand.primaryOrange'
+                borderRadius= 'none'
                 icon={
                     <HamburgerIcon
                         boxSize={{ base: '1.5rem', md: '2rem', lg: '2.25rem' }}
