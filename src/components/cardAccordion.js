@@ -18,11 +18,12 @@ export default function CardAccordion({ names }) {
               <a>
                 <Box key={data} mr={4} mb={4}>
                   <AspectRatio 
-                    ratio={1 / 1}
+                    ratio={1 / 0}
                     w={{ base: '8.6rem', md: '9.75rem', lg: '9.75rem', xl: '16.8rem'}}
                     h={{ base: '8.6rem', md: '9.75rem', lg: '9.75rem', xl: '10rem'}}
+                    
                   >
-                    <Image src={url} alt={val.imagenDeLaArtista} layout="fill" objectFit='cover' quality={50}/>
+                    <Image src={url} alt={val.imagenDeLaArtista} width={270} height={160} />
                   </AspectRatio>
                   <Stack 
                     align={{ base: 'center', md: 'stretch' }}
