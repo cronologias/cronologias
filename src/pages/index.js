@@ -37,14 +37,18 @@ function homePage({curatorsData, museumData}) {
         />
       </Box>
       <Box
-        w={{ base: '100%', '2sm': '23rem', md: '48rem', lg: '60rem', xl: '75rem' }}
+        w='100%'
         bg='brand.primaryOrange'
         // h={{ base: '16.75rem', '400px':'13.75rem' , md: '8.75rem', xl: '7.75rem' }}
-        p={{base: '2rem', md:'4rem'}}
+        p='2rem'
         m='auto'
         mb={{ base: '2rem', md:'2.25rem', lg:'2.5rem'}}
       >
-        <Text fontSize={{ base: '1rem', lg: '1.125rem' }}>
+        <Text 
+          fontSize={{ base: '1rem', lg: '1.125rem' }}
+          m='auto'
+          w={{ base: '20rem', '2sm': '23rem', md: '48rem', lg: '60rem', xl: '75rem'}}
+        >
           <span style={emphasisWord}>CRONOLOGÍAS DE LO INVISIBLE</span>{' '}
           <span style={normalParagraph}>
             es una exposición historiográfica de las artistas visuales en
