@@ -18,7 +18,6 @@ export default function SearchBarCard({ names }) {
         },
         transformations: {
           width:'270',
-          height:'160',
           quality:'75',
         }
     });

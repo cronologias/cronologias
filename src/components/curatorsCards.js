@@ -1,8 +1,10 @@
 import Link from "next/link";
-import {Text, Heading, Box, Flex, HStack,} from '@chakra-ui/react'
+import {Text, Heading, Box, Flex, HStack,} from '@chakra-ui/react';
+import { buildUrl } from 'cloudinary-build-url';
 import Image from 'next/image'
 
 function CuratorsCards(props) {
+    let imgurl = ''
     return (
     <>
     <Flex
@@ -27,6 +29,15 @@ function CuratorsCards(props) {
         alignItems='normal'
         mb={8}>
             {props.curators.map((element, index) => (
+                imgurl = buildUrl(element.imagenDeLaCuradora, {
+                    cloud: {
+                        cloudName: 'cronologias-invisible',
+                    },
+                    transformations: {
+                        width:'384',
+                        quality:'75',
+                    }
+                }),
                 <Box
                 key={`curators-card-${index}`}
                 w={{base:'9.75rem', '2sm': '11.75rem', md:'15rem', lg:'24rem'}}
@@ -42,7 +53,7 @@ function CuratorsCards(props) {
                             >
                             <Image 
                                 mr='0'
-                                src={element.imagenDeLaCuradora} 
+                                src={imgurl} 
                                 display="inline-block" 
                                 layout='fill'
                                 objectFit="cover"

@@ -36,7 +36,6 @@ function Galery(props) {
             },
             transformations: {
               width:'1031',
-              height:'1627',
               quality:'75',
             }
         }),
