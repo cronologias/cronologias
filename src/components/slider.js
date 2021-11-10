@@ -37,12 +37,15 @@ const Slider = (props) => {
                                 <Image layout='fill' objectFit='contain' src={url} />
                             </Box>
                             <Box bg='brand.primaryBlack' p={7} mb={50}>
-                                <Heading as='h2' fontSize='1.75rem' mb={4} color='brand.baseColor'>
-                                    {slide.title}
-                                </Heading>
-                                <Text fontSize='1rem' color='brand.baseColor'>
-                                    {slide.text}
-                                </Text>
+                            <Text fontSize='0.75rem' color='brand.baseColor' pb='0.75rem'>
+                                {slide.derechoDeAutor}
+                            </Text>
+                            <Heading as='h2' fontSize='1.75rem' mb={4} color='brand.baseColor'>
+                                {slide.tTuloDeLaObra}
+                            </Heading>
+                            <Text fontSize='1rem' color='brand.baseColor'>
+                                {slide.informaciNExtra}
+                            </Text>
                             </Box>
                         </Box>
                     ))}
