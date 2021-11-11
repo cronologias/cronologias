@@ -107,7 +107,7 @@ function MenuHam() {
                                     p={2}
                                     _hover={{ bg: 'rgba(0, 0, 0, 0.04)'}}>
                                         <Link 
-                                            href='/about-investigation'>
+                                            href='/sobre-la-investigacion'>
                                             <a>Sobre la Investigación</a>
                                         </Link>
                                     </Box>
@@ -147,21 +147,21 @@ function MenuHam() {
                                                     >
                                                     <AccordionPanel fontWeight={300} border='none'>
                                                         <Link
-                                                            href='/exposition-museum/63998842'>
+                                                            href='/visita-las-exposiciones/63998842'>
                                                             <a>Museo del Jade y de la Cultura Precolombina</a>
                                                         </Link>
                                                         
                                                     </AccordionPanel>
                                                     <AccordionPanel fontWeight={300} border='none'>
                                                         <Link
-                                                            href='/exposition-museum/63998873'>
+                                                            href='/visita-las-exposiciones/63998873'>
                                                             <a>Museo Dr. Rafael Ángel Calderon Guardia</a>
                                                         </Link>
                                                         
                                                     </AccordionPanel>
                                                     <AccordionPanel fontWeight={300} border='none'>
                                                         <Link
-                                                            href='/exposition-museum/63998876'>
+                                                            href='/visita-las-exposiciones/63998876'>
                                                             <a>Biblioteca Nacional</a>
                                                         </Link>
                                                         
@@ -197,13 +197,13 @@ function MenuHam() {
                                                 <Box fontSize={{ base: '1rem', md: '1.25rem' }} ml={2}>
                                                     <AccordionPanel fontWeight={300} border='none' pb={4}>
                                                         <Link
-                                                            href='/curator-bio/64001243'>
+                                                            href='/curadoras/64001243'>
                                                             <a>Susana Sánchez Carballo</a>
                                                         </Link>
                                                     </AccordionPanel>
                                                     <AccordionPanel fontWeight={300} border='none' pb={4}>
                                                     <Link
-                                                            href='/curator-bio/64001348'>
+                                                            href='/curadoras/64001348'>
                                                             <a>Sussy Vargas Alvarado</a>
                                                         </Link>
                                                     </AccordionPanel>
@@ -225,7 +225,7 @@ function MenuHam() {
                                     <Box 
                                     p={2}
                                     _hover={{ bg: 'rgba(0, 0, 0, 0.04)'}}>
-                                        <Link href='/search-artist'>
+                                        <Link href='/busqueda-de-artistas'>
                                             <a>Búsqueda de artistas</a>
                                         </Link>
                                     </Box>
@@ -245,7 +245,7 @@ function MenuHam() {
                                     _hover={{ bg: 'rgba(0, 0, 0, 0.04)'}}
                                     >
                                         <Link
-                                            href='/documentatio'>
+                                            href='/documentacion'>
                                             <a>Documentación</a>
                                         </Link>
                                     </Box>
@@ -265,7 +265,7 @@ function MenuHam() {
                                     _hover={{ bg: 'rgba(0, 0, 0, 0.04)'}}
                                     >
                                         <Link
-                                            href='/collaborators'>
+                                            href='/colaboradores'>
                                             <a>Colaboradores</a>
                                         </Link>
                                     </Box>

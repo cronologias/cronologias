@@ -97,7 +97,7 @@ function homePage({curatorsData, museumData}) {
           textDecoration='underline'
           >
             <Link
-              href='/about-investigation'>
+              href='/sobre-la-investigacion'>
               <a>Leer más</a>
             </Link>
           </Box>
@@ -130,7 +130,7 @@ function homePage({curatorsData, museumData}) {
         _hover={{ bg: 'brand.secondaryBlack'}}
         >
           <Link
-            href='/search-artist'>
+            href='/busqueda-de-artistas'>
             <a>Búsqueda de artistas</a>
           </Link>
         </Box>
