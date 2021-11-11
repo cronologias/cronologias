@@ -15,7 +15,7 @@ function MobileSlider(props) {
     let imgurl = ''
     return(
         <Center 
-        mb={{ base: '2rem', md:'2.25rem', lg:'2.5rem'}}
+        mb={{ base: '3rem', md:'4rem', lg:'5rem'}}
         >
             <Flex
             overflow='scroll'
@@ -27,7 +27,7 @@ function MobileSlider(props) {
             align='start'
             >
                 <HStack 
-                    w={{ base: '20rem', '2sm': '24rem' ,md: '48rem', lg: '60rem', xl: '75rem' }}
+                    w={{ base: '20rem', '2sm': '24rem' ,md: '45rem', lg: '58rem', xl: '72rem' }}
                     m='auto'
                     textAlign='start'
                     mb={4}

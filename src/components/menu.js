@@ -108,7 +108,9 @@ function MenuHam() {
                                     _hover={{ bg: 'rgba(0, 0, 0, 0.04)'}}>
                                         <Link 
                                             href='/sobre-la-investigacion'>
-                                            <a>Sobre la Investigación</a>
+                                            <a
+                                                onClick={onClose}
+                                            >Sobre la Investigación</a>
                                         </Link>
                                     </Box>
                                 </ListItem>
@@ -148,21 +150,27 @@ function MenuHam() {
                                                     <AccordionPanel fontWeight={300} border='none'>
                                                         <Link
                                                             href='/visita-las-exposiciones/70573081'>
-                                                            <a>Museo del Jade y de la Cultura Precolombina</a>
+                                                            <a
+                                                                onClick={onClose}
+                                                            >Museo del Jade y de la Cultura Precolombina</a>
                                                         </Link>
                                                         
                                                     </AccordionPanel>
                                                     <AccordionPanel fontWeight={300} border='none'>
                                                         <Link
                                                             href='/visita-las-exposiciones/63998873'>
-                                                            <a>Museo Dr. Rafael Ángel Calderon Guardia</a>
+                                                            <a
+                                                                onClick={onClose}
+                                                            >Museo Dr. Rafael Ángel Calderon Guardia</a>
                                                         </Link>
                                                         
                                                     </AccordionPanel>
                                                     <AccordionPanel fontWeight={300} border='none'>
                                                         <Link
                                                             href='/visita-las-exposiciones/63998876'>
-                                                            <a>Biblioteca Nacional</a>
+                                                            <a
+                                                                onClick={onClose}
+                                                            >Biblioteca Nacional</a>
                                                         </Link>
                                                         
                                                     </AccordionPanel>
@@ -198,13 +206,17 @@ function MenuHam() {
                                                     <AccordionPanel fontWeight={300} border='none' pb={4}>
                                                         <Link
                                                             href='/curadoras/64001243'>
-                                                            <a>Susana Sánchez Carballo</a>
+                                                            <a
+                                                                onClick={onClose}
+                                                            >Susana Sánchez Carballo</a>
                                                         </Link>
                                                     </AccordionPanel>
                                                     <AccordionPanel fontWeight={300} border='none' pb={4}>
                                                     <Link
                                                             href='/curadoras/64001348'>
-                                                            <a>Sussy Vargas Alvarado</a>
+                                                            <a
+                                                                onClick={onClose}
+                                                            >Sussy Vargas Alvarado</a>
                                                         </Link>
                                                     </AccordionPanel>
                                                 </Box>
@@ -226,7 +238,9 @@ function MenuHam() {
                                     p={2}
                                     _hover={{ bg: 'rgba(0, 0, 0, 0.04)'}}>
                                         <Link href='/busqueda-de-artistas'>
-                                            <a>Búsqueda de artistas</a>
+                                            <a
+                                                onClick={onClose}
+                                            >Búsqueda de artistas</a>
                                         </Link>
                                     </Box>
                                 </ListItem>
@@ -246,7 +260,9 @@ function MenuHam() {
                                     >
                                         <Link
                                             href='/documentacion'>
-                                            <a>Documentación</a>
+                                            <a
+                                                onClick={onClose}
+                                            >Documentación</a>
                                         </Link>
                                     </Box>
                                     
@@ -266,7 +282,9 @@ function MenuHam() {
                                     >
                                         <Link
                                             href='/colaboradores'>
-                                            <a>Colaboradores</a>
+                                            <a
+                                                onClick={onClose}
+                                            >Colaboradores</a>
                                         </Link>
                                     </Box>
                                     
