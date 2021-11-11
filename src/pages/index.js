@@ -27,21 +27,19 @@ function homePage({curatorsData, museumData, teamData}) {
       <Box 
         bg='#000000' 
         width='100%' 
-        //mb={{ base: '0', md:'2.25rem', lg:'2.5rem'}}
       >
         <Image
           m='auto'
           src='/animationBlack.gif'
-          w={{ base: '35rem', md:'40rem', lg:'45rem', xl:'55rem'}} 
-          h={{base:'20rem', md:'25rem', lg:'30rem', xl:'35rem'}}
+          w={{ base: '100%', md:'40rem', lg:'45rem', xl:'55rem'}} 
+          h={{base:'100%', md:'25rem', lg:'30rem', xl:'35rem'}}
           alt='cronologías de lo invisible'
         />
       </Box>
       <Box
         w='100%'
         bg='brand.primaryOrange'
-        // h={{ base: '16.75rem', '400px':'13.75rem' , md: '8.75rem', xl: '7.75rem' }}
-        p='2rem'
+        p={{base:'1rem', md:'2rem'}}
         m='auto'
         mb={{ base: '2rem', md:'2.25rem', lg:'2.5rem'}}
       >
