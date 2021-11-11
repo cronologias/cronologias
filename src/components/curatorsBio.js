@@ -79,7 +79,7 @@ function CuratorsBio(props) {
                     <Box
                     position="relative"
                     w="full"
-                    h={{base: "10.375rem", md:"31.5rem", lg: "18.563rem", xl:"23.75rem"}}
+                    h={{base: "24rem", md:"64rem", lg: "35rem", xl:"44rem"}}
                     >
                         <Image 
                         src={imgurl}

@@ -8,7 +8,7 @@ import Footer from '../components/footer';
 import {getApiRes} from '../services/callApi';
 import Head from 'next/head';
 
-function homePage({curatorsData, museumData}) {
+function homePage({curatorsData, museumData, teamData}) {
   let emphasisWord = {
     color: '#E6AA92',
     fontFamily: 'Kulim Park, sans-serif',
@@ -17,7 +17,7 @@ function homePage({curatorsData, museumData}) {
   let normalParagraph = {
     color: 'brand.primaryBlack',
     fontFamily: 'Cousine, monospace',
-  };
+  }; 
   return (
     <>
       <Head>
@@ -119,7 +119,7 @@ function homePage({curatorsData, museumData}) {
       </Box>
       <MobileSlider mobleSlides={museumData}/>
       <CuratorsCards curators={curatorsData} />
-      <TeamCards curators={curatorsData} />
+      <TeamCards team={teamData} />
       <Center>
         <Box
         bg='brand.primaryOrange'
@@ -148,11 +148,15 @@ export async function getStaticProps () {
   const URl= process.env.NEXT_URL;
   const TOKEN= process.env.NEXT_TOKEN;
   
+  const teamInfo ='query MyQuery {allPersonaColaboradoras {id imagenDelColaborador,nombreDelColaborador,profesion, enlace{enlaceASitioWebYRedesSociales}}}'
   const curatorsInfo ='query MyQuery{ allBiografiaCuradoras{ id nombreDeLaCuradora imagenDeLaCuradora breveDescripcionDeLaCuradora }}'
   const museumInfo ='query MyQuery {allVisitaLaExposicions { id tituloDeLaTarjeta enlaceDeLaImagen fechaDeLaExposicion fechaDeFinalizacionDeLaExposicion ubicacionDelMuseo recorrido360}}'
   
   const getCurators = await getApiRes(URl,TOKEN, curatorsInfo)
   const curatorsData = getCurators.data.allBiografiaCuradoras
+
+  const getTeamData = await getApiRes(URl,TOKEN, teamInfo)
+  const teamData = getTeamData.data.allPersonaColaboradoras
   
   const getMuseum = await getApiRes(URl,TOKEN, museumInfo)
   const museumData = getMuseum.data.allVisitaLaExposicions
@@ -161,6 +165,7 @@ export async function getStaticProps () {
     props: {
       curatorsData,
       museumData,
+      teamData,
     }
   }
 }

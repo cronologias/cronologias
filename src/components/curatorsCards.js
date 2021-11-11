@@ -75,7 +75,7 @@ function CuratorsCards(props) {
                             mb={3}
                             mt={3}
                             fontWeight='bold'
-                            w={{ base:'105px', md:'auto'}}
+                            w={{ base:'108px', md:'auto'}}
                             >
                                 {element.nombreDeLaCuradora} 
                             </Heading>

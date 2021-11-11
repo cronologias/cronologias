@@ -1,8 +1,10 @@
 import Link from "next/link";
 import {Text, Heading, Box, Flex, HStack,} from '@chakra-ui/react'
 import Image from 'next/image'
+import { buildUrl } from 'cloudinary-build-url';
 
 function TeamCards(props) {
+    let imgurl = ''
     return (
         <>
         <Flex
@@ -27,13 +29,22 @@ function TeamCards(props) {
             spacing={{ base:'0.700rem', md:'1rem', lg:'1.5rem' }}
             alignItems='normal'
             mb={8}>
-                {props.curators.map((element, index) => (
+                {props.team.map((element, index) => (
+                    imgurl = buildUrl(element.imagenDelColaborador, {
+                        cloud: {
+                            cloudName: 'cronologias-invisible',
+                        },
+                        transformations: {
+                            width:'384',
+                            quality:'75',
+                        }
+                    }),
                     <Box
                     key={`curators-card-${index}`}
                     w={{base:'9.75rem', md:'15rem'}}
                     >
                         <Link
-                        href={`/curator-bio/${element.id}`} as={`/curator-bio/${element.id}`}
+                        href='/'
                         >
                             <a>
                                 <Box 
@@ -43,11 +54,11 @@ function TeamCards(props) {
                                 >
                                 <Image 
                                     mr='0'
-                                    src={element.imagenDeLaCuradora} 
+                                    src={imgurl} 
                                     display="inline-block" 
                                     layout='fill'
                                     objectFit="cover"
-                                    alt={element.nombreDeLaCuradora} 
+                                    alt={element.nombreDelColaborador} 
                                     pb='7px'
                                 />
                                 </Box>
@@ -64,9 +75,9 @@ function TeamCards(props) {
                                 mb={3}
                                 mt={3}
                                 fontWeight='bold'
-                                w={{ base:'105px', md:'auto'}}
+                                w={{ base:'108px', md:'auto'}}
                                 >
-                                    {element.nombreDeLaCuradora} 
+                                    {element.nombreDelColaborador} 
                                 </Heading>
                                 <Box
                                 transform= 'rotate(-4deg)'
@@ -82,7 +93,7 @@ function TeamCards(props) {
                                 fontWeight={300}
                                 mt={3}
                                 >
-                                    {element.breveDescripcionDeLaCuradora} 
+                                    {element.profesion} 
                                 </Text>
                             </a>
                         </Link>
