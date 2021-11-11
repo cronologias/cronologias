@@ -180,7 +180,7 @@ export async function getStaticProps () {
   const URl= process.env.NEXT_URL;
   const TOKEN= process.env.NEXT_TOKEN;
   
-  const teamInfo ='query MyQuery {allPersonaColaboradoras {id imagenDelColaborador,nombreDelColaborador,profesion, enlace{enlaceASitioWebYRedesSociales}}}'
+  const teamInfo ='query MyQuery {allEquipos {id imagenIntegranteDelEquipo nombreDelIntegrante profesion enlace {enlaceASitioWebYRedesSociales}}}'
   const curatorsInfo ='query MyQuery{ allBiografiaCuradoras{ id nombreDeLaCuradora imagenDeLaCuradora breveDescripcionDeLaCuradora }}'
   const museumInfo ='query MyQuery {allVisitaLaExposicions { id tituloDeLaTarjeta enlaceDeLaImagen fechaDeLaExposicion fechaDeFinalizacionDeLaExposicion ubicacionDelMuseo recorrido360}}'
   
@@ -188,7 +188,7 @@ export async function getStaticProps () {
   const curatorsData = getCurators.data.allBiografiaCuradoras
 
   const getTeamData = await getApiRes(URl,TOKEN, teamInfo)
-  const teamData = getTeamData.data.allPersonaColaboradoras
+  const teamData = getTeamData.data.allEquipos
   
   const getMuseum = await getApiRes(URl,TOKEN, museumInfo)
   const museumData = getMuseum.data.allVisitaLaExposicions
