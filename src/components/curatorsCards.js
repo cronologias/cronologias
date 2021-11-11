@@ -25,7 +25,7 @@ function CuratorsCards(props) {
                         cloudName: 'cronologias-invisible',
                     },
                     transformations: {
-                        width:'384',
+                        width:'240',
                         quality:'75',
                     }
                 }),
@@ -47,7 +47,7 @@ function CuratorsCards(props) {
                                 src={imgurl} 
                                 display="inline-block" 
                                 layout='fill'
-                                objectFit="cover"
+                                objectFit="contain"
                                 alt={element.nombreDeLaCuradora} 
                                 pb='7px'
                             />
