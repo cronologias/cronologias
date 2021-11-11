@@ -7,12 +7,22 @@ import { BsEnvelope,BsGlobe2 } from 'react-icons/bs'
 import Header from "./header";
 import Footer from "./footer";
 import Head from 'next/head';
-
+import { buildUrl } from 'cloudinary-build-url';
 
 function CuratorsBio(props) {
     const [show, setShow] = React.useState(false)
     const handleToggle = () => setShow(!show)
+    let imgurl =''
     return (
+        imgurl = buildUrl(props.curators[0].imagenDeLaCuradora, {
+            cloud: {
+                cloudName: 'cronologias-invisible',
+            },
+            transformations: {
+                width:'490',
+                quality:'75',
+            }
+        }),
         <>
         <Head>
             <link rel="icon" type="image/svg" sizes="42x42" href="/logoCrono.png"/>
@@ -72,7 +82,7 @@ function CuratorsBio(props) {
                     h={{base: "10.375rem", md:"31.5rem", lg: "18.563rem", xl:"23.75rem"}}
                     >
                         <Image 
-                        src={props.curators[0].imagenDeLaCuradora}
+                        src={imgurl}
                         layout='fill'
                         objectFit="cover"
                         alt={props.curators[0].nombreDeLaCuradora}

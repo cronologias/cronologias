@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { buildUrl } from 'cloudinary-build-url';
 import {
     Box,
     Flex,
@@ -11,6 +12,7 @@ import {
 
 function MobileSlider(props) {
     let url ='/cronologias-invible'
+    let imgurl = ''
     return(
         <Center 
         mb={{ base: '2rem', md:'2.25rem', lg:'2.5rem'}}
@@ -32,7 +34,16 @@ function MobileSlider(props) {
                     spacing={{ base:'0.5rem', md:'0.6rem', lg:'1.5rem' }}>
                     {props.mobleSlides.map((slide, sid) => (
                         slide.enlaceDeLaImagen === ''? url = url: url = slide.enlaceDeLaImagen,
-                            <Link href={`/exposition-museum/${slide.id}`} as={`/exposition-museum/${slide.id}`} key={sid}>
+                        imgurl = buildUrl(url, {
+                            cloud: {
+                                cloudName: 'cronologias-invisible',
+                            },
+                            transformations: {
+                                width:'490',
+                                quality:'75',
+                            }
+                        }),
+                            <Link href={`/visita-las-exposiciones/${slide.id}`} as={`/visita-las-exposiciones/${slide.id}`} key={sid}>
                             <a>
                                 <LinkBox >
                                 <Box 
@@ -43,7 +54,7 @@ function MobileSlider(props) {
                                 position='relative'
                                 >
                                     <Image 
-                                    src={url} 
+                                    src={imgurl} 
                                     objectFit='cover' 
                                     layout='fill'
                                     />

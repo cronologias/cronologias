@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from "next/link";
 import Image from "next/image"
+import { buildUrl } from 'cloudinary-build-url';
 import {
   Box,
   HStack,
@@ -22,12 +23,22 @@ function Galery(props) {
     setindexSlide(e.target.dataset.index)
   }
   let url = '/cronologias-invisible';
+  let imgurl ='';
   return (
     <> 
       <Box mb={{ base: '2rem', md:'2.25rem', lg:'2.5rem'}}>
         {props.images.map((worksImg, index) => (
           url = '/cronologias-invisible',
           worksImg.imagenDeLaObraDeLaArtista ===""? url= url: url = worksImg.imagenDeLaObraDeLaArtista,
+          imgurl = buildUrl(url, {
+            cloud: {
+              cloudName: 'cronologias-invisible',
+            },
+            transformations: {
+              width:'1031',
+              quality:'75',
+            }
+        }),
           index % 2 === 0 ?
             <Center 
                 key={index} 
@@ -44,7 +55,7 @@ function Galery(props) {
                     data-index={index}
                     objectFit="cover"
                     layout="fill" 
-                    src={url}
+                    src={imgurl}
                     alt="Galeria del Artista" 
                     data-index={index}
                     onClick={
@@ -75,7 +86,7 @@ function Galery(props) {
                   <Image 
                     layout='fill'
                     objectFit="cover" 
-                    src={url}
+                    src={imgurl}
                     alt="Galeria del Artista" alt="Galeria del Artista" 
                     data-index={index}
                     onClick={
