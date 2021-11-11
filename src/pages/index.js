@@ -31,7 +31,7 @@ function homePage({curatorsData, museumData}) {
         <Image
           m='auto'
           src='/animationBlack.gif'
-          w={{ base: '30rem', md:'40rem', lg:'45rem', xl:'55rem'}} 
+          w={{ base: '35rem', md:'40rem', lg:'45rem', xl:'55rem'}} 
           h={{base:'20rem', md:'25rem', lg:'30rem', xl:'35rem'}}
           alt='cronologías de lo invisible'
         />

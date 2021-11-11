@@ -147,7 +147,7 @@ function MenuHam() {
                                                     >
                                                     <AccordionPanel fontWeight={300} border='none'>
                                                         <Link
-                                                            href='/visita-las-exposiciones/63998842'>
+                                                            href='/visita-las-exposiciones/70573081'>
                                                             <a>Museo del Jade y de la Cultura Precolombina</a>
                                                         </Link>
                                                         
