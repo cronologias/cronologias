@@ -3,6 +3,7 @@ import { Box, Center, Image, Text} from '@chakra-ui/react';
 import MobileSlider from '../components/mobileSlider';
 import Header from '../components/header';
 import CuratorsCards from '../components/curatorsCards';
+import TeamCards from '../components/teamCards';
 import Footer from '../components/footer';
 import {getApiRes} from '../services/callApi';
 import Head from 'next/head';
@@ -107,6 +108,7 @@ function homePage({curatorsData, museumData}) {
       </Box>
       <MobileSlider mobleSlides={museumData}/>
       <CuratorsCards curators={curatorsData} />
+      <TeamCards curators={curatorsData} />
       <Center>
         <Box
         bg='brand.primaryOrange'
