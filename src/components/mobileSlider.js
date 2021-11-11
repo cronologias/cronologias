@@ -43,7 +43,7 @@ function MobileSlider(props) {
                                 quality:'75',
                             }
                         }),
-                            <Link href={`/exposition-museum/${slide.id}`} as={`/exposition-museum/${slide.id}`} key={sid}>
+                            <Link href={`/visita-las-exposiciones/${slide.id}`} as={`/visita-las-exposiciones/${slide.id}`} key={sid}>
                             <a>
                                 <LinkBox >
                                 <Box 

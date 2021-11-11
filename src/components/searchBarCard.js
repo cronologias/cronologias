@@ -22,7 +22,7 @@ export default function SearchBarCard({ names }) {
         }
     });
     return (
-        <Link href={`/search-artist/${names.id}`} as={`/search-artist/${names.id}`}>
+        <Link href={`/busqueda-de-artistas/${names.id}`} as={`/busqueda-de-artistas/${names.id}`}>
             <a>
                 <Box key={names} mb={4}>
                     <AspectRatio

@@ -43,7 +43,7 @@ function CuratorsCards(props) {
                 w={{base:'9.75rem', '2sm': '11.75rem', md:'15rem', lg:'24rem'}}
                 >
                     <Link
-                    href={`/curator-bio/${element.id}`} as={`/curator-bio/${element.id}`}
+                    href={`/curadoras/${element.id}`} as={`/curadoras/${element.id}`}
                     >
                         <a>
                             <Box 

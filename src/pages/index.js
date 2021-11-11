@@ -23,31 +23,42 @@ function homePage({curatorsData, museumData}) {
         <link rel="icon" type="image/svg" sizes="42x42" href="/logoCrono.png"/>
       </Head>
       <Header museumMenu={museumData} />
-      <Box bg='brand.fifhtOrange' width='100%' >
+      <Box 
+        bg='#000000' 
+        width='100%' 
+        //mb={{ base: '0', md:'2.25rem', lg:'2.5rem'}}
+      >
         <Image
-          src='/animation.gif'
           m='auto'
-          w={{ base: '22.5rem', md:'30rem'}}
+          src='/animationBlack.gif'
+          w={{ base: '35rem', md:'40rem', lg:'45rem', xl:'55rem'}} 
+          h={{base:'20rem', md:'25rem', lg:'30rem', xl:'35rem'}}
+          alt='cronologías de lo invisible'
         />
-        <Box
-          w='100%'
-          bg='brand.thirdOrange'
-          h={{ base: '16.75rem', '400px':'13.75rem' , md: '8.75rem', xl: '7.75rem' }}
-          p={{base: '1.375rem'}}
-          mb={{ base: '2rem', md:'2.25rem', lg:'2.5rem'}}
+      </Box>
+      <Box
+        w='100%'
+        bg='brand.primaryOrange'
+        // h={{ base: '16.75rem', '400px':'13.75rem' , md: '8.75rem', xl: '7.75rem' }}
+        p='2rem'
+        m='auto'
+        mb={{ base: '2rem', md:'2.25rem', lg:'2.5rem'}}
+      >
+        <Text 
+          fontSize={{ base: '1rem', lg: '1.125rem' }}
+          m='auto'
+          w={{ base: '20rem', '2sm': '23rem', md: '48rem', lg: '60rem', xl: '75rem'}}
         >
-          <Text fontSize={{ base: '1rem', lg: '1.125rem' }}>
-            <span style={emphasisWord}>CRONOLOGÍAS DE LO INVISIBLE</span>{' '}
-            <span style={normalParagraph}>
-              es una exposición historiográfica de las artistas visuales en
-              Costa Rica de los años 1900 a 1979. Muestra los resultados de las
-              investigaciones realizadas por
-            </span>{' '}
-            <span style={emphasisWord}>Sussy Vargas Alvarado</span>{' '}
-            <span style={normalParagraph}>y</span>{' '}
-            <span style={emphasisWord}>Susana Sánchez Carballo</span>
-          </Text>
-        </Box>
+          <span style={emphasisWord}>CRONOLOGÍAS DE LO INVISIBLE</span>{' '}
+          <span style={normalParagraph}>
+            es una exposición historiográfica de las artistas visuales en
+            Costa Rica de los años 1900 a 1979. Muestra los resultados de las
+            investigaciones realizadas por
+          </span>{' '}
+          <span style={emphasisWord}>Sussy Vargas Alvarado</span>{' '}
+          <span style={normalParagraph}>y</span>{' '}
+          <span style={emphasisWord}>Susana Sánchez Carballo</span>
+        </Text>
       </Box>
       <Center
         alignItems='start'
@@ -86,7 +97,7 @@ function homePage({curatorsData, museumData}) {
           textDecoration='underline'
           >
             <Link
-              href='/about-investigation'>
+              href='/sobre-la-investigacion'>
               <a>Leer más</a>
             </Link>
           </Box>
@@ -119,7 +130,7 @@ function homePage({curatorsData, museumData}) {
         _hover={{ bg: 'brand.secondaryBlack'}}
         >
           <Link
-            href='/search-artist'>
+            href='/busqueda-de-artistas'>
             <a>Búsqueda de artistas</a>
           </Link>
         </Box>

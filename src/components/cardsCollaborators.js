@@ -21,7 +21,7 @@ const CardCollaborators = ({ collaboratorsData, institucionData, index}) => {
           mt='2rem'
           mb={2}
         >
-            Equipo
+            Personas Colaboradoras
         </Text>
 
         <SimpleGrid 
