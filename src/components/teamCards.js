@@ -20,7 +20,7 @@ function TeamCards(props) {
             alignItems='normal'
             mb={8}>
                 {props.team.map((element, index) => (
-                    imgurl = buildUrl(element.imagenDelColaborador, {
+                    imgurl = buildUrl(element.imagenIntegranteDelEquipo, {
                         cloud: {
                             cloudName: 'cronologias-invisible',
                         },
@@ -48,7 +48,7 @@ function TeamCards(props) {
                                     display="inline-block" 
                                     layout='fill'
                                     objectFit="contain"
-                                    alt={element.nombreDelColaborador} 
+                                    alt={element.nombreDelIntegrante} 
                                     pb='7px'
                                 />
                                 </Box>
@@ -67,7 +67,7 @@ function TeamCards(props) {
                                 fontWeight='bold'
                                 w={{ base:'108px', md:'auto'}}
                                 >
-                                    {element.nombreDelColaborador} 
+                                    {element.nombreDelIntegrante} 
                                 </Heading>
                                 <Box
                                 transform= 'rotate(-4deg)'
