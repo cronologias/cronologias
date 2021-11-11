@@ -48,7 +48,7 @@ function homePage({curatorsData, museumData, teamData}) {
         <Text 
           fontSize={{ base: '1rem', lg: '1.125rem' }}
           m='auto'
-          w={{ base: '20rem', '2sm': '23rem', md: '48rem', lg: '60rem', xl: '75rem'}}
+          w={{ base: '20rem', '2sm': '23rem', md: '46rem', lg: '58rem', xl: '72rem'}}
         >
           <span style={emphasisWord}>CRONOLOGÍAS DE LO INVISIBLE</span>{' '}
           <span style={normalParagraph}>
@@ -69,80 +69,107 @@ function homePage({curatorsData, museumData, teamData}) {
         fontSize={{ base: '1.25rem', md: '1.25rem', lg: '1.5rem' }}
         fontWeight={700}
         m='auto'
-        w={{ base: '20rem', '2sm': '23rem', md: '48rem', lg: '60rem', xl: '75rem' }}
+        w={{ base: '20rem', '2sm': '23rem', md: '45rem', lg: '58rem', xl: '72rem' }}
         justifyContent='space-between'
-        mb={{ base: '3rem', md:'4rem', lg:'5rem'}}
       >
         <Box
-          mb='1rem'
+        mb={{ base: '3rem', md:'4rem', lg:'5rem'}}
         >
-          <Link
-              href='/about-investigation'>
-              <a>
-                <Image 
-                  src="/sobreLaInvestigacion.png"
-                  alt="Sobre la investigación"
-                />
-              </a>
-          </Link>
-        </Box>
-        <Box
-          fontFamily='body'
-          fontWeight={300}
-          mb={{ base: '2rem' }}
-          fontSize={{ base: '1rem', lg: '1.125rem' }}
-          w={{ base: '20rem',  '2sm': '24rem', md: '24.4rem', lg: '40.25rem', xl:'43.125rem' }} 
-          m={{ md: '0' }}
-        >
-          <p>
-          La muestra recopila obras de 54 artistas que estaban presentes y notablemente activas, no solo en el campo 
-          artístico y académico del país, sino también a escala internacional; mujeres cuyas prácticas artísticas no se 
-          limitaban a la pintura, al grabado, a la escultura, a la cerámica, o a la fotografía, sino también a la gestión cultural, 
-          a la producción editorial y a la docencia en escuelas, colegios y universidades.
-          </p>
           <Box
-          textAlign='end'
-          textDecoration='underline'
+          mb='1rem'
           >
             <Link
-              href='/sobre-la-investigacion'>
-              <a>Leer más</a>
+                href='/about-investigation'>
+                <a>
+                  <Image 
+                    src="/sobreLaInvestigacion.png"
+                    alt="Sobre la investigación"
+                  />
+                </a>
             </Link>
           </Box>
+          <Box
+            fontFamily='body'
+            fontWeight={300}
+            mb={{ base: '4rem' }}
+            fontSize={{ base: '1rem', lg: '1.125rem' }}
+            w={{ base: '20rem',  '2sm': '24rem', md: '36.5rem', lg: '58rem', xl: '49rem' }} 
+            m={{ md: '0' }}
+          >
+            <p>
+            La muestra recopila obras de 54 artistas que estaban presentes y notablemente activas, no solo en el campo 
+            artístico y académico del país, sino también a escala internacional; mujeres cuyas prácticas artísticas no se 
+            limitaban a la pintura, al grabado, a la escultura, a la cerámica, o a la fotografía, sino también a la gestión cultural, 
+            a la producción editorial y a la docencia en escuelas, colegios y universidades.
+            </p>
+            <Box
+            textAlign='end'
+            textDecoration='underline'
+            >
+              <Link
+                href='/sobre-la-investigacion'>
+                <a>Leer más</a>
+              </Link>
+            </Box>
+          </Box>
         </Box>
+        
 
-      </Center>
-      <Box
-        w={{ base: '20rem', md: '48rem', lg: '60rem', xl: '75rem' }}
-        m='auto'
-        textAlign='start'
-        mb='1rem'
-      >
-      <Image 
-        src="/vistaLasExpo.png"
-        alt="Visita las exposiciones"
-      />
-      </Box>
-      <MobileSlider mobleSlides={museumData}/>
-
-      <CuratorsCards curators={curatorsData} />
-      <TeamCards team={teamData} />
-      <Center>
+        
         <Box
-        bg='brand.primaryOrange'
-        color='brand.baseColor'
-        fontSize={{ base: '1rem', lg: '1.125rem' }}
-        fontFamily='body'
-        fontWeight={700}
-        p={4}
-        mb={{ base: '3rem', md:'4rem', lg:'5rem'}}
-        _hover={{ bg: 'brand.secondaryBlack'}}
+          w={{ base: '20rem', md: '45rem', lg: '58rem', xl: '72rem' }}
+          m='auto'
+          mb='1rem'
         >
-          <Link
-            href='/busqueda-de-artistas'>
-            <a>Búsqueda de artistas</a>
-          </Link>
+        <Image 
+          src="/vistaLasExpo.png"
+          alt="Visita las exposiciones"
+        />
         </Box>
+        <MobileSlider mobleSlides={museumData}/>
+
+        <Box
+          w={{ base: '20rem', md: '45rem', lg: '58rem', xl: '72rem' }}
+          m='auto'
+          textAlign='start'
+          mb='1rem'
+        >
+        <Image 
+          src="/curadoras.png"
+          alt="Visita las exposiciones"
+        />
+        </Box>
+        <CuratorsCards curators={curatorsData} />
+
+        <Box
+          w={{ base: '20rem', md: '45rem', lg: '58rem', xl: '72rem' }}
+          m='auto'
+          textAlign='start'
+          mb='1rem'
+        >
+        <Image 
+          src="/equipo.png"
+          alt="Visita las exposiciones"
+        />
+        </Box>
+        <TeamCards team={teamData} />
+      </Center>
+      <Center>
+          <Box
+          bg='brand.primaryOrange'
+          color='brand.baseColor'
+          fontSize={{ base: '1rem', lg: '1.125rem' }}
+          fontFamily='body'
+          fontWeight={700}
+          p={4}
+          mb={{ base: '3rem', md:'4rem', lg:'5rem'}}
+          _hover={{ bg: 'brand.secondaryBlack'}}
+          >
+            <Link
+              href='/busqueda-de-artistas'>
+              <a>Búsqueda de artistas</a>
+            </Link>
+          </Box>
       </Center>
       <Footer></Footer>
     </>

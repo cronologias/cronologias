@@ -79,7 +79,7 @@ function CuratorsBio(props) {
                     <Box
                     position="relative"
                     w="full"
-                    h={{base: "24rem", md:"64rem", lg: "35rem", xl:"44rem"}}
+                    h={{base: "24rem", md:"64rem", lg: "36rem", xl:"44rem"}}
                     >
                         <Image 
                         src={imgurl}
@@ -114,6 +114,16 @@ function CuratorsBio(props) {
                             </Link>
                         </HStack>
                     </Flex>
+                </Box>
+                <Box 
+                    ml="-10px"
+                    mt={{base:"14.6rem", md:"35.4rem"}}
+                    display={{lg:"none", xl:"none"}}
+                    w="0.25rem"
+                    h={{ base: "33rem", md: "33.4rem" }}
+                    bg="brand.primaryOrange"
+                    position="absolute"
+                >
                 </Box>
                 <Box 
                     w={{lg:'36.313rem', xl:'38.125rem'}}
