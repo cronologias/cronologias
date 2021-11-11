@@ -15,7 +15,7 @@ function MobileSlider(props) {
     let imgurl = ''
     return(
         <Center 
-        mb={{ base: '2rem', md:'2.25rem', lg:'2.5rem'}}
+        mb={{ base: '3rem', md:'4rem', lg:'5rem'}}
         >
             <Flex
             overflow='scroll'
