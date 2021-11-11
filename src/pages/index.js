@@ -134,7 +134,7 @@ function homePage({curatorsData, museumData, teamData}) {
         >
         <Image 
           src="/curadoras.png"
-          alt="Visita las exposiciones"
+          alt="Curadoras"
         />
         </Box>
         <CuratorsCards curators={curatorsData} />
@@ -147,7 +147,7 @@ function homePage({curatorsData, museumData, teamData}) {
         >
         <Image 
           src="/equipo.png"
-          alt="Visita las exposiciones"
+          alt="Equipo"
         />
         </Box>
         <TeamCards team={teamData} />
