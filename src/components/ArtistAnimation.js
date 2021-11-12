@@ -8,7 +8,7 @@ const brushRadius = 120;
 const imageOpacity = 0.15;
 export default () => {
 	const setup = (p5, canvasParentRef) => {
-        let height = window.innerWidth >= 960 ? 600 : window.innerWidth >= 768 ? 450 : 300;
+        let height = window.innerWidth >= 960 ? 600 : window.innerWidth >= 768 ? 450 : 348;
         p5.createCanvas(window.innerWidth, height).parent(canvasParentRef);
         p5.fill(`rgba(244, 120, 67, ${1 - imageOpacity})`);
         p5.rect(0, 0, window.innerWidth, height);
