@@ -13,14 +13,14 @@ function TeamCards(props) {
             m='auto'
             w={{ base: '20rem', '2sm': '24rem' , md: '45rem', lg: '58rem', xl: '72rem' }}
             justifyContent='space-between'
-            mb={{ base: '2rem', md:'2.25rem', lg:'2.5rem'}}
+            mb={{ base: '3rem', md:'4rem', lg:'5rem'}}
         >
             <HStack 
             spacing={{ base:'0.700rem', md:'1rem', lg:'1.5rem' }}
             alignItems='normal'
             mb={8}>
                 {props.team.map((element, index) => (
-                    imgurl = buildUrl(element.imagenDelColaborador, {
+                    imgurl = buildUrl(element.imagenIntegranteDelEquipo, {
                         cloud: {
                             cloudName: 'cronologias-invisible',
                         },
@@ -48,7 +48,7 @@ function TeamCards(props) {
                                     display="inline-block" 
                                     layout='fill'
                                     objectFit="contain"
-                                    alt={element.nombreDelColaborador} 
+                                    alt={element.nombreDelIntegrante} 
                                     pb='7px'
                                 />
                                 </Box>
@@ -67,7 +67,7 @@ function TeamCards(props) {
                                 fontWeight='bold'
                                 w={{ base:'108px', md:'auto'}}
                                 >
-                                    {element.nombreDelColaborador} 
+                                    {element.nombreDelIntegrante} 
                                 </Heading>
                                 <Box
                                 transform= 'rotate(-4deg)'

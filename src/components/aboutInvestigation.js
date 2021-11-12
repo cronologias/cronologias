@@ -5,6 +5,7 @@ import ReactMarkdown from 'react-markdown';
 import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons';
 import Header from './header';
 import Footer from './footer';
+import Head from 'next/head';
 
 
 function AboutInvestigation(props) {
@@ -12,36 +13,39 @@ function AboutInvestigation(props) {
     const handleToggle = () => setShow(!show)
     return (
         <>
-        <Header museumMenu={props.museumData} /> 
-        <Box 
-fontFamily='body'
-w='100%' 
-h={{ base: '266px', lg: '331px' }}
-position='relative'
->
-    <Image 
-        src='/background.png'
-        layout='fill'
-        objectFit='cover'
-    />
-    <Box
-        position='absolute'
-        zIndex='2'
-        bottom='1.25rem'
-        ml='2rem'
-        mr='2rem'
-    >
-        <Heading
-        as='h2'
-        color='brand.baseColor'
-        fontStyle='bold'
-        pb='1.563rem'
-        fontSize={{ base: '1.75rem', md: '1.85rem', lg: '2rem' }}
-        >
-            Sobre la investigación
-        </Heading>
-    </Box>
-</Box>
+        <Head>
+            <link rel="icon" type="image/svg" sizes="42x42" href="/logoCrono.png"/>
+        </Head>
+            <Header museumMenu={props.museumData} /> 
+            <Box 
+                fontFamily='body'
+                w='100vw' 
+                h={{ base: '266px', lg: '331px' }}
+                position='relative'
+            >
+                <Image 
+                    src="/bg.svg"
+                    layout='fill'
+                    objectFit='cover'
+                />
+                <Box
+                    position='absolute'
+                    zIndex='2'
+                    bottom='1.25rem'
+                    ml='2rem'
+                    mr='2rem'
+                >
+                    <Heading
+                    as='h2'
+                    color='brand.baseColor'
+                    fontStyle='bold'
+                    pb='1.563rem'
+                    fontSize={{ base: '1.75rem', md: '1.85rem', lg: '2rem' }}
+                    >
+                        Sobre la investigación
+                    </Heading>
+                </Box>
+            </Box>
             <Flex 
                 p={8} 
                 flexDir={{ base: 'column', lg: 'row' }}

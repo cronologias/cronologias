@@ -16,12 +16,12 @@ function documentation({ documentationData }) {
         <Header />
         <Box 
                 fontFamily="body"
-                w="100%" 
+                w="100vw" 
                 h={{ base: "266px", lg: "331px" }}
                 position="relative"
             >
                 <Image 
-                    src="/background.png"
+                    src="/bg.svg"
                     layout='fill'
                     objectFit="cover"
                 />

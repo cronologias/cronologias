@@ -13,7 +13,7 @@ function CuratorsCards(props) {
         m='auto'
         w={{ base: '20rem', '2sm': '24rem' , md: '45rem', lg: '58rem', xl: '72rem' }}
         justifyContent='space-between'
-        mb={{ base: '2rem', md:'2.25rem', lg:'2.5rem'}}
+        mb={{ base: '3rem', md:'4rem', lg:'5rem'}}
     >
         <HStack 
         spacing={{ base:'0.700rem', md:'1rem', lg:'1.5rem' }}
