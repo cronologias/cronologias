@@ -84,7 +84,7 @@ function MenuHam() {
                     <DrawerBody
                         color='brand.primaryBlack'
                         fontFamily='body'
-                        fontSize={{ base: '1.25rem', md: '1.25rem', lg: '1.5rem' }}
+                        fontSize={{ base: '1.25rem', md: '1.25rem', lg: '1.75rem' }}
                         mt={{ base: '24%', md: '16%', lg: '8%' }}
                     >
                         <Center
@@ -132,7 +132,7 @@ function MenuHam() {
                                                         _focus={{ boxShadow: 'none', borderRadius: 'none', border: '0.125rem solid', borderColor: 'brand.primaryBlack' }}>
                                                         <Box
                                                             flex='1'
-                                                            fontSize={{ base: '1.25rem', md: '1.25rem', lg: '1.5rem' }}
+                                                            fontSize={{ base: '1.25rem', md: '1.25rem', lg: '1.75rem' }}
                                                             fontWeight={700}
                                                             textStyle='body'
                                                             textAlign='left'
@@ -196,7 +196,7 @@ function MenuHam() {
                                                         p={2}
                                                         _focus={{ boxShadow: 'none', borderRadius: 'none', border: '0.125rem solid', borderColor: 'brand.primaryBlack' }}
                                                     >
-                                                        <Box fontSize={{ base: '1.25rem', md: '1.25rem', lg: '1.5rem' }} fontWeight={700} textStyle='body' flex='1' textAlign='left'>
+                                                        <Box fontSize={{ base: '1.25rem', md: '1.25rem', lg: '1.75rem' }} fontWeight={700} textStyle='body' flex='1' textAlign='left'>
                                                             <h4>Curadoras</h4>
                                                         </Box>
                                                         <AccordionIcon />
