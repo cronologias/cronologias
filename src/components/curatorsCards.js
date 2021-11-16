@@ -16,7 +16,7 @@ function CuratorsCards(props) {
         mb={{ base: '3rem', md:'4rem', lg:'5rem'}}
     >
         <HStack 
-        spacing={{ base:'0.700rem', md:'1rem', lg:'1.5rem' }}
+        spacing={{ base:'0.700rem', md:'1rem', lg:'10.5rem' }}
         alignItems='normal'
         mb={8}>
             {props.curators.map((element, index) => (

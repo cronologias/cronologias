@@ -51,8 +51,9 @@ function homePage({curatorsData, museumData, teamData}) {
           <span style={emphasisWord}>CRONOLOGÍAS DE LO INVISIBLE</span>{' '}
           <span style={normalParagraph}>
             es una exposición historiográfica de las artistas visuales en
-            Costa Rica de los años 1900 a 1979. Muestra los resultados de las
-            investigaciones realizadas por
+            Costa Rica de los años 1900 a 1980.</span>
+          <span>
+            Muestra los resultados de las investigaciones realizadas por
           </span>{' '}
           <span style={emphasisWord}>Sussy Vargas Alvarado</span>{' '}
           <span style={normalParagraph}>y</span>{' '}
@@ -80,7 +81,7 @@ function homePage({curatorsData, museumData, teamData}) {
                 href='/about-investigation'>
                 <a>
                   <Image 
-                    src="/sobreLaInvestigacion.png"
+                    src='/sobreInvestDesktopBlack.svg' 
                     alt="Sobre la investigación"
                   />
                 </a>
@@ -120,7 +121,7 @@ function homePage({curatorsData, museumData, teamData}) {
           mb='1rem'
         >
         <Image 
-          src="/vistaLasExpo.png"
+          src="/visitaExpoDesktop.svg"
           alt="Visita las exposiciones"
         />
         </Box>
@@ -133,7 +134,7 @@ function homePage({curatorsData, museumData, teamData}) {
           mb='1rem'
         >
         <Image 
-          src="/curadoras.png"
+          src="/curadoras_desktop.svg"
           alt="Curadoras"
         />
         </Box>
@@ -146,7 +147,7 @@ function homePage({curatorsData, museumData, teamData}) {
           mb='1rem'
         >
         <Image 
-          src="/equipo.png"
+          src="/equipoDesktopBlack.svg"
           alt="Equipo"
         />
         </Box>
