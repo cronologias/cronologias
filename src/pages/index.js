@@ -26,13 +26,15 @@ function homePage({curatorsData, museumData, teamData}) {
       <Header museumMenu={museumData} />
       <Box 
         bg='#000000' 
-        width='100%' 
+        width='100%'
+        h='70vh'
       >
         <Image
           m='auto'
           src='/animationBlack.gif'
-          w={{ base: '100%', md:'40rem', lg:'45rem', xl:'55rem'}} 
-          h={{base:'100%', md:'25rem', lg:'30rem', xl:'35rem'}}
+          w={{ base: "100%"}}
+          h={{ base: "70vh"}}
+          objectFit='cover'
           alt='cronologías de lo invisible'
         />
       </Box>
