@@ -1,25 +1,49 @@
 import React from 'react';
-import { Box, Collapse, Button, Container, Flex, LinkBox, LinkOverlay, Text } from '@chakra-ui/react';
+import { Box, Collapse, Button, Container, Flex, LinkBox, LinkOverlay, Text, position,} from '@chakra-ui/react';
 import ReactMarkdown from 'react-markdown';
 import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons';
-
+import Image from "next/image"
+import ArtistAnimation from './ArtistAnimation';
+import { buildUrl } from 'cloudinary-build-url';
 const ViewArtist = ({ names }) => {
     const [show, setShow] = React.useState(false)
     const handleToggle = () => setShow(!show)
+    let url = '/cronologias-invisible';
+    names.imagenDeLaArtista === ''? url= url: url= names.imagenDeLaArtista;
+    let imgurl = buildUrl(url, {
+        cloud: {
+            cloudName: 'cronologias-invisible',
+        },
+        transformations: {
+            width:'1175',
+            height:'769',
+            quality:'75',
+        }
+    });
     return (
         <>
+            <Box as='main'
+                position='relative'
+                w='100%'
+                h= {{base:'18.75rem',md:'28.125rem', lg:'37.5rem'}}
+            >
+                <Image src={imgurl} alt={names.nombreDeLaAutora} layout="fill" objectFit='cover' />
+                <Box h= {{base:'18.75rem',md:'28.125rem', lg:'37.5rem'}}>
+                <ArtistAnimation />
+                </Box>
+            </Box>
             <Flex 
                 p={8} 
-                flexDir={{ base: "column", lg: "row" }}
-                m="auto"
-                w={{ base: "20rem", md: "48rem", lg: "60rem", xl: "75rem" }}
+                flexDir={{ base: 'column', lg: 'row' }}
+                m='auto'
+                w={{ base: '20rem', md: '48rem', lg: '60rem', xl: '75rem' }}
             >
-                <Box fontWeight="bold" fontFamily="heading" fontSize={{ base: "1.25rem", md: "1.25rem", lg: "1.5rem" }} color="brand.primaryBlack" w={{ lg: '21.875rem' }} mb={4}>
+                <Box fontWeight='bold' fontFamily='heading' fontSize={{ base: '1.25rem', md: '1.25rem', lg: '1.5rem' }} color='brand.primaryBlack' w={{ lg: '21.875rem' }} mb={4}>
                     <Text>{names.nombreDeLaAutora}</Text>
                 </Box>
-                <Box display={{ lg: "none" }}>
-                    <LinkBox fontFamily="heading" fontSize={{ base: "1.25rem", md: "1.25rem", lg: "1.5rem" }}textDecoration="underline" color="brand.primaryGray" mb={4}>
-                        <LinkOverlay href="#artTreasures">Obras</LinkOverlay>
+                <Box display={{ lg: 'none' }}>
+                    <LinkBox fontFamily='heading' fontSize={{ base: '1.25rem', md: '1.25rem', lg: '1.5rem' }}textDecoration='underline' color='brand.primaryGray' mb={4}>
+                        <LinkOverlay href='#artTreasures'>Obras</LinkOverlay>
                     </LinkBox>
                 </Box>
                     <Box w={{ lg: '581px' }} fontSize={{ base: '1rem', md: '1rem', lg: '1.125rem' }} display={{base:'block', lg:'none'}}>
@@ -42,17 +66,17 @@ const ViewArtist = ({ names }) => {
                         }}>{names.biografia}</ReactMarkdown></Box>
             </Flex>
             <Box 
-                id="artTreasures"
+                id='artTreasures'
                 pl={8} 
                 pr={8} 
-                fontWeight="bold" 
-                fontFamily="heading" 
-                color="brand.primaryBlack" 
+                fontWeight='bold' 
+                fontFamily='heading' 
+                color='brand.primaryBlack' 
                 w={{ lg: '21.875rem' }}
-                m="auto"
-                w={{ base: "20rem", md: "48rem", lg: "60rem", xl: "75rem" }}
+                m='auto'
+                w={{ base: '20rem', md: '48rem', lg: '60rem', xl: '75rem' }}
                 >
-                <Text fontSize={{ base: "1.25rem", md: "1.25rem", lg: "1.5rem" }}>Obras</Text>
+                <Text fontSize={{ base: '1.25rem', md: '1.25rem', lg: '1.5rem' }}>Obras</Text>
             </Box>
         </>
     )

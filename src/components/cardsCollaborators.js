@@ -92,10 +92,10 @@ const CardCollaborators = ({ collaboratorsData, institucionData, index}) => {
                         } 
                       }
                       return (
-                        <>
+                        
                           <Link mr={2} key={key} href={link.enlaceASitioWebYRedesSociales} isExternal children={icons(link.enlaceASitioWebYRedesSociales)}>                   
                           </Link>   
-                        </>
+                        
                       )
                     })}
                   </Flex>
@@ -182,10 +182,10 @@ const CardCollaborators = ({ collaboratorsData, institucionData, index}) => {
                         } 
                       }
                       return (
-                        <>
+                        
                           <Link mr={2} key={key} href={link.enlaceASitioWebYRedesSociales} isExternal children={icons(link.enlaceASitioWebYRedesSociales)}>                   
                           </Link>   
-                        </>
+                        
                       )
                     })}
                   </Flex>

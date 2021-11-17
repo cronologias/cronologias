@@ -3,7 +3,7 @@ import Header from '../../components/header'
 import CardCollaborators from '../../components/cardsCollaborators'
 import Footer from '../../components/footer'
 import Image from "next/image";
-
+import Head from 'next/head';
 import {
   Box,
   Heading,
@@ -12,6 +12,9 @@ import {
 function viewCollaborators({ collaboratorsData, institucionData }) {
   return (
     <>
+      <Head>
+        <link rel="icon" type="image/svg" sizes="42x42" href="/logoCrono.png"/>
+      </Head>
       <Header />
       <Box 
             fontFamily="body"

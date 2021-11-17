@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { Text, Box, Flex, Heading, IconButton } from '@chakra-ui/react';
 import Image from 'next/image';
+import { buildUrl } from 'cloudinary-build-url';
 import {
     ChevronLeftIcon,
     ChevronRightIcon,
 }
     from '@chakra-ui/icons'
-
+console.log(Slider)
 const Slider = (props) => {
     const position = props.position;
     const [currentSlide, setCurrentSlide] = useState(Number(position));
@@ -23,6 +24,7 @@ const Slider = (props) => {
         ml: `-${currentSlide * 100}%`,
     };
     let url = '/cronologias-invisible'
+    let imgurl ='';
     return (
         <Flex
             alignItems='center'
@@ -32,9 +34,18 @@ const Slider = (props) => {
                 <Flex w='full' {...carouselStyle} >
                     {props.slides.map((slide, sid) => (
                         slide.imagenDeLaObraDeLaArtista === '' ? url = url : url = slide.imagenDeLaObraDeLaArtista,
+                        imgurl = buildUrl(url, {
+                            cloud: {
+                                cloudName: 'cronologias-invisible',
+                            },
+                            transformations: {
+                                width:'1031',
+                                quality:'75',
+                            }
+                        }),
                         <Box key={`slide-${sid}`} flex='none' w='100%'>
                             <Box   height={{ base: '480px', md: '581px', lg: '682px' }} position='relative'>
-                                <Image layout='fill' objectFit='contain' src={url} />
+                                <Image layout='fill' objectFit='contain' src={imgurl} />
                             </Box>
                             <Box bg='brand.primaryBlack' p={7} mb={50}>
                             <Text fontSize='0.75rem' color='brand.baseColor' pb='0.75rem'>

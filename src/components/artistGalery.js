@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from "next/link";
 import Image from "next/image"
+import { buildUrl } from 'cloudinary-build-url';
 import {
   Box,
   HStack,
@@ -22,12 +23,23 @@ function Galery(props) {
     setindexSlide(e.target.dataset.index)
   }
   let url = '/cronologias-invisible';
+  let imgurl ='';
   return (
     <> 
-      <Box mb={{ base: "2rem", md:"2.25rem", lg:"2.5rem"}}>
+      <Box mb={{ base: '2rem', md:'2.25rem', lg:'2.5rem'}}>
         {props.images.map((worksImg, index) => (
           url = '/cronologias-invisible',
           worksImg.imagenDeLaObraDeLaArtista ===""? url= url: url = worksImg.imagenDeLaObraDeLaArtista,
+          imgurl = buildUrl(url, {
+            cloud: {
+              cloudName: 'cronologias-invisible',
+            },
+            transformations: {
+              width:'1031',
+              height:'1627',
+              quality:'75',
+            }
+        }),
           index % 2 === 0 ?
             <Center 
                 key={index} 
@@ -44,7 +56,7 @@ function Galery(props) {
                     data-index={index}
                     objectFit="cover"
                     layout="fill" 
-                    src={url}
+                    src={imgurl}
                     alt="Galeria del Artista" 
                     data-index={index}
                     onClick={
@@ -54,9 +66,9 @@ function Galery(props) {
                       }
                     } />
                 </Box>
-                <Box bg="brand.primaryOrange"
-                  w={ {base: "4rem",md: "15rem", lg: "14rem", xl: "16rem"} }
-                  h={ { base: "16rem", md: "28rem", lg: "30rem" }} >
+                <Box bg='brand.primaryOrange'
+                  w={ {base: '4rem',md: '15rem', lg: '14rem', xl: '16rem'} }
+                  h={ { base: '16rem', md: '28rem', lg: '30rem' }} >
                 </Box>
               </HStack>
             </Center> :
@@ -66,16 +78,16 @@ function Galery(props) {
                 mt={{ base: 5, lg: 8 }} 
               >
                 <Box 
-                  bg="brand.primaryBlack"
-                  w={{ base: "4rem", md: "15rem", lg: "14rem", xl: "16rem" }}
-                  h={{ base: "16rem", md: "28rem", lg: "30rem" }} >
+                  bg='brand.primaryBlack'
+                  w={{ base: '4rem', md: '15rem', lg: '14rem', xl: '16rem' }}
+                  h={{ base: '16rem', md: '28rem', lg: '30rem' }} >
                 </Box>
                 <Box w={ { base: "11.5rem", md: "28rem", lg: "40rem", xl: "53rem"} }
                 h={ {base: "16rem", md: "28rem", lg: "30rem"} } position='relative'>
                   <Image 
                     layout='fill'
                     objectFit="cover" 
-                    src={url}
+                    src={imgurl}
                     alt="Galeria del Artista" alt="Galeria del Artista" 
                     data-index={index}
                     onClick={
