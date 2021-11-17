@@ -18,12 +18,12 @@ function viewCollaborators({ collaboratorsData, institucionData }) {
       <Header />
       <Box 
             fontFamily="body"
-            w="100%" 
+            w="100vw" 
             h={{ base: "266px", lg: "331px" }}
             position="relative"
         >
             <Image 
-                src="/background.png"
+                src="/bg.svg"
                 layout='fill'
                 objectFit="cover"
             />
@@ -57,7 +57,7 @@ export async function getStaticProps () {
   const URl= process.env.NEXT_URL;
   const TOKEN= process.env.NEXT_TOKEN;
   
-  const collaborartorsInfo ='query MyQuery{ allPersonaColaboradoras{ id imagenDelColaborador nombreDelColaborador profesion enlace { id enlaceASitioWebYRedesSociales }}}'
+  const collaborartorsInfo ='query MyQuery{ allPersonaColaboradoras{ id nombreDelColaborador }}'
   const institucionInfo ='query MyQuery{ allInstitucionColaboradoras{ id nombreDeLaInstitucion imagenDeLaInstitucion enlaceASitioWebYRedesSociales{ id enlaceASitioWebYRedesSociales}}}'
   
   const getCollaborators = await getApiRes(URl,TOKEN, collaborartorsInfo)

@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link';
 import {Box, Center} from '@chakra-ui/react'
-import logo from '../../public/logo.svg'
+import logo from '../../public/logoNaranja.svg'
 import Image from 'next/image'
 function Footer(){
     return (

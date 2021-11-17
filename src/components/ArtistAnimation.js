@@ -4,11 +4,11 @@ import dynamic from 'next/dynamic'
 const Sketch = dynamic(() => import('react-p5').then((mod) => mod.default), {
 ssr: false,
 })
-const brushRadius = 50;
+const brushRadius = 120;
 const imageOpacity = 0.15;
-export default (props) => {
+export default () => {
 	const setup = (p5, canvasParentRef) => {
-        let height = window.innerWidth >= 960 ? 600 : window.innerWidth >= 768 ? 450 : 300;
+        let height = window.innerWidth >= 960 ? 600 : window.innerWidth >= 768 ? 450 : 348;
         p5.createCanvas(window.innerWidth, height).parent(canvasParentRef);
         p5.fill(`rgba(244, 120, 67, ${1 - imageOpacity})`);
         p5.rect(0, 0, window.innerWidth, height);
@@ -24,4 +24,3 @@ export default (props) => {
 
 	return <Sketch setup={setup} mouseMoved={mouseMoved} style={{position:'absolute',top:'0',height:'100%'}}/>;
 };
-

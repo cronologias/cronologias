@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { buildUrl } from 'cloudinary-build-url';
 import {
     Box,
     Flex,
@@ -11,9 +12,10 @@ import {
 
 function MobileSlider(props) {
     let url ='/cronologias-invible'
+    let imgurl = ''
     return(
         <Center 
-        mb={{ base: '2rem', md:'2.25rem', lg:'2.5rem'}}
+        mb={{ base: '3rem', md:'4rem', lg:'5rem'}}
         >
             <Flex
             overflow='scroll'
@@ -25,14 +27,23 @@ function MobileSlider(props) {
             align='start'
             >
                 <HStack 
-                    w={{ base: '20rem', '2sm': '24rem' ,md: '48rem', lg: '60rem', xl: '75rem' }}
+                    w={{ base: '20rem', '2sm': '24rem' ,md: '45rem', lg: '58rem', xl: '72rem' }}
                     m='auto'
                     textAlign='start'
                     mb={4}
                     spacing={{ base:'0.5rem', md:'0.6rem', lg:'1.5rem' }}>
                     {props.mobleSlides.map((slide, sid) => (
                         slide.enlaceDeLaImagen === ''? url = url: url = slide.enlaceDeLaImagen,
-                            <Link href={`/exposition-museum/${slide.id}`} as={`/exposition-museum/${slide.id}`} key={sid}>
+                        imgurl = buildUrl(url, {
+                            cloud: {
+                                cloudName: 'cronologias-invisible',
+                            },
+                            transformations: {
+                                width:'490',
+                                quality:'75',
+                            }
+                        }),
+                            <Link href={`/visita-las-exposiciones/${slide.id}`} as={`/visita-las-exposiciones/${slide.id}`} key={sid}>
                             <a>
                                 <LinkBox >
                                 <Box 
@@ -43,7 +54,7 @@ function MobileSlider(props) {
                                 position='relative'
                                 >
                                     <Image 
-                                    src={url} 
+                                    src={imgurl} 
                                     objectFit='cover' 
                                     layout='fill'
                                     />

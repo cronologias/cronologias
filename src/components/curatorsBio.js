@@ -7,12 +7,22 @@ import { BsEnvelope,BsGlobe2 } from 'react-icons/bs'
 import Header from "./header";
 import Footer from "./footer";
 import Head from 'next/head';
-
+import { buildUrl } from 'cloudinary-build-url';
 
 function CuratorsBio(props) {
     const [show, setShow] = React.useState(false)
     const handleToggle = () => setShow(!show)
+    let imgurl =''
     return (
+        imgurl = buildUrl(props.curators[0].imagenDeLaCuradora, {
+            cloud: {
+                cloudName: 'cronologias-invisible',
+            },
+            transformations: {
+                width:'490',
+                quality:'75',
+            }
+        }),
         <>
         <Head>
             <link rel="icon" type="image/svg" sizes="42x42" href="/logoCrono.png"/>
@@ -20,12 +30,12 @@ function CuratorsBio(props) {
         <Header museumMenu={props.museumData} /> 
         <Box 
         fontFamily='body'
-        w='100%' 
+        w='100vw' 
         h={{ base: '266px', lg: '331px' }}
         position='relative'
         >
             <Image
-                src="/background.png"
+                src="/bg.svg"
                 layout='fill'
                 objectFit="cover"
                 alt=""
@@ -69,10 +79,10 @@ function CuratorsBio(props) {
                     <Box
                     position="relative"
                     w="full"
-                    h={{base: "10.375rem", md:"31.5rem", lg: "18.563rem", xl:"23.75rem"}}
+                    h={{base: "24rem", md:"64rem", lg: "36rem", xl:"44rem"}}
                     >
                         <Image 
-                        src={props.curators[0].imagenDeLaCuradora}
+                        src={imgurl}
                         layout='fill'
                         objectFit="cover"
                         alt={props.curators[0].nombreDeLaCuradora}
@@ -104,16 +114,6 @@ function CuratorsBio(props) {
                             </Link>
                         </HStack>
                     </Flex>
-                </Box>
-                <Box 
-                    ml="-10px"
-                    mt={{base:"14.6rem", md:"35.4rem"}}
-                    display={{lg:"none", xl:"none"}}
-                    w="0.25rem"
-                    h={{ base: "33rem", md: "33.4rem" }}
-                    bg="brand.primaryOrange"
-                    position="absolute"
-                >
                 </Box>
                 <Box 
                     w={{lg:'36.313rem', xl:'38.125rem'}}

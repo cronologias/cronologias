@@ -46,6 +46,7 @@ function MenuHam() {
             <IconButton
                 aria-label='hambuerger menu'
                 bg='brand.primaryOrange'
+                borderRadius= 'none'
                 icon={
                     <HamburgerIcon
                         boxSize={{ base: '1.5rem', md: '2rem', lg: '2.25rem' }}
@@ -83,7 +84,7 @@ function MenuHam() {
                     <DrawerBody
                         color='brand.primaryBlack'
                         fontFamily='body'
-                        fontSize={{ base: '1.25rem', md: '1.25rem', lg: '1.5rem' }}
+                        fontSize={{ base: '1.25rem', md: '1.25rem', lg: '1.75rem' }}
                         mt={{ base: '24%', md: '16%', lg: '8%' }}
                     >
                         <Center
@@ -106,8 +107,10 @@ function MenuHam() {
                                     p={2}
                                     _hover={{ bg: 'rgba(0, 0, 0, 0.04)'}}>
                                         <Link 
-                                            href='/about-investigation'>
-                                            <a>Sobre la Investigación</a>
+                                            href='/sobre-la-investigacion'>
+                                            <a
+                                                onClick={onClose}
+                                            >Sobre la Investigación</a>
                                         </Link>
                                     </Box>
                                 </ListItem>
@@ -129,7 +132,7 @@ function MenuHam() {
                                                         _focus={{ boxShadow: 'none', borderRadius: 'none', border: '0.125rem solid', borderColor: 'brand.primaryBlack' }}>
                                                         <Box
                                                             flex='1'
-                                                            fontSize={{ base: '1.25rem', md: '1.25rem', lg: '1.5rem' }}
+                                                            fontSize={{ base: '1.25rem', md: '1.25rem', lg: '1.75rem' }}
                                                             fontWeight={700}
                                                             textStyle='body'
                                                             textAlign='left'
@@ -146,22 +149,28 @@ function MenuHam() {
                                                     >
                                                     <AccordionPanel fontWeight={300} border='none'>
                                                         <Link
-                                                            href='/exposition-museum/63998842'>
-                                                            <a>Museo del Jade y de la Cultura Precolombina</a>
+                                                            href='/visita-las-exposiciones/70573081'>
+                                                            <a
+                                                                onClick={onClose}
+                                                            >Museo del Jade y de la Cultura Precolombina</a>
                                                         </Link>
                                                         
                                                     </AccordionPanel>
                                                     <AccordionPanel fontWeight={300} border='none'>
                                                         <Link
-                                                            href='/exposition-museum/63998873'>
-                                                            <a>Museo Dr. Rafael Ángel Calderon Guardia</a>
+                                                            href='/visita-las-exposiciones/63998873'>
+                                                            <a
+                                                                onClick={onClose}
+                                                            >Museo Dr. Rafael Ángel Calderon Guardia</a>
                                                         </Link>
                                                         
                                                     </AccordionPanel>
                                                     <AccordionPanel fontWeight={300} border='none'>
                                                         <Link
-                                                            href='/exposition-museum/63998876'>
-                                                            <a>Biblioteca Nacional</a>
+                                                            href='/visita-las-exposiciones/63998876'>
+                                                            <a
+                                                                onClick={onClose}
+                                                            >Biblioteca Nacional</a>
                                                         </Link>
                                                         
                                                     </AccordionPanel>
@@ -187,7 +196,7 @@ function MenuHam() {
                                                         p={2}
                                                         _focus={{ boxShadow: 'none', borderRadius: 'none', border: '0.125rem solid', borderColor: 'brand.primaryBlack' }}
                                                     >
-                                                        <Box fontSize={{ base: '1.25rem', md: '1.25rem', lg: '1.5rem' }} fontWeight={700} textStyle='body' flex='1' textAlign='left'>
+                                                        <Box fontSize={{ base: '1.25rem', md: '1.25rem', lg: '1.75rem' }} fontWeight={700} textStyle='body' flex='1' textAlign='left'>
                                                             <h4>Curadoras</h4>
                                                         </Box>
                                                         <AccordionIcon />
@@ -196,14 +205,18 @@ function MenuHam() {
                                                 <Box fontSize={{ base: '1rem', md: '1.25rem' }} ml={2}>
                                                     <AccordionPanel fontWeight={300} border='none' pb={4}>
                                                         <Link
-                                                            href='/curator-bio/64001243'>
-                                                            <a>Susana Sánchez Carballo</a>
+                                                            href='/curadoras/64001243'>
+                                                            <a
+                                                                onClick={onClose}
+                                                            >Susana Sánchez Carballo</a>
                                                         </Link>
                                                     </AccordionPanel>
                                                     <AccordionPanel fontWeight={300} border='none' pb={4}>
                                                     <Link
-                                                            href='/curator-bio/64001348'>
-                                                            <a>Sussy Vargas Alvarado</a>
+                                                            href='/curadoras/64001348'>
+                                                            <a
+                                                                onClick={onClose}
+                                                            >Sussy Vargas Alvarado</a>
                                                         </Link>
                                                     </AccordionPanel>
                                                 </Box>
@@ -224,8 +237,10 @@ function MenuHam() {
                                     <Box 
                                     p={2}
                                     _hover={{ bg: 'rgba(0, 0, 0, 0.04)'}}>
-                                        <Link href='/search-artist'>
-                                            <a>Búsqueda de artistas</a>
+                                        <Link href='/busqueda-de-artistas'>
+                                            <a
+                                                onClick={onClose}
+                                            >Búsqueda de artistas</a>
                                         </Link>
                                     </Box>
                                 </ListItem>
@@ -244,8 +259,10 @@ function MenuHam() {
                                     _hover={{ bg: 'rgba(0, 0, 0, 0.04)'}}
                                     >
                                         <Link
-                                            href='/documentatio'>
-                                            <a>Documentación</a>
+                                            href='/documentacion'>
+                                            <a
+                                                onClick={onClose}
+                                            >Documentación</a>
                                         </Link>
                                     </Box>
                                     
@@ -264,8 +281,10 @@ function MenuHam() {
                                     _hover={{ bg: 'rgba(0, 0, 0, 0.04)'}}
                                     >
                                         <Link
-                                            href='/collaborators'>
-                                            <a>Colaboradores</a>
+                                            href='/colaboradores'>
+                                            <a
+                                                onClick={onClose}
+                                            >Colaboradores</a>
                                         </Link>
                                     </Box>
                                     

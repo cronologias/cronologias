@@ -7,14 +7,10 @@ import {
     ChevronRightIcon,
 }
     from '@chakra-ui/icons'
-console.log(Slider)
+
 const Slider = (props) => {
-    let position = 0;
-    if (props.position) {
-        position = props.position;
-    }
-    const [currentSlide, setCurrentSlide] = useState(Number(position));
-    const slidesCount = props.slides.length;
+    const [currentSlide, setCurrentSlide] = useState(0);
+    const slidesCount = props.slides[props.index].documentacion.length;
     const prevSlide = () => {
         setCurrentSlide((s) => (s === 0 ? slidesCount - 1 : s - 1));
     };
@@ -35,8 +31,8 @@ const Slider = (props) => {
         >
             <Flex w='full' overflow='hidden' pos='relative'>
                 <Flex w='full' {...carouselStyle} >
-                    {props.slides.map((slide, sid) => (
-                        slide.imagenDeLaObraDeLaArtista === '' ? url = url : url = slide.imagenDeLaObraDeLaArtista,
+                    {props.slides[props.index].documentacion.map((slide, sid) => (
+                        slide.imagenDelDocumento === '' ? url = url : url = slide.imagenDelDocumento,
                         imgurl = buildUrl(url, {
                             cloud: {
                                 cloudName: 'cronologias-invisible',
@@ -51,14 +47,11 @@ const Slider = (props) => {
                                 <Image layout='fill' objectFit='contain' src={imgurl} />
                             </Box>
                             <Box bg='brand.primaryBlack' p={7} mb={50}>
-                            <Text fontSize='0.75rem' color='brand.baseColor' pb='0.75rem'>
+                            <Heading as='h2' fontSize='0.75rem' color='brand.baseColor' pb='0.75rem'>
                                 {slide.derechoDeAutor}
-                            </Text>
-                            <Heading as='h2' fontSize='1.75rem' mb={4} color='brand.baseColor'>
-                                {slide.tTuloDeLaObra}
                             </Heading>
                             <Text fontSize='1rem' color='brand.baseColor'>
-                                {slide.informaciNExtra}
+                                {slide.informacionExtra}
                             </Text>
                             </Box>
                         </Box>

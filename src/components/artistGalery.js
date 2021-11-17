@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from "next/link";
 import Image from "next/image"
 import { buildUrl } from 'cloudinary-build-url';
 import {
@@ -36,7 +35,6 @@ function Galery(props) {
             },
             transformations: {
               width:'1031',
-              height:'1627',
               quality:'75',
             }
         }),
