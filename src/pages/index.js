@@ -84,8 +84,8 @@ function homePage({curatorsData, museumData, teamData}) {
                 <a>
                   <Image 
                     src='/sobreInvest1.svg'
-                    w={{base:'70px', md:'255px'}}
-                    h={{base:'70px', md:'61px'}} 
+                    w={{base:'70px','1sm':'100px', md:'200px', lg:'255px'}}
+                    h={{base:'65px', md:'65px',lg:'65px'}} 
                     srcSet="/sobreInvest1.svg 768w, /sobreInvest2.svg 960w"
                     alt="Sobre la investigación"
                     mb={2}
@@ -127,9 +127,9 @@ function homePage({curatorsData, museumData, teamData}) {
           mb='1rem'
         >
         <Image 
-          src="/visitaExpoDesktop.svg"
-          w={{base:'70px', md:'270px'}}
-          h={{base:'70px', md:'65px'}}
+          src="/visitaExpovisitaExposicionesMobile.svg"
+          w={{base:'70px','1sm':'100px', md:'200px', lg:'270px'}}
+          h={{base:'65px', md:'65px', lg:'65px'}}
           srcSet="/visitaExposicionesMobile.svg 768w, /visitaExposicionesDescktop.svg 960w"
           alt="Visita las exposiciones"
           mb={2}
@@ -145,10 +145,9 @@ function homePage({curatorsData, museumData, teamData}) {
         >
         <Image 
           src="/curadoras1.svg"
-          w={{base:'130px', md:'230px'}}
-          h={{base:'40px', md:'65px'}}
+          w={{base:'130px', md:'190px',lg:'230px'}}
+          h={{base:'40px', md:'65px',lg:'65px'}}
           alt="Curadoras"
-          mb={2}
         />
         </Box>
         <CuratorsCards curators={curatorsData} />
@@ -161,10 +160,9 @@ function homePage({curatorsData, museumData, teamData}) {
         >
         <Image 
           src="/equipo1.svg"
-          w={{base:'110px', md:'210px'}}
-          h={{base:'40px', md:'65px'}}
+          w={{base:'110px', md:'150px',lg:'200px'}}
+          h={{base:'40px',md:'65px',lg:'65px'}}
           alt="Equipo"
-          mb={2}
         />
         </Box>
         <TeamCards team={teamData} />
