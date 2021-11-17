@@ -6,7 +6,7 @@ import {Text, Heading, Box, Flex, HStack, Link, Image} from '@chakra-ui/react'
 import { buildUrl } from 'cloudinary-build-url';
 
 function Team({teamData}){
-    console.log(teamData.data.allEquipos[0].cuerpoDeLaBiografiaDelIntegrante)
+    // console.log(teamData.data.allEquipos[0].cuerpoDeLaBiografiaDelIntegrante)
     let imgurl = ''
     return (
         <>
@@ -14,6 +14,35 @@ function Team({teamData}){
                 <link rel="icon" type="image/svg" sizes="42x42" href="/logoCrono.png"/>
             </Head>
             <Header/>
+            <Box 
+                fontFamily='body'
+                w='100vw' 
+                h={{ base: '266px', lg: '331px' }}
+                position='relative'
+            >
+                <Image 
+                    src="/bg.svg"
+                    layout='fill'
+                    objectFit='cover'
+                />
+                <Box
+                    position='absolute'
+                    zIndex='2'
+                    bottom='1.25rem'
+                    ml='2rem'
+                    mr='2rem'
+                >
+                    <Heading
+                    as='h2'
+                    color='brand.baseColor'
+                    fontStyle='bold'
+                    pb='1.563rem'
+                    fontSize={{ base: '1.75rem', md: '1.85rem', lg: '2rem' }}
+                    >
+                        Sobre la investigación
+                    </Heading>
+                </Box>
+            </Box>
             <Flex
             alignItems='start'
             flexDir={{base:'column', md:"row"}}
