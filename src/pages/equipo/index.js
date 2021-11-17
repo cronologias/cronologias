@@ -69,10 +69,10 @@ function Team({teamData}){
                                 textTransform='uppercase'
                                 as='h3'
                                 href='#' 
-                                textStyle='body'
+                                textStyle=''
                                 fontSize={{ base:'1.125rem'}}
                                 fontWeight={300}
-                                fontFamily='body'
+                                fontFamily='heading'
                                 mb={3}
                                 mt={3}
                                 fontWeight='bold'
@@ -112,7 +112,8 @@ function Team({teamData}){
                             </Link>
                             <Box pb={8}
                             w={{md:"18rem", lg:"22rem", xl:"26rem"}}>
-                                <Text>
+                                <Text
+                                fontFamily='body'>
                                     {teamData.data.allEquipos[index].cuerpoDeLaBiografiaDelIntegrante}
                                 </Text>
                             </Box>
