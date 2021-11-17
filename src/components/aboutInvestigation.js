@@ -1,6 +1,5 @@
 import React from 'react';
-import Image from 'next/image';
-import { Box, Collapse, Button, Container, Flex, Heading } from '@chakra-ui/react';
+import { Box, Collapse, Button, Container, Flex, Heading, Image } from '@chakra-ui/react';
 import ReactMarkdown from 'react-markdown';
 import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons';
 import Header from './header';
@@ -25,7 +24,8 @@ function AboutInvestigation(props) {
             >
                 <Image 
                     src="/bg.svg"
-                    layout='fill'
+                    width='100%'
+                    h={{base:'16.625rem', md:'20.688rem'}}
                     objectFit='cover'
                 />
                 <Box
@@ -35,15 +35,20 @@ function AboutInvestigation(props) {
                     ml='2rem'
                     mr='2rem'
                 >
-                    <Heading
-                    as='h2'
-                    color='brand.baseColor'
-                    fontStyle='bold'
-                    pb='1.563rem'
-                    fontSize={{ base: '1.75rem', md: '1.85rem', lg: '2rem' }}
+                    <Box
+                    position='relative'
+                    
                     >
-                        Sobre la investigación
-                    </Heading>
+                    <Image 
+                    src="/sobreInvestigacionMobile.svg"
+                    srcSet="/sobreInvestvistaMobile.svg 768w, /sobreInvestvistaDescktop.svg 960w"
+                    alt="Equipo"
+                    w={{base:'90px', md:'270px'}}
+                    h={{base:'90px', md:'65px'}}
+                    mb={2}
+                    
+                    />
+                    </Box>
                 </Box>
             </Box>
             <Flex 
