@@ -34,7 +34,7 @@ function TeamCards(props) {
                     w={{base:'9.75rem', md:'15rem'}}
                     >
                         <Link
-                        href='/'
+                        href={`/equipo`} as={`/equipo`}
                         >
                             <a>
                                 <Box 

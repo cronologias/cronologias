@@ -27,7 +27,7 @@ function Team({teamData}){
                                 cloudName: 'cronologias-invisible',
                             },
                             transformations: {
-                                width:'240',
+                                width:'320',
                                 quality:'75',
                             }
                         }),
@@ -56,7 +56,7 @@ function Team({teamData}){
                                 <a>
                                     <Box 
                                     w="100%"
-                                    h={{base:"14.875rem", md:"25rem"}}
+                                    h={{base:"32.625rem", md:"32.5rem"}}
                                     position='relative'
                                     >
                                     <Image 
