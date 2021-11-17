@@ -124,6 +124,7 @@ function homePage({curatorsData, museumData, teamData}) {
         >
         <Image 
           src="/visitaExpoDesktop.svg"
+          srcSet="/visitaExposicionesMobile.svg 768w, /visitaExposicionesDescktop.svg 960w"
           alt="Visita las exposiciones"
         />
         </Box>
