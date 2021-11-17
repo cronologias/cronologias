@@ -2,11 +2,10 @@ import { getApiRes } from '../../services/callApi'
 import Header from "../../components/header"
 import Footer from "../../components/footer"
 import Head from 'next/head';
-import {Text, Heading, Box, Flex, HStack, Link, Image} from '@chakra-ui/react'
+import {Text, Heading, Box, Flex, Link, Image} from '@chakra-ui/react'
 import { buildUrl } from 'cloudinary-build-url';
 
 function Team({teamData}){
-    // console.log(teamData.data.allEquipos[0].cuerpoDeLaBiografiaDelIntegrante)
     let imgurl = ''
     return (
         <>
@@ -17,13 +16,15 @@ function Team({teamData}){
             <Box 
                 fontFamily='body'
                 w='100vw' 
-                h={{ base: '266px', lg: '331px' }}
+                h={{ base: '16.625rem', lg: '20.688rem' }}
                 position='relative'
             >
                 <Image 
                     src="/bg.svg"
                     layout='fill'
                     objectFit='cover'
+                    h='100%'
+                    w='100%'
                 />
                 <Box
                     position='absolute'
@@ -32,23 +33,23 @@ function Team({teamData}){
                     ml='2rem'
                     mr='2rem'
                 >
-                    <Heading
-                    as='h2'
-                    color='brand.baseColor'
-                    fontStyle='bold'
-                    pb='1.563rem'
-                    fontSize={{ base: '1.75rem', md: '1.85rem', lg: '2rem' }}
+                    <Box
+                    position='relative'
                     >
-                        Sobre la investigación
-                    </Heading>
+                    <Image 
+                    src="/Equipovista.svg"
+                    alt="Equipo"
+                    w={{base:'140px', md:'270px'}}
+                    h={{base:'40px', md:'65px'}}
+                    mb={2}
+                    />
+                    </Box>
                 </Box>
             </Box>
             <Flex
-            alignItems='start'
             flexDir={{base:'column', md:"row"}}
             m='auto'
             w={{ base: '20rem', '2sm': '24rem' , md: '45rem', lg: '58rem', xl: '72rem' }}
-            justifyContent='space-between'
             >
                     {teamData.data.allEquipos.map((element, index) => (
                         imgurl = buildUrl(element.imagenIntegranteDelEquipo, {
@@ -56,7 +57,7 @@ function Team({teamData}){
                                 cloudName: 'cronologias-invisible',
                             },
                             transformations: {
-                                width:'240',
+                                width:'320',
                                 quality:'75',
                             }
                         }),
@@ -85,7 +86,7 @@ function Team({teamData}){
                                 <a>
                                     <Box 
                                     w="100%"
-                                    h={{base:"14.875rem", md:"25rem"}}
+                                    h={{base:"32.625rem", md:"32.5rem"}}
                                     position='relative'
                                     >
                                     <Image 
