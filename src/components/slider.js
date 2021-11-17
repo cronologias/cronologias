@@ -7,7 +7,7 @@ import {
     ChevronRightIcon,
 }
     from '@chakra-ui/icons'
-
+console.log(Slider)
 const Slider = (props) => {
     let position = 0;
     if (props.position) {
