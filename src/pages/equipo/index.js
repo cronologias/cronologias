@@ -69,12 +69,11 @@ function Team({teamData}){
                                 textTransform='uppercase'
                                 as='h3'
                                 href='#' 
-                                textStyle=''
                                 fontSize={{ base:'1.125rem'}}
                                 fontWeight={300}
                                 fontFamily='heading'
-                                mb={3}
-                                mt={3}
+                                mb={6}
+                                mt={6}
                                 fontWeight='bold'
                                 w={{ base:'12rem', md:'auto'}}
                             >
@@ -104,9 +103,8 @@ function Team({teamData}){
                                     fontSize={{ base:'1rem'}}
                                     fontFamily='body'
                                     fontWeight={300}
-                                    mt={3}
+                                    mb={7}
                                     >
-                                        {element.profesion} 
                                     </Text>
                                 </a>
                             </Link>
