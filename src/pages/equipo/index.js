@@ -84,8 +84,8 @@ function Team({teamData}){
                             >
                                 <a>
                                     <Box 
-                                    w="100%"
-                                    h={{base:"32.625rem", md:"32.5rem"}}
+                                    w={{ base: "16rem", md: "44rem", lg:"24.188rem", xl:"30.625rem" }}
+                                    h={{base:"26.625rem", md:"32.5rem"}}
                                     position='relative'
                                     >
                                     <Image 
