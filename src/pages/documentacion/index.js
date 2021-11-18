@@ -62,29 +62,31 @@ function documentation({ documentationData }) {
                     </Heading>
                 </Box>
             </Box>
-            <Box mb={{ base: "2rem", md: "2.25rem", lg: "2.5rem" }}>
+            <Center
+            flexDir='column'
+            mb={{ base: "2rem", md: "2.25rem", lg: "2.5rem" }}>
                 {documentationData.data.allDocumentacions.map((element, index) => (
                     element.documentacion[0].imagenDelDocumento === "" ? url = url : url = element.documentacion[0].imagenDelDocumento,
                     imgurl = buildUrl(url, {
                         cloud: {
-                          cloudName: 'cronologias-invisible',
+                        cloudName: 'cronologias-invisible',
                         },
                         transformations: {
-                          width:'1031',
-                          quality:'75',
+                        width:'1031',
+                        quality:'75',
                         }
                     }),
                     index % 2 === 0 ?
                         <Center
                             key={index}>
                             <HStack
-                                spacing={{ base: 4, md: 6, lg: 8 }}
+                                spacing={{ base: 4, md: 6, lg :8 }}
                                 mt={{ base: 5, lg: 8 }}>
-                                <Box w={{ base: "11.5rem", md: "28rem", lg: "40rem", xl: "53rem" }}
+                                <Box w={{ base: "11.5rem", md: "22rem"}}
                                     h={{ base: "16rem", md: "28rem", lg: "30rem" }} position='relative'>
                                     <Image
                                         layout='fill'
-                                        objectFit="cover"
+                                        objectFit="contain"
                                         src={imgurl}
                                         data-slide={index}
                                         alt="Documentación"
@@ -106,11 +108,11 @@ function documentation({ documentationData }) {
                                     w={{ base: "4rem", md: "15rem", lg: "14rem", xl: "16rem" }}
                                     h={{ base: "16rem", md: "28rem", lg: "30rem" }} >
                                 </Box>
-                                <Box w={{ base: "11.5rem", md: "28rem", lg: "40rem", xl: "53rem" }}
+                                <Box w={{ base: "11.5rem", md: "22rem"}}
                                     h={{ base: "16rem", md: "28rem", lg: "30rem" }} position='relative'>
                                     <Image
                                         layout='fill'
-                                        objectFit="cover"
+                                        objectFit="contain"
                                         src={imgurl}
                                         data-slide={index}
                                         alt="Documentación"
@@ -121,7 +123,7 @@ function documentation({ documentationData }) {
                         </Center>
                 ))
                 }
-            </Box>
+            </Center>
             <Modal
                 isOpen={isOpen} onClose={onClose}
             >
