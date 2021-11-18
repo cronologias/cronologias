@@ -99,14 +99,14 @@ function CuratorsBio(props) {
                         position="relative"
                         >
                             <Link 
-                            href='#'
+                            href={props.curators[0].enlaceDelSitioWeb}
                             w={{ base: '1.5rem' }}
                             h={{ base: '1.5rem' }}
                             >
                                 <BsGlobe2/>
                             </Link>
                             <Link 
-                            href='#'
+                            href={props.curators[0].email}
                             w={{ base: '1.5rem'}}
                             h={{ base: '1.5rem'}}
                             >

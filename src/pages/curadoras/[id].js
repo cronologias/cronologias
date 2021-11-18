@@ -33,7 +33,7 @@ export async function getStaticProps ({params}) {
     const URl= process.env.NEXT_URL;
     const TOKEN= process.env.NEXT_TOKEN;
     const curatorsShortInfo ='query MyQuery{ allTarjetaCuradoras{breveDescripcionDeLaCuradora}}'
-    const bodyCuratorsBio =`query MyQuery {allBiografiaCuradoras (filter: {id: {eq: ${params.id}}}) {id nombreDeLaCuradora,imagenDeLaCuradora,cuerpoDeLaBiografia, breveDescripcionDeLaCuradora}}`
+    const bodyCuratorsBio =`query MyQuery {allBiografiaCuradoras (filter: {id: {eq: ${params.id}}}) {id nombreDeLaCuradora,imagenDeLaCuradora, enlaceDelSitioWeb, email, cuerpoDeLaBiografia, breveDescripcionDeLaCuradora}}`
     const getCuratorsBio = await getApiRes(URl,TOKEN, bodyCuratorsBio)
     const curatorsBioData = getCuratorsBio.data.allBiografiaCuradoras
     const museumInfo ='query MyQuery {allVisitaLaExposicions {id tituloDeLaTarjeta}}'
