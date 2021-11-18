@@ -18,7 +18,7 @@ function AboutInvestigation(props) {
             <Header museumMenu={props.museumData} /> 
             <Box 
                 fontFamily='body'
-                w='100vw' 
+                w='100%' 
                 h={{ base: '266px', lg: '331px' }}
                 position='relative'
             >

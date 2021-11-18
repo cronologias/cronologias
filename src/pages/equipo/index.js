@@ -15,7 +15,7 @@ function Team({teamData}){
             <Header/>
             <Box 
                 fontFamily='body'
-                w='100vw' 
+                w='100%' 
                 h={{ base: '16.625rem', lg: '20.688rem' }}
                 position='relative'
             >
