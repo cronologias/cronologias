@@ -160,7 +160,7 @@ function homePage({curatorsData, museumData, teamData}) {
         >
         <Image 
           src="/equipo1.svg"
-          w={{base:'110px', md:'150px',lg:'200px'}}
+          w={{base:'110px', md:'150px',lg:'150px'}}
           h={{base:'40px',md:'65px',lg:'65px'}}
           alt="Equipo"
         />
