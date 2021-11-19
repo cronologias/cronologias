@@ -39,7 +39,7 @@ function Team({teamData}){
                     <Image 
                     src="/Equipovista.svg"
                     alt="Equipo"
-                    w={{base:'140px', md:'270px'}}
+                    w={{base:'140px', md:'200px'}}
                     h={{base:'40px', md:'65px'}}
                     mb={2}
                     />
