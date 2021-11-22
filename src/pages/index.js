@@ -127,7 +127,7 @@ function homePage({curatorsData, museumData, teamData}) {
         >
         <Image 
           src="/visitaExposicionesDescktop.svg"
-          w={{base:'170px','1sm':'100px', md:'200px', lg:'270px'}}
+          w={{base:'170px', md:'200px', lg:'270px'}}
           h={{base:'65px', md:'65px', lg:'65px'}}
           alt="Visita las exposiciones"
           mb={2}
